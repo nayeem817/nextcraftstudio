@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<!-- ================= Favicon Tags ================= -->
+    <link rel="icon" href="https://www.image2url.com/r2/default/images/1785860745679-a479f8f8-7be3-4a74-9d32-27d5958146bd.png" type="image/png">
+    <link rel="shortcut icon" href="https://www.image2url.com/r2/default/images/1785860745679-a479f8f8-7be3-4a74-9d32-27d5958146bd.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="https://www.image2url.com/r2/default/images/1785860745679-a479f8f8-7be3-4a74-9d32-27d5958146bd.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>প্রফেশনাল ল্যান্ডিং পেজ ডিজাইন - NextCraft Studio</title>
+    <meta name="description" content="NextCraft Studio থেকে মাত্র ৬৯৯ টাকায় আপনার ব্যবসার জন্য নিন প্রফেশনাল ওয়ান পেজ ল্যান্ডিং পেজ ডিজাইন। নো অ্যাডভান্স পেমেন্ট!">
+    <meta name="keywords" content="NextCraft Studio, ল্যান্ডিং পেজ, Landing Page Design, ওয়ান পেজ ওয়েবসাইট, ওয়েবসাইট ডিজাইন">
+    <meta name="author" content="NextCraft Studio">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook SEO Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="প্রফেশনাল ল্যান্ডিং পেজ ডিজাইন - NextCraft Studio">
+    <meta property="og:description" content="আপনার ব্যবসার সেলস বাড়াতে নিন প্রফেশনাল ল্যান্ডিং পেজ। কাজ পছন্দ হলে পেমেন্ট করবেন!">
+    <meta property="og:image" content="https://www.image2url.com/r2/default/images/1781882691736-3ee3120a-c934-4702-b10b-c1ce0dc8c027.png">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ================= Original Brand Color Palette ================= */
+        :root {
+            --primary-blue: #163B5D;       
+            --secondary-blue: #3A81A9;     
+            --gold-accent: #C4A265;        
+            --gold-hover: #d8b475;         
+            --dark-bg: #0D2135;            
+            --card-bg: #132D47;            
+            --light-bg: #F4F7F9;           
+            --text-dark: #1E293B;          
+            --text-light: #E0E8F0;         
+            --text-muted: #94A3B8;         
+            --white: #FFFFFF;
+            --whatsapp-green: #25D366;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* ================= Header Navigation ================= */
+        .header {
+            background-color: var(--dark-bg);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-bottom: 2px solid var(--gold-accent);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--gold-accent);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .logo-text span {
+            color: var(--gold-accent);
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: var(--gold-accent);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        /* ================= Side Navigation Drawer ================= */
+        .side-drawer {
+            position: fixed;
+            top: 0;
+            right: -380px;
+            width: 350px;
+            height: 100vh;
+            background-color: var(--dark-bg);
+            box-shadow: -5px 0 25px rgba(0,0,0,0.5);
+            z-index: 10000;
+            transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+            padding: 25px 20px;
+            overflow-y: auto;
+            border-left: 2px solid var(--gold-accent);
+        }
+
+        .side-drawer.open {
+            right: 0;
+        }
+
+        .drawer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(2px);
+            z-index: 9999;
+            display: none;
+        }
+
+        .drawer-overlay.active {
+            display: block;
+        }
+
+        .drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 15px;
+        }
+
+        .drawer-header h3 {
+            color: var(--gold-accent);
+            font-size: 1.3rem;
+        }
+
+        .close-drawer {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .drawer-btn {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(196, 162, 101, 0.3);
+            color: var(--white);
+            padding: 14px 18px;
+            border-radius: 8px;
+            text-align: left;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .drawer-btn:hover {
+            background-color: var(--primary-blue);
+            border-color: var(--gold-accent);
+        }
+
+        .drawer-btn i.arrow {
+            transition: transform 0.3s ease;
+            color: var(--gold-accent);
+        }
+
+        .drawer-btn.active i.arrow {
+            transform: rotate(90deg);
+        }
+
+        .slide-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            margin-top: -5px;
+            margin-bottom: 15px;
+            padding: 0 15px;
+        }
+
+        .slide-content.open {
+            padding: 15px;
+        }
+
+        .drawer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .drawer-contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .drawer-contact-item i {
+            font-size: 1.2rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .drawer-contact-item i.fa-whatsapp { color: var(--whatsapp-green); }
+        .drawer-contact-item i.fa-envelope { color: var(--gold-accent); }
+        .drawer-contact-item i.fa-facebook { color: #1877F2; }
+
+        .drawer-contact-item a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .drawer-contact-item a:hover {
+            color: var(--gold-accent);
+        }
+
+        .mini-form .form-group {
+            margin-bottom: 12px;
+        }
+
+        .mini-form label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .mini-form input, .mini-form textarea {
+            width: 100%;
+            padding: 8px 12px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 5px;
+            color: var(--white);
+            font-size: 0.85rem;
+            outline: none;
+        }
+
+        .mini-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--gold-accent);
+            color: var(--dark-bg);
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        .mini-form button:hover {
+            background-color: var(--gold-hover);
+        }
+
+        /* ================= Hero Banner ================= */
+        .hero-section {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-blue) 100%);
+            padding: 70px 20px;
+            color: var(--white);
+            text-align: center;
+            border-bottom: 4px solid var(--gold-accent);
+        }
+
+        .hero-container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(196, 162, 101, 0.15);
+            color: var(--gold-accent);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--gold-accent);
+            margin-bottom: 15px;
+        }
+
+        .hero-container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 18px;
+            line-height: 1.3;
+        }
+
+        .hero-container h1 span {
+            color: var(--gold-accent);
+        }
+
+        .hero-container p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* ================= Features Section ================= */
+        .features-section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 8px;
+        }
+
+        .section-title h2 span {
+            color: var(--gold-accent);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 30px 25px;
+            border-radius: 12px;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-accent);
+        }
+
+        .feature-icon {
+            width: 65px;
+            height: 65px;
+            background: rgba(196, 162, 101, 0.12);
+            color: var(--gold-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 18px;
+        }
+
+        .feature-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* ================= Free Bonus Offer ================= */
+        .bonus-box {
+            background: rgba(196, 162, 101, 0.1);
+            border: 2px dashed var(--gold-accent);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 35px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .bonus-box i {
+            font-size: 2.2rem;
+            color: var(--gold-accent);
+        }
+
+        .bonus-box h4 {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+        }
+
+        .bonus-box p {
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        /* ================= Demo Section ================= */
+        .demo-showcase-section {
+            background-color: #EEF3F7;
+            padding: 60px 20px;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 900px;
+            margin: 30px auto 0;
+        }
+
+        .demo-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .demo-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .demo-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-view-demo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-view-demo:hover {
+            background-color: var(--gold-accent);
+            color: var(--dark-bg);
+        }
+
+        /* ================= Pricing Section ================= */
+        .pricing-section {
+            padding: 70px 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .pricing-card-single {
+            background-color: var(--white);
+            border-radius: 16px;
+            padding: 40px 30px;
+            border: 2px solid var(--gold-accent);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            text-align: center;
+            position: relative;
+        }
+
+        .trust-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold-accent);
+            color: var(--dark-bg);
+            padding: 4px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .pricing-price {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin: 15px 0;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 25px 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid #F0F2F5;
+            color: #444;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pricing-features li i {
+            color: #10B981;
+            font-size: 1.1rem;
+        }
+
+        .no-advance-tag {
+            background-color: rgba(37, 211, 102, 0.1);
+            color: #15803D;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            border: 1px dashed #10B981;
+        }
+
+        .btn-order-wa {
+            background-color: var(--whatsapp-green);
+            color: var(--white);
+            padding: 15px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+        }
+
+        .btn-order-wa:hover {
+            background-color: #20ba5a;
+            transform: translateY(-2px);
+        }
+
+        /* ================= WhatsApp Contact Banner ================= */
+        .demo-section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .demo-box {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--card-bg) 100%);
+            border: 2px dashed var(--gold-accent);
+            border-radius: 16px;
+            padding: 40px 25px;
+            color: var(--white);
+        }
+
+        .demo-box i.icon {
+            font-size: 3.2rem;
+            color: var(--whatsapp-green);
+            margin-bottom: 15px;
+        }
+
+        .demo-box h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .demo-box p {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        .btn-wa-large {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--whatsapp-green);
+            color: var(--white);
+            padding: 15px 32px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 18px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-wa-large:hover {
+            background-color: #20ba5a;
+            transform: scale(1.05);
+        }
+
+        /* ================= Footer Area (Exact Original Layout) ================= */
+        .footer-section {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            padding-top: 60px;
+            border-top: 4px solid var(--gold-accent);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--gold-accent);
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary-blue);
+        }
+
+        .footer-col p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .contact-list i {
+            color: var(--whatsapp-green);
+            margin-right: 12px;
+            font-size: 1.1rem;
+        }
+
+        .contact-list i.fa-facebook {
+            color: #1877F2;
+        }
+
+        .contact-list a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-list a:hover {
+            color: var(--gold-accent);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.08);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--gold-accent);
+            color: var(--dark-bg);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            margin-top: 50px;
+            padding: 20px 0;
+            background-color: #071524;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-bottom strong {
+            color: var(--gold-accent);
+        }
+
+        @media (max-width: 768px) {
+            .hero-container h1 {
+                font-size: 1.9rem;
+            }
+            .side-drawer {
+                width: 300px;
+            }
+            .bonus-box {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="http://nextcraftstudio.site" class="logo-box">
+                <img src="https://www.image2url.com/r2/default/images/1781882691736-3ee3120a-c934-4702-b10b-c1ce0dc8c027.png" alt="NextCraft Studio Logo" class="logo-img">
+                <span class="logo-text">NextCraft <span>Studio</span></span>
+            </a>
+            <button class="menu-toggle" id="openDrawer" aria-label="Open Navigation Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Side Navigation Drawer -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <aside class="side-drawer" id="sideDrawer">
+        <div class="drawer-header">
+            <h3>নেভিগেশন মেনু</h3>
+            <button class="close-drawer" id="closeDrawer"><i class="fas fa-times"></i></button>
+        </div>
+
+        <!-- Sliding Contact Button -->
+        <button class="drawer-btn" id="contactBtn">
+            <span><i class="fas fa-address-book" style="margin-right:8px;"></i> যোগাযোগ করুন</span>
+            <i class="fas fa-chevron-right arrow"></i>
+        </button>
+        <div class="slide-content" id="contactSlide">
+            <div class="drawer-contact-item">
+                <i class="fab fa-whatsapp"></i>
+                <a href="https://wa.me/8801810546079?text=Hello%20NextCraft%20Studio,%20I%20want%20to%20order%20a%20Landing%20Page" target="_blank">+8801810546079</a>
+            </div>
+            <div class="drawer-contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:nextcraftstudio@gmail.com">nextcraftstudio@gmail.com</a>
+            </div>
+            <div class="drawer-contact-item">
+                <i class="fab fa-facebook"></i>
+                <a href="https://www.facebook.com/share/1HoWnZpURf/" target="_blank">অফিশিয়াল ফেসবুক পেজ</a>
+            </div>
+        </div>
+
+        <!-- Sliding Details / Form Button -->
+        <button class="drawer-btn" id="detailsBtn">
+            <span><i class="fas fa-edit" style="margin-right:8px;"></i> প্রজেক্ট ডিটেইলস লিখুন</span>
+            <i class="fas fa-chevron-right arrow"></i>
+        </button>
+        <div class="slide-content" id="detailsSlide">
+            <form class="mini-form" action="https://formspree.io/f/xvzejkdr" method="POST">
+                <div class="form-group">
+                    <label>আপনার নাম *</label>
+                    <input type="text" name="name" placeholder="আপনার নাম লিখুন" required>
+                </div>
+                <div class="form-group">
+                    <label>WhatsApp নম্বর *</label>
+                    <input type="tel" name="whatsapp" placeholder="01810546079" required>
+                </div>
+                <div class="form-group">
+                    <label>সার্ভিস বিবরণ *</label>
+                    <textarea name="details" rows="3" placeholder="ল্যান্ডিং পেজের বিবরণ বা আপনার পণ্যের তথ্য লিখুন..." required></textarea>
+                </div>
+                <button type="submit">জমা দিন</button>
+            </form>
+        </div>
+    </aside>
+
+    <!-- Hero Banner -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <span class="hero-badge"><i class="fas fa-laptop-code"></i> প্রফেশনাল ওয়েব ডিজাইন</span>
+            <h1>আসসালামু আলাইকুম, <span>আপনার ব্যবসার জন্য</span> তৈরি করুন প্রফেশনাল ল্যান্ডিং পেজ</h1>
+            <p>আপনার পণ্যের সেলস বহুগুণ বাড়িয়ে নিতে আমরা তৈরি করে দিচ্ছি আকর্ষণীয় ও হাই-কনভার্টিং One Page Landing Page।</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="section-title">
+            <h2>আমাদের ল্যান্ডিং পেজে <span>যা যা থাকছে</span></h2>
+            <p>আপনার কাস্টমারদের সহজ কেনাকাটার জন্য সেরা ফিচারসমূহ</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>মোবাইল ও কম্পিউটার সাপোর্ট</h3>
+                <p>সব ধরনের ডিভাইস (মোবাইল, ট্যাবলেট, ল্যাপটপ)-এ ১০০% রেসপন্সিভ এবং ফাস্ট লোডিং।</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-shopping-cart"></i></div>
+                <h3>সহজ অর্ডার ফর্ম</h3>
+                <p>কাস্টমার যেন ১ ক্লিকে নাম, ঠিকানা ও মোবাইল নম্বর দিয়ে অর্ডার করতে পারে সেই ব্যবস্থা।</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fab fa-whatsapp"></i></div>
+                <h3>ডাইরেক্ট WhatsApp বাটন</h3>
+                <p>কাস্টমার সরাসরি হোয়াটসঅ্যাপে যোগাযোগ ও মেসেজ পাঠানোর সুবিধা পাবে।</p>
+            </div>
+        </div>
+
+        <!-- Free Bonus Highlight -->
+        <div class="bonus-box">
+            <i class="fas fa-qrcode"></i>
+            <div>
+                <h4>🎁 স্পেশাল ফ্রী বোনাস!</h4>
+                <p>আমরা আপনাকে আপনার ব্যবসার নাম ও পেজ লিংক দিয়ে একটি প্রফেশনাল <strong>QR কোড তৈরি করে দিব একদম ফ্রিতে!</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Showcase Section -->
+    <section class="demo-showcase-section">
+        <div class="section-title">
+            <h2>আমাদের তৈরি <span>লাইভ ডেমো দেখুন</span></h2>
+            <p>নিচের লিংকগুলোতে ক্লিক করে আমাদের কাজের মান দেখে নিন</p>
+        </div>
+
+        <div class="demo-grid">
+            <div class="demo-card">
+                <div>
+                    <h3>ল্যান্ডিং পেজ ডেমো - ১</h3>
+                    <p>আধুনিক ই-কমার্স ও প্রোডাক্ট সেলস লেআউট</p>
+                </div>
+                <a href="https://wild-blue-yzppc4yy.edgeone.dev/" target="_blank" class="btn-view-demo">
+                    <i class="fas fa-external-link-alt"></i> লাইভ ডেমো ১ দেখুন
+                </a>
+            </div>
+
+            <div class="demo-card">
+                <div>
+                    <h3>ল্যান্ডিং পেজ ডেমো - ২</h3>
+                    <p>প্রিমিয়াম ব্র‍্যান্ডিং ও ক্লিন ডিজাইন</p>
+                </div>
+                <a href="https://whispering-copper-nd81iwtu.edgeone.dev/" target="_blank" class="btn-view-demo">
+                    <i class="fas fa-external-link-alt"></i> লাইভ ডেমো ২ দেখুন
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="section-title">
+            <h2>অফার <span>মূল্য</span></h2>
+            <p>সীমিত সময়ের জন্য বিশেষ মূল্য ছাড়</p>
+        </div>
+
+        <div class="pricing-card-single">
+            <span class="trust-badge">ধামাকা অফার</span>
+            <h3>One Page Landing Page</h3>
+            <div class="pricing-price">৳৯৯৯</div>
+
+            <div class="no-advance-tag">
+                <i class="fas fa-shield-alt"></i> এক টাকাও এডভান্স দেওয়া লাগবে না! কাজ পছন্দ হলে তারপরেই পেমেন্ট করতে পারবেন।
+            </div>
+
+            <ul class="pricing-features">
+                <li><i class="fas fa-check-circle"></i> ১০০% রেসপন্সিভ মোবাইল ও ডেস্কটপ ভিউ</li>
+                <li><i class="fas fa-check-circle"></i> ইজি প্রোডাক্ট অর্ডার ফর্ম সেটআপ</li>
+                <li><i class="fas fa-check-circle"></i> সরাসরি WhatsApp চ্যাট বাটন</li>
+                <li><i class="fas fa-check-circle"></i> ১টি ফ্রি কাস্টমাইজড QR কোড</li>
+                <li><i class="fas fa-check-circle"></i> সুপার ফাস্ট পেজ লোডিং স্পিড</li>
+            </ul>
+
+            <a href="https://wa.me/8801810546079?text=আসসালামু%20আলাইকুম,%20আমি%20৬৯৯%20টাকার%20ল্যান্ডিং%20পেজটি%20তৈরি%20করতে%20চাই" target="_blank" class="btn-order-wa">
+                <i class="fab fa-whatsapp"></i> এখনই অর্ডার করুন
+            </a>
+        </div>
+    </section>
+
+    <!-- Direct WhatsApp Contact Banner -->
+    <section class="demo-section">
+        <div class="demo-box">
+            <i class="fab fa-whatsapp icon"></i>
+            <h3>সরাসরি হোয়াটসঅ্যাপে কথা বলুন</h3>
+            <p>আপনার ব্যবসার জন্য পছন্দমতো ল্যান্ডিং পেজ বানাতে আমাদের সাথে সরাসরি আলোচনা করুন</p>
+            <a href="https://wa.me/8801810546079?text=Hello%20NextCraft%20Studio,%20I%20want%20a%20Landing%20Page" target="_blank" class="btn-wa-large">
+                <i class="fab fa-whatsapp"></i> WhatsApp-এ চ্যাট শুরু করুন
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer Area (Exact Original Layout) -->
+    <footer class="footer-section" id="contact">
+        <div class="footer-container">
+            
+            <div class="footer-col">
+                <h4>NextCraft Studio</h4>
+                <p>আমরা বিজনেসের সেলস বাড়াতে ডিজিটাল মার্কেটিং, লোগো ডিজাইন, প্রমোশনাল ভিডিও অ্যাডস এবং হাই-কনভার্টিং ল্যান্ডিং পেজ তৈরি করে থাকি।</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/1HoWnZpURf/" target="_blank" title="Facebook Page"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/8801810546079" target="_blank" title="WhatsApp Business"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>আমাদের সেবা সমূহ</h4>
+                <ul class="contact-list">
+                    <li>
+                        <i class="fas fa-angle-right"></i>
+                        <a href="http://nextcraftstudio.site/video-ads/">ভিডিও বিজ্ঞাপন তৈরি</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-angle-right"></i>
+                        <a href="http://nextcraftstudio.site/Facebook-marketing/">ফেসবুক এডস ও প্রমোশন</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-angle-right"></i>
+                        <a href="http://nextcraftstudio.site/landing-page/">ল্যান্ডিং পেজ ডিজাইন</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-angle-right"></i>
+                        <a href="http://nextcraftstudio.site/logo-design/">প্রফেশনাল লোগো ডিজাইন</a>
+                    </li>
+                      <li>
+                            <i class="fas fa-angle-right"></i>
+                        <a href="https://nextcraftstudio.site/printing-design/">প্রিন্টিং ডিজাইন এবং প্রিন্ট</a>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>যোগাযোগের তথ্য</h4>
+                <ul class="contact-list">
+                    <li>
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/8801810546079" target="_blank">+8801810546079</a>
+                    </li>
+                    <li>
+                        <i class="fab fa-facebook"></i>
+                        <a href="https://www.facebook.com/share/1HoWnZpURf/" target="_blank">Facebook Official Page</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 <strong>NextCraft Studio</strong>. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // 1. Drawer Navigation Controls
+        const openDrawer = document.getElementById('openDrawer');
+        const closeDrawer = document.getElementById('closeDrawer');
+        const sideDrawer = document.getElementById('sideDrawer');
+        const drawerOverlay = document.getElementById('drawerOverlay');
+
+        function toggleDrawer() {
+            sideDrawer.classList.toggle('open');
+            drawerOverlay.classList.toggle('active');
+        }
+
+        openDrawer.addEventListener('click', toggleDrawer);
+        closeDrawer.addEventListener('click', toggleDrawer);
+        drawerOverlay.addEventListener('click', toggleDrawer);
+
+        // 2. Sliding Sub-content inside Drawer
+        function setupSlideToggle(btnId, slideId) {
+            const btn = document.getElementById(btnId);
+            const slide = document.getElementById(slideId);
+
+            btn.addEventListener('click', function() {
+                btn.classList.toggle('active');
+                slide.classList.toggle('open');
+
+                if (slide.classList.contains('open')) {
+                    slide.style.maxHeight = slide.scrollHeight + "px";
+                } else {
+                    slide.style.maxHeight = null;
+                }
+            });
+        }
+
+        setupSlideToggle('contactBtn', 'contactSlide');
+        setupSlideToggle('detailsBtn', 'detailsSlide');
+    </script>
+
+</body>
+</html>
