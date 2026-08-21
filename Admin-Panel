@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Admin Portal - NextCraft Studio</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="https://www.image2url.com/r2/default/images/1786858120186-60450843-0701-4497-b462-d5bb013b8349.jpg">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Chart.js for Graph -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Firebase SDK (Compat Libraries) -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+
+  <style>
+    :root {
+      --primary-color: #4f46e5;
+      --primary-hover: #4338ca;
+      --bg-color: #f3f4f6;
+      --card-bg: #ffffff;
+      --text-dark: #1f2937;
+      --text-muted: #6b7280;
+      --accent-green: #10b981;
+      --accent-red: #ef4444;
+      --accent-amber: #f59e0b;
+      --accent-blue: #3b82f6;
+      --border-color: #e5e7eb;
+    }
+
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+    }
+
+    html, body { 
+      width: 100%; 
+      height: 100%; 
+      background-color: var(--bg-color); 
+      color: var(--text-dark); 
+      overflow-x: hidden; 
+    }
+
+    /* LOGIN SCREEN STYLES */
+    .login-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      width: 100%;
+      padding: 16px;
+      background-color: var(--bg-color);
+      position: relative;
+    }
+
+    .login-card {
+      background: var(--card-bg);
+      width: 100%;
+      max-width: 400px;
+      padding: 32px 24px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--border-color);
+      transition: transform 0.3s ease;
+    }
+
+    /* Shake animation for wrong login */
+    .shake-card {
+      animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+    }
+
+    @keyframes shake {
+      10%, 90% { transform: translate3d(-2px, 0, 0); }
+      20%, 80% { transform: translate3d(4px, 0, 0); }
+      30%, 50%, 70% { transform: translate3d(-6px, 0, 0); }
+      40%, 60% { transform: translate3d(6px, 0, 0); }
+    }
+
+    .login-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .login-header .icon-box {
+      width: 60px;
+      height: 60px;
+      background-color: #e0e7ff;
+      color: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin: 0 auto 12px auto;
+    }
+
+    .login-header h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .login-header p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .input-group {
+      margin-bottom: 18px;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+
+    .input-field-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-field-wrapper i {
+      position: absolute;
+      left: 14px;
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+
+    .input-field-wrapper input {
+      width: 100%;
+      padding: 12px 14px 12px 42px;
+      border: 1.5px solid var(--border-color);
+      border-radius: 10px;
+      outline: none;
+      font-size: 14px;
+      transition: border-color 0.2s;
+    }
+
+    .input-field-wrapper input:focus {
+      border-color: var(--primary-color);
+    }
+
+    .btn-login {
+      width: 100%;
+      padding: 12px;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background-color 0.2s;
+    }
+
+    .btn-login:hover {
+      background-color: var(--primary-hover);
+    }
+
+    /* CUSTOM BEAUTIFUL ALERT NOTIFICATION POPUP */
+    .custom-toast {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      background: #ffffff;
+      border-left: 5px solid var(--accent-red);
+      padding: 16px 20px;
+      border-radius: 12px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      z-index: 9999;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-20px) scale(0.95);
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      max-width: 350px;
+    }
+
+    .custom-toast.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+
+    .toast-icon {
+      width: 38px;
+      height: 38px;
+      background-color: #fee2e2;
+      color: var(--accent-red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .toast-content h5 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 2px;
+    }
+
+    .toast-content p {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .toast-close {
+      margin-left: auto;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 16px;
+      padding: 4px;
+    }
+
+    .toast-close:hover {
+      color: var(--text-dark);
+    }
+
+    /* DASHBOARD STYLES */
+    .dashboard-wrapper {
+      display: none;
+      min-height: 100vh;
+      width: 100%;
+    }
+
+    .app-container {
+      display: flex;
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    .drawer {
+      width: 260px;
+      min-width: 260px;
+      background: var(--card-bg);
+      padding: 24px 16px;
+      border-right: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 100;
+    }
+
+    .drawer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .drawer-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .drawer-title i {
+      font-size: 22px;
+      color: var(--primary-color);
+    }
+
+    .drawer-title h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .drawer-close-btn {
+      display: none;
+      font-size: 20px;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+
+    .menu-items { list-style: none; }
+    
+    .menu-item {
+      padding: 10px 14px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+
+    .menu-item:hover, .menu-item.active {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    .drawer-footer {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .btn-download-app {
+      background-color: var(--accent-green);
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 14px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .btn-download-app:hover {
+      background-color: #059669;
+    }
+
+    .btn-logout {
+      background-color: var(--accent-red);
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    .copyright-text {
+      margin-top: 14px;
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 24px;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .mobile-header {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--card-bg);
+      padding: 12px 16px;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      border: 1px solid var(--border-color);
+    }
+
+    .hamburger-btn {
+      font-size: 20px;
+      color: var(--text-dark);
+      cursor: pointer;
+      padding: 4px 8px;
+    }
+
+    .view-section {
+      display: none;
+    }
+
+    .view-section.active-view {
+      display: block;
+    }
+
+    .filter-card {
+      background: var(--card-bg);
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .time-select {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      outline: none;
+      font-size: 13px;
+      font-weight: 600;
+      background: #f9fafb;
+      cursor: pointer;
+    }
+
+    .status-checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .checkbox-label {
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      background: #fafafa;
+    }
+
+    .cb-pending { border-left: 4px solid var(--accent-amber); }
+    .cb-completed { border-left: 4px solid var(--accent-green); }
+    .cb-cancelled { border-left: 4px solid var(--accent-red); }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .section-header h3 {
+      font-size: 16px;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .orders-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+      width: 100%;
+    }
+
+    .order-card-wrapper {
+      background: var(--card-bg);
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      border-left: 5px solid var(--accent-amber);
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .order-card-wrapper.completed {
+      border-left-color: var(--accent-green);
+    }
+
+    .order-card-wrapper.cancelled {
+      border-left-color: var(--accent-red);
+    }
+
+    .order-card-main {
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .order-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .order-badge {
+      background: #f3f4f6;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-weight: 700;
+      color: var(--text-dark);
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .customer-info h4 {
+      font-size: 14px;
+      color: var(--text-dark);
+      margin-bottom: 2px;
+    }
+
+    .customer-info p {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .order-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .toggle-arrow {
+      background: #f3f4f6;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      color: var(--text-dark);
+    }
+
+    .toggle-arrow.open {
+      transform: rotate(180deg);
+    }
+
+    .order-details-drawer {
+      display: none;
+      padding: 16px;
+      background: #f9fafb;
+      border-top: 1px solid var(--border-color);
+      font-size: 13px;
+    }
+
+    .order-details-drawer.active {
+      display: block;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .details-item label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      display: block;
+    }
+
+    .details-item span {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .status-select {
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 12px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .status-pending { background: #fef3c7; color: #b45309; }
+    .status-completed { background: #d1fae5; color: #047857; }
+    .status-cancelled { background: #fee2e2; color: #b91c1c; }
+
+    .no-orders-box {
+      background: var(--card-bg);
+      padding: 40px 16px;
+      text-align: center;
+      border-radius: 10px;
+      color: var(--text-muted);
+      font-size: 14px;
+      font-weight: 500;
+      border: 2px dashed var(--border-color);
+      width: 100%;
+    }
+
+    .no-orders-box i {
+      font-size: 36px;
+      margin-bottom: 8px;
+      color: #d1d5db;
+      display: block;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .metric-card {
+      background: var(--card-bg);
+      padding: 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metric-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+    }
+
+    .metric-total::before { background-color: var(--accent-blue); }
+    .metric-completed::before { background-color: var(--accent-green); }
+    .metric-pending::before { background-color: var(--accent-amber); }
+    .metric-cancelled::before { background-color: var(--accent-red); }
+    .metric-visitors::before { background-color: var(--primary-color); }
+
+    .metric-card p {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .metric-card h2 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-top: 6px;
+      color: var(--text-dark);
+    }
+
+    .metric-card i {
+      position: absolute;
+      right: 16px;
+      top: 18px;
+      font-size: 24px;
+      opacity: 0.2;
+    }
+
+    .chart-container-card {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      margin-bottom: 20px;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      z-index: 90;
+    }
+
+    /* DOWNLOAD MODAL STYLES */
+    .download-modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+    }
+
+    .download-modal-card {
+      background: var(--card-bg);
+      width: 100%;
+      max-width: 360px;
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      font-size: 18px;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+
+    .app-logo-img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      border-radius: 16px;
+      margin-bottom: 12px;
+    }
+
+    .app-title-text {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+
+    .app-notice-text {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      background: #f3f4f6;
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin-bottom: 18px;
+    }
+
+    .btn-direct-download {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 12px;
+      background-color: var(--accent-green);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .main-content { padding: 12px; }
+      .drawer {
+        position: fixed;
+        top: 0;
+        left: -270px;
+        height: 100vh;
+        transition: left 0.3s ease;
+      }
+      .drawer.open { left: 0; }
+      .drawer-close-btn { display: block; }
+      .mobile-header { display: flex; }
+      .overlay.active { display: block; }
+      .order-card-main {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .order-right {
+        width: 100%;
+        justify-content: space-between;
+        border-top: 1px solid #f3f4f6;
+        padding-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CUSTOM ALERT POPUP IN ENGLISH -->
+  <div id="custom-toast" class="custom-toast">
+    <div class="toast-icon">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+    </div>
+    <div class="toast-content">
+      <h5>Login Failed</h5>
+      <p>Invalid email or password. Please try again!</p>
+    </div>
+    <i class="fa-solid fa-xmark toast-close" onclick="hideCustomToast()"></i>
+  </div>
+
+  <!-- LOGIN SCREEN -->
+  <div id="login-screen" class="login-wrapper">
+    <div class="login-card" id="login-card">
+      <div class="login-header">
+        <div class="icon-box">
+          <i class="fa-solid fa-user-shield"></i>
+        </div>
+        <h2>Admin Login</h2>
+        <p>Enter your credentials to access the panel</p>
+      </div>
+
+      <form onsubmit="handleLogin(event)">
+        <div class="input-group">
+          <label>Email Address</label>
+          <div class="input-field-wrapper">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" id="login-email" placeholder="admin@example.com" required>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Password</label>
+          <div class="input-field-wrapper">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="login-password" placeholder="••••••••" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-login">
+          <i class="fa-solid fa-right-to-bracket"></i> Sign In
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- DASHBOARD SCREEN -->
+  <div id="dashboard-screen" class="dashboard-wrapper">
+    <div class="overlay" id="drawer-overlay" onclick="toggleDrawer(false)"></div>
+
+    <div class="app-container">
+      <div class="drawer" id="side-drawer">
+        <div>
+          <div class="drawer-header">
+            <div class="drawer-title">
+              <i class="fa-solid fa-border-all"></i>
+              <h2>Admin Panel</h2>
+            </div>
+            <i class="fa-solid fa-xmark drawer-close-btn" onclick="toggleDrawer(false)"></i>
+          </div>
+          
+          <ul class="menu-items">
+            <li class="menu-item active" id="menu-orders" onclick="switchView('orders-view')">
+              <i class="fa-solid fa-boxes-stacked"></i> Orders
+            </li>
+            <li class="menu-item" id="menu-visitors" onclick="switchView('visitors-view')">
+              <i class="fa-solid fa-chart-line"></i> Visitors Analytics
+            </li>
+          </ul>
+        </div>
+
+        <div class="drawer-footer">
+          <button class="btn-download-app" onclick="openDownloadModal()">
+            <i class="fa-solid fa-download"></i> Download App
+          </button>
+          <button class="btn-logout" onclick="handleLogout()">
+            <i class="fa-solid fa-right-from-bracket"></i> Logout
+          </button>
+          <div class="copyright-text">
+            &copy; NextCraft Studio. All rights reserved.
+          </div>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="mobile-header">
+          <div class="hamburger-btn" onclick="toggleDrawer(true)">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+          <h3 id="mobile-page-title" style="font-size: 15px; font-weight:700;">Orders Management</h3>
+        </div>
+
+        <!-- ORDERS VIEW -->
+        <div id="orders-view" class="view-section active-view">
+          <div class="section-header">
+            <h3><i class="fa-solid fa-list-check" style="color: var(--accent-red);"></i> Order List & Filters</h3>
+          </div>
+
+          <div class="filter-card">
+            <div class="filter-group">
+              <label style="font-size:13px; font-weight:600;"><i class="fa-solid fa-calendar-days"></i> Time Frame:</label>
+              <select id="time-filter" class="time-select" onchange="applyFilters()">
+                <option value="all">All Time</option>
+                <option value="7">Last 7 Days</option>
+                <option value="30">Last 30 Days</option>
+              </select>
+            </div>
+
+            <div class="status-checkbox-group">
+              <label class="checkbox-label cb-pending">
+                <input type="checkbox" value="Pending" checked onchange="applyFilters()"> Pending
+              </label>
+              <label class="checkbox-label cb-completed">
+                <input type="checkbox" value="Completed" checked onchange="applyFilters()"> Completed
+              </label>
+              <label class="checkbox-label cb-cancelled">
+                <input type="checkbox" value="Cancelled" checked onchange="applyFilters()"> Cancelled
+              </label>
+            </div>
+          </div>
+
+          <div id="orders-list" class="orders-container"></div>
+        </div>
+
+        <!-- VISITORS VIEW -->
+        <div id="visitors-view" class="view-section">
+          <div class="section-header">
+            <h3><i class="fa-solid fa-chart-line" style="color: var(--accent-blue);"></i> Overview & Traffic</h3>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-card metric-total">
+              <p>Total Orders</p>
+              <h2 id="metric-total-val">0</h2>
+              <i class="fa-solid fa-box" style="color: var(--accent-blue);"></i>
+            </div>
+            <div class="metric-card metric-completed">
+              <p>Completed Orders</p>
+              <h2 id="metric-completed-val" style="color: var(--accent-green);">0</h2>
+              <i class="fa-solid fa-circle-check" style="color: var(--accent-green);"></i>
+            </div>
+            <div class="metric-card metric-pending">
+              <p>Pending Orders</p>
+              <h2 id="metric-pending-val" style="color: var(--accent-amber);">0</h2>
+              <i class="fa-solid fa-clock" style="color: var(--accent-amber);"></i>
+            </div>
+            <div class="metric-card metric-cancelled">
+              <p>Cancelled Orders</p>
+              <h2 id="metric-cancelled-val" style="color: var(--accent-red);">0</h2>
+              <i class="fa-solid fa-circle-xmark" style="color: var(--accent-red);"></i>
+            </div>
+
+            <!-- LIVE VISITORS COUNTER CARD -->
+            <div class="metric-card metric-visitors">
+              <p>Live Visitors Count</p>
+              <h2 id="metric-visitors-val" style="color: var(--primary-color);">0</h2>
+              <i class="fa-solid fa-users" style="color: var(--primary-color);"></i>
+            </div>
+          </div>
+
+          <div class="chart-container-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:16px;">
+              <h4 style="font-size:15px; font-weight:700;">
+                <i class="fa-solid fa-eye" style="color:var(--accent-blue);"></i> Live Website Traffic Trend
+              </h4>
+              
+              <!-- VISITOR CHART TIME FRAME FILTER -->
+              <div style="display:flex; align-items:center; gap:8px;">
+                <label style="font-size:12px; font-weight:600;"><i class="fa-solid fa-filter"></i> Time Range:</label>
+                <select id="visitor-time-filter" class="time-select" onchange="updateVisitorChartData()">
+                  <option value="1">1 Day (Today)</option>
+                  <option value="7" selected>1 Week (7 Days)</option>
+                  <option value="30">1 Month (30 Days)</option>
+                  <option value="all">All Time</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="height: 300px; width: 100%;">
+              <canvas id="visitorChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- DOWNLOAD MODAL -->
+  <div id="download-modal" class="download-modal-overlay">
+    <div class="download-modal-card">
+      <i class="fa-solid fa-xmark modal-close-btn" onclick="closeDownloadModal()"></i>
+      <img src="https://www.image2url.com/r2/default/images/1786858120186-60450843-0701-4497-b462-d5bb013b8349.jpg" alt="NCS Admin Panel Logo" class="app-logo-img">
+      <div class="app-title-text">NCS Admin Panel</div>
+      <div class="app-notice-text">
+        This app is only for Android devices. If you are using a PC, Mac, or iPhone, please use the web browser version.
+      </div>
+      <a href="https://drive.google.com/uc?export=download&id=1HrraDVrI8IhS3jMC8G6qXM4KEuasm9Gy" class="btn-direct-download" download>
+        <i class="fa-solid fa-download"></i> Download App
+      </a>
+    </div>
+  </div>
+
+  <!-- FIREBASE SCRIPTS & LOGIC -->
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyC1msE7NX6eEueO3tjOZNEu2flU_TslLK8",
+      authDomain: "nayeem-demo-95833.firebaseapp.com",
+      databaseURL: "https://nayeem-demo-95833-default-rtdb.firebaseio.com",
+      projectId: "nayeem-demo-95833",
+      storageBucket: "nayeem-demo-95833.firebasestorage.app",
+      messagingSenderId: "650068553670",
+      appId: "1:650068553670:web:8fcaab047944f4030cccc7",
+      measurementId: "G-LHFZTQZVL2"
+    };
+
+    let rtdb = null;
+    let auth = null;
+    let rawOrdersData = {};
+    let rawVisitorsData = 0;
+    let visitorChartInstance = null;
+    let toastTimer = null;
+
+    try {
+      firebase.initializeApp(firebaseConfig);
+      rtdb = firebase.database();
+      auth = firebase.auth();
+    } catch (e) {
+      console.error("Firebase Initialization Error:", e);
+    }
+
+    // Check Auth Status Realtime
+    window.addEventListener('DOMContentLoaded', () => {
+      auth.onAuthStateChanged((user) => {
+        if (user) {
+          showDashboard();
+        } else {
+          document.getElementById('dashboard-screen').style.display = 'none';
+          document.getElementById('login-screen').style.display = 'flex';
+        }
+      });
+    });
+
+    function showDashboard() {
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('dashboard-screen').style.display = 'block';
+      initVisitorChart();
+      listenRealtimeData();
+    }
+
+    function openDownloadModal() {
+      document.getElementById('download-modal').style.display = 'flex';
+      toggleDrawer(false); 
+    }
+
+    function closeDownloadModal() {
+      document.getElementById('download-modal').style.display = 'none';
+    }
+
+    // Custom Toast Alert Helpers
+    function showCustomToast() {
+      const toast = document.getElementById('custom-toast');
+      const loginCard = document.getElementById('login-card');
+      
+      toast.classList.add('show');
+      loginCard.classList.add('shake-card');
+
+      setTimeout(() => {
+        loginCard.classList.remove('shake-card');
+      }, 500);
+
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        hideCustomToast();
+      }, 4000);
+    }
+
+    function hideCustomToast() {
+      const toast = document.getElementById('custom-toast');
+      toast.classList.remove('show');
+    }
+
+    function handleLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById('login-email').value.trim();
+      const password = document.getElementById('login-password').value;
+
+      auth.signInWithEmailAndPassword(email, password)
+        .then(() => {
+          hideCustomToast();
+          showDashboard();
+        })
+        .catch((error) => {
+          showCustomToast();
+        });
+    }
+
+    function handleLogout() {
+      auth.signOut().then(() => {
+        document.getElementById('dashboard-screen').style.display = 'none';
+        document.getElementById('login-screen').style.display = 'flex';
+        document.getElementById('login-email').value = '';
+        document.getElementById('login-password').value = '';
+      }).catch((error) => {
+        console.error("Logout Error:", error);
+      });
+    }
+
+    function toggleDrawer(isOpen) {
+      const drawer = document.getElementById('side-drawer');
+      const overlay = document.getElementById('drawer-overlay');
+      if (isOpen) {
+        drawer.classList.add('open');
+        overlay.classList.add('active');
+      } else {
+        drawer.classList.remove('open');
+        overlay.classList.remove('active');
+      }
+    }
+
+    function switchView(viewId) {
+      document.querySelectorAll('.view-section').forEach(sec => sec.classList.remove('active-view'));
+      document.querySelectorAll('.menu-item').forEach(m => m.classList.remove('active'));
+
+      document.getElementById(viewId).classList.add('active-view');
+
+      if (viewId === 'orders-view') {
+        document.getElementById('menu-orders').classList.add('active');
+        document.getElementById('mobile-page-title').innerText = "Orders Management";
+      } else if (viewId === 'visitors-view') {
+        document.getElementById('menu-visitors').classList.add('active');
+        document.getElementById('mobile-page-title').innerText = "Visitors Analytics";
+      }
+
+      toggleDrawer(false);
+    }
+
+    function toggleOrderDetails(key) {
+      const detailsBox = document.getElementById(`details-${key}`);
+      const arrowBtn = document.getElementById(`arrow-${key}`);
+      
+      if (detailsBox.classList.contains('active')) {
+        detailsBox.classList.remove('active');
+        arrowBtn.classList.remove('open');
+      } else {
+        detailsBox.classList.add('active');
+        arrowBtn.classList.add('open');
+      }
+    }
+
+    function listenRealtimeData() {
+      if (!rtdb) return;
+
+      rtdb.ref('orders').on('value', (snapshot) => {
+        rawOrdersData = snapshot.val() || {};
+        updateMetricsSummary(rawOrdersData);
+        applyFilters();
+      });
+
+      rtdb.ref('visitors').on('value', (snapshot) => {
+        const val = snapshot.val();
+        let totalCount = 0;
+
+        if (typeof val === 'number') {
+          totalCount = val;
+        } else if (val && typeof val === 'object') {
+          totalCount = Object.keys(val).length;
+        }
+
+        rawVisitorsData = totalCount;
+        document.getElementById('metric-visitors-val').innerText = totalCount;
+        updateVisitorChartData();
+      });
+    }
+
+    function updateMetricsSummary(data) {
+      let total = 0, completed = 0, pending = 0, cancelled = 0;
+
+      Object.keys(data).forEach(key => {
+        total++;
+        const st = data[key].status || 'Pending';
+        if (st === 'Completed') completed++;
+        else if (st === 'Cancelled') cancelled++;
+        else pending++;
+      });
+
+      document.getElementById('metric-total-val').innerText = total;
+      document.getElementById('metric-completed-val').innerText = completed;
+      document.getElementById('metric-pending-val').innerText = pending;
+      document.getElementById('metric-cancelled-val').innerText = cancelled;
+    }
+
+    function applyFilters() {
+      const container = document.getElementById('orders-list');
+      container.innerHTML = "";
+
+      if (!rawOrdersData || Object.keys(rawOrdersData).length === 0) {
+        showNoOrdersMessage();
+        return;
+      }
+
+      const timeFrame = document.getElementById('time-filter').value;
+      const selectedStatuses = Array.from(document.querySelectorAll('.status-checkbox-group input:checked')).map(cb => cb.value);
+
+      const now = Date.now();
+      const keys = Object.keys(rawOrdersData).reverse();
+      let displayedCount = 0;
+
+      keys.forEach(key => {
+        const item = rawOrdersData[key];
+        const status = item.status || 'Pending';
+        const timestamp = item.timestamp || item.createdAt || now;
+
+        if (!selectedStatuses.includes(status)) return;
+
+        if (timeFrame !== 'all') {
+          const daysLimit = parseInt(timeFrame, 10);
+          const diffDays = (now - timestamp) / (1000 * 60 * 60 * 24);
+          if (diffDays > daysLimit) return;
+        }
+
+        displayedCount++;
+
+        let statusClass = 'status-pending';
+        let borderClass = '';
+        
+        if (status === 'Completed') {
+          statusClass = 'status-completed';
+          borderClass = 'completed';
+        } else if (status === 'Cancelled') {
+          statusClass = 'status-cancelled';
+          borderClass = 'cancelled';
+        }
+
+        const name = item.name || item.fullName || 'Customer';
+        const phone = item.phone || 'N/A';
+        const address = item.address || 'No address provided';
+        const packageName = item.package || item.weight || item.quantity || 'Package Item';
+        const totalPrice = item.totalPrice || item.total || item.price || item.amount || '0';
+        const productCode = item.productCode || item.orderNo || key.substring(1, 7).toUpperCase();
+        const productName = item.productName || 'Product Name';
+
+        const card = document.createElement('div');
+        card.className = `order-card-wrapper ${borderClass}`;
+        
+        card.innerHTML = `
+          <div class="order-card-main">
+            <div class="order-left">
+              <span class="order-badge"><i class="fa-solid fa-receipt"></i> Order</span>
+              <div class="customer-info">
+                <h4>${name} (${phone})</h4>
+                <p><i class="fa-solid fa-location-dot"></i> ${address}</p>
+                <p style="font-size:12px; color:#4f46e5; margin-top:3px; font-weight:600;">
+                  Package: ${packageName} | Total: ৳${totalPrice}
+                </p>
+              </div>
+            </div>
+            <div class="order-right">
+              <select class="status-select ${statusClass}" onchange="updateOrderStatus('${key}', this.value)">
+                <option value="Pending" ${status === 'Pending' ? 'selected' : ''}>Pending</option>
+                <option value="Completed" ${status === 'Completed' ? 'selected' : ''}>Completed</option>
+                <option value="Cancelled" ${status === 'Cancelled' ? 'selected' : ''}>Cancelled</option>
+              </select>
+              <button id="arrow-${key}" class="toggle-arrow" onclick="toggleOrderDetails('${key}')">
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+
+          <div id="details-${key}" class="order-details-drawer">
+            <div class="details-grid">
+              <div class="details-item">
+                <label>Order / Product Code</label>
+                <span>#${productCode}</span>
+              </div>
+              <div class="details-item">
+                <label>Product Name</label>
+                <span>${productName}</span>
+              </div>
+              <div class="details-item">
+                <label>Package Size</label>
+                <span>${packageName}</span>
+              </div>
+              <div class="details-item">
+                <label>Total Price</label>
+                <span style="color:var(--accent-green); font-size:14px;">৳${totalPrice}</span>
+              </div>
+              <div class="details-item" style="grid-column: 1 / -1;">
+                <label>Full Delivery Address</label>
+                <span>${address}</span>
+              </div>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+
+      if (displayedCount === 0) {
+        showNoOrdersMessage();
+      }
+    }
+
+    function showNoOrdersMessage() {
+      const container = document.getElementById('orders-list');
+      container.innerHTML = `
+        <div class="no-orders-box">
+          <i class="fa-solid fa-inbox"></i>
+          No orders match the selected filters.
+        </div>
+      `;
+    }
+
+    function updateOrderStatus(orderKey, newStatus) {
+      if (rtdb) {
+        rtdb.ref('orders/' + orderKey).update({ status: newStatus });
+      }
+    }
+
+    function initVisitorChart() {
+      const canvas = document.getElementById('visitorChart');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      if (visitorChartInstance) {
+        visitorChartInstance.destroy();
+      }
+
+      visitorChartInstance = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['6 Days Ago', '5 Days Ago', '4 Days Ago', '3 Days Ago', '2 Days Ago', 'Yesterday', 'Today'],
+          datasets: [{
+            label: 'Visitors Count',
+            data: [0, 0, 0, 0, 0, 0, 0],
+            borderColor: '#3b82f6',
+            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+            fill: true,
+            tension: 0.4,
+            borderWidth: 2,
+            pointRadius: 4,
+            pointBackgroundColor: '#3b82f6'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              grid: { color: '#f3f4f6' }
+            },
+            x: {
+              grid: { display: false }
+            }
+          }
+        }
+      });
+    }
+
+    function updateVisitorChartData() {
+      if (!visitorChartInstance) return;
+
+      const filterVal = document.getElementById('visitor-time-filter').value;
+      let labels = [];
+      let dataPoints = [];
+
+      if (filterVal === '1') {
+        labels = ['12 AM', '4 AM', '8 AM', '12 PM', '4 PM', '8 PM', 'Now'];
+        const currentVal = rawVisitorsData || 0;
+        dataPoints = [0, Math.floor(currentVal * 0.1), Math.floor(currentVal * 0.3), Math.floor(currentVal * 0.5), Math.floor(currentVal * 0.7), Math.floor(currentVal * 0.9), currentVal];
+      } else if (filterVal === '7') {
+        labels = ['6 Days Ago', '5 Days Ago', '4 Days Ago', '3 Days Ago', '2 Days Ago', 'Yesterday', 'Today'];
+        const currentVal = rawVisitorsData || 0;
+        dataPoints = [12, 18, 25, 30, 22, 45, currentVal];
+      } else if (filterVal === '30') {
+        labels = ['Week 1', 'Week 2', 'Week 3', 'Week 4'];
+        const currentVal = rawVisitorsData || 0;
+        dataPoints = [Math.floor(currentVal * 0.2), Math.floor(currentVal * 0.3), Math.floor(currentVal * 0.7), currentVal];
+      } else if (filterVal === 'all') {
+        labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Current'];
+        const currentVal = rawVisitorsData || 0;
+        dataPoints = [100, 250, 400, 300, 500, currentVal];
+      }
+
+      visitorChartInstance.data.labels = labels;
+      visitorChartInstance.data.datasets[0].data = dataPoints;
+      visitorChartInstance.update();
+    }
+  </script>
+</body>
+</html>
