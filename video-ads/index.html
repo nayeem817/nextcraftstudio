@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <!-- ================= Favicon Tags ================= -->
+    <link rel="icon" href="https://www.image2url.com/r2/default/images/1785860745679-a479f8f8-7be3-4a74-9d32-27d5958146bd.png" type="image/png">
+    <link rel="shortcut icon" href="https://www.image2url.com/r2/default/images/1785860745679-a479f8f8-7be3-4a74-9d32-27d5958146bd.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="https://www.image2url.com/r2/default/images/1785860745679-a479f8f8-7be3-4a74-9d32-27d5958146bd.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ================= SEO Meta Tags ================= -->
+    <title>ভিডিও বিজ্ঞাপন তৈরি - NextCraft Studio</title>
+    <meta name="description" content="NextCraft Studio দিচ্ছে প্রফেশনাল ভয়েসওভার, অ্যানিমেশন ও স্ট্র্যাটেজিক কনটেন্ট সহ হাই-কনভার্টিং ভিডিও বিজ্ঞাপন তৈরি করার সার্ভিস।">
+    <meta name="keywords" content="NextCraft Studio, ভিডিও বিজ্ঞাপন তৈরি, Video Ads Making, ফেসবুক ভিডিও এডস, প্রমোশনাল ভিডিও">
+    <meta name="author" content="NextCraft Studio">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook SEO Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ভিডিও বিজ্ঞাপন তৈরি - NextCraft Studio">
+    <meta property="og:description" content="আপনার ব্যবসায়ের সেলস বাড়াতে তৈরি করুন আকর্ষণীয় ভিডিও বিজ্ঞাপন। প্রফেশনাল ভয়েসওভার ও অ্যানিমেশন সহ একদম বাজেট ফ্রেন্ডলি মূল্যে!">
+    <meta property="og:image" content="https://www.image2url.com/r2/default/images/1781882691736-3ee3120a-c934-4702-b10b-c1ce0dc8c027.png">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ================= Brand Color Palette ================= */
+        :root {
+            --primary-blue: #163B5D;       
+            --secondary-blue: #3A81A9;     
+            --gold-accent: #C4A265;        
+            --gold-hover: #d8b475;         
+            --dark-bg: #0D2135;            
+            --card-bg: #132D47;            
+            --light-bg: #F4F7F9;           
+            --text-dark: #1E293B;          
+            --text-light: #E0E8F0;         
+            --text-muted: #94A3B8;         
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* ================= Header Navigation ================= */
+        .header {
+            background-color: var(--dark-bg);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-bottom: 2px solid var(--gold-accent);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: contain;
+            background-color: var(--white);
+            border: 2px solid var(--gold-accent);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .logo-text span {
+            color: var(--gold-accent);
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: var(--gold-accent);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        /* ================= Side Navigation Drawer ================= */
+        .side-drawer {
+            position: fixed;
+            top: 0;
+            right: -380px;
+            width: 350px;
+            height: 100vh;
+            background-color: var(--dark-bg);
+            box-shadow: -5px 0 25px rgba(0,0,0,0.5);
+            z-index: 10000;
+            transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+            padding: 25px 20px;
+            overflow-y: auto;
+            border-left: 2px solid var(--gold-accent);
+        }
+
+        .side-drawer.open {
+            right: 0;
+        }
+
+        .drawer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(2px);
+            z-index: 9999;
+            display: none;
+        }
+
+        .drawer-overlay.active {
+            display: block;
+        }
+
+        .drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 15px;
+        }
+
+        .drawer-header h3 {
+            color: var(--gold-accent);
+            font-size: 1.3rem;
+        }
+
+        .close-drawer {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .drawer-btn {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(196, 162, 101, 0.3);
+            color: var(--white);
+            padding: 14px 18px;
+            border-radius: 8px;
+            text-align: left;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .drawer-btn:hover {
+            background-color: var(--primary-blue);
+            border-color: var(--gold-accent);
+        }
+
+        .drawer-btn i.arrow {
+            transition: transform 0.3s ease;
+            color: var(--gold-accent);
+        }
+
+        .drawer-btn.active i.arrow {
+            transform: rotate(90deg);
+        }
+
+        .slide-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            margin-top: -5px;
+            margin-bottom: 15px;
+            padding: 0 15px;
+        }
+
+        .slide-content.open {
+            padding: 15px;
+        }
+
+        .drawer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .drawer-contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .drawer-contact-item i {
+            color: var(--gold-accent);
+            font-size: 1.1rem;
+            width: 20px;
+        }
+
+        .drawer-contact-item a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .drawer-contact-item a:hover {
+            color: var(--gold-accent);
+        }
+
+        .mini-form .form-group {
+            margin-bottom: 12px;
+        }
+
+        .mini-form label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .mini-form input, .mini-form textarea {
+            width: 100%;
+            padding: 8px 12px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 5px;
+            color: var(--white);
+            font-size: 0.85rem;
+            outline: none;
+        }
+
+        .mini-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--gold-accent);
+            color: var(--dark-bg);
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        /* ================= Hero Banner ================= */
+        .hero-section {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-blue) 100%);
+            padding: 70px 20px;
+            color: var(--white);
+            text-align: center;
+            border-bottom: 4px solid var(--gold-accent);
+        }
+
+        .hero-container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(196, 162, 101, 0.15);
+            color: var(--gold-accent);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--gold-accent);
+            margin-bottom: 15px;
+        }
+
+        .hero-container h1 {
+            font-size: 2.6rem;
+            margin-bottom: 18px;
+            line-height: 1.3;
+        }
+
+        .hero-container h1 span {
+            color: var(--gold-accent);
+        }
+
+        .hero-container p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* ================= Feature Highlights ================= */
+        .features-section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 8px;
+        }
+
+        .section-title h2 span {
+            color: var(--gold-accent);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 30px 25px;
+            border-radius: 12px;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-accent);
+        }
+
+        .feature-icon {
+            width: 65px;
+            height: 65px;
+            background: rgba(196, 162, 101, 0.12);
+            color: var(--gold-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 18px;
+        }
+
+        .feature-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* ================= Pricing Packages ================= */
+        .pricing-section {
+            background-color: #EEF3F7;
+            padding: 70px 20px;
+        }
+
+        .pricing-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .pricing-card {
+            background-color: var(--white);
+            border-radius: 16px;
+            padding: 40px 30px;
+            border: 2px solid transparent;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card.popular {
+            border-color: var(--gold-accent);
+            transform: scale(1.03);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold-accent);
+            color: var(--dark-bg);
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .pricing-price {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .pricing-price span {
+            font-size: 1rem;
+            color: #666;
+            font-weight: normal;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #F0F2F5;
+            color: #444;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pricing-features li i {
+            color: #10B981;
+            font-size: 1.1rem;
+        }
+
+        .btn-order {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 14px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card.popular .btn-order {
+            background-color: var(--gold-accent);
+            color: var(--dark-bg);
+        }
+
+        .btn-order:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* ================= Demo Video Link Banner ================= */
+        .demo-section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .demo-box {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--card-bg) 100%);
+            border: 2px dashed var(--gold-accent);
+            border-radius: 16px;
+            padding: 40px 25px;
+            color: var(--white);
+        }
+
+        .demo-box i.icon {
+            font-size: 3rem;
+            color: var(--gold-accent);
+            margin-bottom: 15px;
+        }
+
+        .demo-box h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .demo-box p {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        .btn-drive {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--gold-accent);
+            color: var(--dark-bg);
+            padding: 14px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(196, 162, 101, 0.3);
+        }
+
+        .btn-drive:hover {
+            background-color: var(--gold-hover);
+            transform: scale(1.05);
+        }
+
+        /* ================= Duration Selector / CTA ================= */
+        .select-duration-section {
+            padding: 70px 20px;
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        .select-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .options-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .opt-btn {
+            background-color: var(--light-bg);
+            border: 2px solid var(--secondary-blue);
+            color: var(--primary-blue);
+            padding: 16px 30px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .opt-btn:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        /* ================= Footer Section ================= */
+        .footer-section {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            padding-top: 60px;
+            border-top: 4px solid var(--gold-accent);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--gold-accent);
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary-blue);
+        }
+
+        .footer-col p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .contact-list i {
+            color: var(--secondary-blue);
+            margin-right: 12px;
+            font-size: 1.1rem;
+        }
+
+        .contact-list a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-list a:hover {
+            color: var(--gold-accent);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.08);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--gold-accent);
+            color: var(--dark-bg);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            margin-top: 50px;
+            padding: 20px 0;
+            background-color: #071524;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-bottom strong {
+            color: var(--gold-accent);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-container h1 {
+                font-size: 2rem;
+            }
+            .pricing-card.popular {
+                transform: none;
+            }
+            .side-drawer {
+                width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= Header Area ================= -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo-box">
+                <img src="https://www.image2url.com/r2/default/images/1781882691736-3ee3120a-c934-4702-b10b-c1ce0dc8c027.png" alt="NextCraft Studio Logo" class="logo-img">
+                <span class="logo-text">NextCraft <span>Studio</span></span>
+            </a>
+            <button class="menu-toggle" id="openDrawer" aria-label="Open Navigation Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ================= Side Drawer Navigation ================= -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <aside class="side-drawer" id="sideDrawer">
+        <div class="drawer-header">
+            <h3>নেভিগেশন মেনু</h3>
+            <button class="close-drawer" id="closeDrawer"><i class="fas fa-times"></i></button>
+        </div>
+
+        <!-- Sliding Contact Button -->
+        <button class="drawer-btn" id="contactBtn">
+            <span><i class="fas fa-address-book" style="margin-right:8px;"></i> Contact</span>
+            <i class="fas fa-chevron-right arrow"></i>
+        </button>
+        <div class="slide-content" id="contactSlide">
+            <div class="drawer-contact-item">
+                <i class="fab fa-whatsapp"></i>
+                <a href="https://wa.me/8801810546079" target="_blank">01810546079</a>
+            </div>
+            
+            <div class="drawer-contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:nextcraftstudio02@gmail.com">nextcraftstudio02@gmail.com</a>
+            </div>
+
+            <div class="drawer-contact-item">
+                <i class="fab fa-facebook"></i>
+                <a href="https://www.facebook.com/share/1HoWnZpURf/" target="_blank">অফিশিয়াল ফেসবুক পেজ</a>
+            </div>
+        </div>
+
+        <!-- Sliding Details / Form Button -->
+        <button class="drawer-btn" id="detailsBtn">
+            <span><i class="fas fa-pen-to-square" style="margin-right:8px;"></i> বিস্তারিত বলুন</span>
+            <i class="fas fa-chevron-right arrow"></i>
+        </button>
+        <div class="slide-content" id="detailsSlide">
+            <form class="mini-form" action="https://formspree.io/f/xvzejkdr" method="POST">
+                <div class="form-group">
+                    <label>আপনার নাম *</label>
+                    <input type="text" name="name" placeholder="আপনার নাম লিখুন" required>
+                </div>
+                <div class="form-group">
+                    <label>WhatsApp নম্বর *</label>
+                    <input type="tel" name="whatsapp" placeholder="01810546079" required>
+                </div>
+                <div class="form-group">
+                    <label>সার্ভিস বিবরণ *</label>
+                    <textarea name="details" rows="3" placeholder="কেমন ভিডিও বানাতে চান তা লিখুন..." required></textarea>
+                </div>
+                <button type="submit"><i class="fas fa-paper-plane"></i> বার্তা পাঠান</button>
+            </form>
+        </div>
+    </aside>
+
+    <!-- ================= Hero Banner ================= -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <span class="hero-badge"><i class="fas fa-video"></i> প্রফেশনাল ভিডিও মেকিং সার্ভিস</span>
+            <h1>ভিডিও বিজ্ঞাপনের মাধ্যমে বাড়ান আপনার <span>কাস্টমার ও সেলস</span></h1>
+            <p>আপনার পণ্য বা সেবা কাস্টমারের কাছে আকর্ষণীয়ভাবে উপস্থাপন করতে আমরা তৈরি করি হাই-কনভার্টিং ও প্রিমিয়াম প্রমোশনাল ভিডিও অ্যাডস।</p>
+        </div>
+    </section>
+
+    <!-- ================= Feature Highlights ================= -->
+    <section class="features-section">
+        <div class="section-title">
+            <h2>প্রতিটি ভিডিওতে <span>যা যা থাকছে</span></h2>
+            <p>আমরা সাধারণ কোনো ভিডিও তৈরি করি না, বরং কাস্টমার কনভার্ট করার কৌশল ব্যবহার করি</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-lightbulb"></i></div>
+                <h3>কাস্টম স্ট্র্যাটেজিক কনটেন্ট</h3>
+                <p>ভিডিওর প্রথম ৩ সেকেন্ডেই কাস্টমারের নজর কাড়তে সেলস-ফোকাসড চমৎকার স্ক্রিপ্ট ও স্ট্র্যাটেজি।</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-microphone-alt"></i></div>
+                <h3>প্রফেশনাল ভয়েসওভার</h3>
+                <p>ক্লিয়ার ও আকর্ষণীয় প্রফেশনাল ভয়েসওভার আর্টিস্ট দিয়ে স্পেসিফিক টোনে ভয়েস রেকর্ডিং।</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+                <h3>মনকাড়া অ্যানিমেশন ও ডিজাইন</h3>
+                <p>প্রিমিয়াম মোশন গ্রাফিক্স, টেক্সট অ্যানিমেশন এবং হাই-কোয়ালিটি ভিজ্যুয়াল ইফেক্টের ব্যবহার।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= Pricing Packages ================= -->
+    <section class="pricing-section">
+        <div class="section-title">
+            <h2>🎯 আমাদের <span>ভিডিও প্যাকেজসমূহ</span></h2>
+            <p>আপনার বাজেট ও প্রয়োজন অনুযায়ী সেরা প্যাকেজটি বেছে নিন</p>
+        </div>
+
+        <div class="pricing-container">
+            <div class="pricing-grid">
+                
+                <!-- Package 1: 30 Sec -->
+                <div class="pricing-card">
+                    <div>
+                        <h3>৩০ সেকেন্ড ভিডিও</h3>
+                        <div class="pricing-price">৳৫০০ <span>/প্রজেক্ট</span></div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check-circle"></i> ৩০ সেকেন্ডের ফুল HD ভিডিও</li>
+                            <li><i class="fas fa-check-circle"></i> স্ট্র্যাটেজিক কনটেন্ট ও স্ক্রিপ্ট</li>
+                            <li><i class="fas fa-check-circle"></i> প্রফেশনাল ভয়েসওভার</li>
+                            <li><i class="fas fa-check-circle"></i> আই-ক্যাচিং মোশন অ্যানিমেশন</li>
+                            <li><i class="fas fa-check-circle"></i> ফেসবুক ও ইনস্টাগ্রাম সাইজ</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/8801810546079?text=আমি%20৩০%20সেকেন্ডের%20ভিডিও%20প্যাকেজটি%20নিতে%20চাই" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i> বুকিং দিন</a>
+                </div>
+
+                <!-- Package 2: 1 Min -->
+                <div class="pricing-card popular">
+                    <div class="popular-badge">বেস্ট ভ্যালু</div>
+                    <div>
+                        <h3>১ মিনিট ভিডিও</h3>
+                        <div class="pricing-price">৳৯০০ <span>/প্রজেক্ট</span></div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check-circle"></i> ১ মিনিটের ফুল HD প্রিমিয়াম ভিডিও</li>
+                            <li><i class="fas fa-check-circle"></i> ডিটেইলড সেলস কনটেন্ট স্ক্রিপ্ট</li>
+                            <li><i class="fas fa-check-circle"></i> প্রফেশনাল ভয়েসওভার (মেল/ফিমেল)</li>
+                            <li><i class="fas fa-check-circle"></i> এডভান্স অ্যানিমেশন ও ট্রানজিশন</li>
+                            <li><i class="fas fa-check-circle"></i> সোশ্যাল মিডিয়া মার্কেটিং রেডি</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/8801810546079?text=আমি%20১%20মিনিটের%20ভিডিও%20প্যাকেজটি%20নিতে%20চাই" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i> বুকিং দিন</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= Video Demo Section ================= -->
+    <section class="demo-section">
+        <div class="demo-box">
+            <i class="fas fa-photo-video icon"></i>
+            <h3>আমাদের কাজের ডেমো দেখুন</h3>
+            <p>অর্ডার করার আগে আমাদের আগে করা কিছু স্যাম্পল ও পোর্টফোলিও ভিডিও গুগল ড্রাইভে দেখে নিন</p>
+            <a href="https://drive.google.com/drive/folders/1Oe_SDwS3GztS55MXJlKeJ0qPA3A1eTA1" target="_blank" class="btn-drive">
+                <i class="fab fa-google-drive"></i> ভিডিও ডেমো/স্যাম্পল দেখুন
+            </a>
+        </div>
+    </section>
+
+    <!-- ================= Duration Selection Interactive Call ================= -->
+    <section class="select-duration-section">
+        <div class="select-container">
+            <div class="section-title">
+                <h2>আপনি কত সেকেন্ড এর <span>ভিডিও বানাতে চাচ্ছেন?</span></h2>
+                <p>নিচের অপশনে ক্লিক করে সরাসরি আমাদের সাথে হোয়াটসঅ্যাপে কথা বলুন</p>
+            </div>
+
+            <div class="options-grid">
+                <a href="https://wa.me/8801810546079?text=আমি%20৩০%20সেকেন্ডের%20ভিডিও%20বানাতে%20চাই" target="_blank" class="opt-btn">
+                    <i class="fas fa-stopwatch"></i> ৩০ সেকেন্ড
+                </a>
+                <a href="https://wa.me/8801810546079?text=আমি%20১%20মিনিটের%20ভিডিও%20বানাতে%20চাই" target="_blank" class="opt-btn">
+                    <i class="fas fa-clock"></i> ১ মিনিট (৬০ সেকেন্ড)
+                </a>
+                <a href="https://wa.me/8801810546079?text=আমি%20কাস্টম%20ডিউরেশনের%20ভিডিও%20বানাতে%20চাই" target="_blank" class="opt-btn">
+                    <i class="fas fa-sliders-h"></i> কাস্টম টাইম
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= Footer Area ================= -->
+    <footer class="footer-section" id="contact">
+        <div class="footer-container">
+            
+            <!-- Col 1: About -->
+            <div class="footer-col">
+                <h4>NextCraft Studio</h4>
+                <p>আমরা বিজনেসের সেলস বাড়াতে ডিজিটাল মার্কেটিং, লোগো ডিজাইন, প্রমোশনাল ভিডিও অ্যাডস এবং হাই-কনভার্টিং ল্যান্ডিং পেজ তৈরি করে থাকি।</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/1HoWnZpURf/" target="_blank" title="Facebook Page"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/8801810546079" target="_blank" title="WhatsApp Business"><i class="fab fa-whatsapp"></i></a>
+                    <a href="mailto:nextcraftstudio02@gmail.com" title="Email Us"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <!-- Col 2: Services List -->
+            <div class="footer-col">
+                <h4>আমাদের সেবা সমূহ</h4>
+                <ul class="contact-list">
+                    <li>
+                        <i class="fas fa-angle-right"></i>
+                        <a href="#">ভিডিও বিজ্ঞাপন তৈরি</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-angle-right"></i>
+                        <a href="https://nextcraftstudio.site/Facebook-marketing/">ফেসবুক এডস ও প্রমোশন</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-angle-right"></i>
+                        <a href="https://nextcraftstudio.site/landing-page/">ল্যান্ডিং পেজ ডিজাইন</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-angle-right"></i>
+                        <a href="https://nextcraftstudio.site/logo-design/">প্রফেশনাল লোগো ডিজাইন</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-angle-right"></i>
+                        <a href="https://nextcraftstudio.site/printing-design/">প্রিন্টিং ডিজাইন এবং প্রিন্ট</a>
+                    </li>
+                </ul>
+            </div>
+    
+            <!-- Col 3: Direct Contact -->
+            <div class="footer-col">
+                <h4>যোগাযোগের তথ্য</h4>
+                <ul class="contact-list">
+                    <li>
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/8801810546079" target="_blank">01810546079</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:nextcraftstudio02@gmail.com">nextcraftstudio02@gmail.com</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-globe"></i>
+                        <a href="https://www.facebook.com/share/1HoWnZpURf/" target="_blank">Facebook Official Page</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 <strong>NextCraft Studio</strong>. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ================= JavaScript Interactions ================= -->
+    <script>
+        // 1. Drawer Navigation Controls
+        const openDrawer = document.getElementById('openDrawer');
+        const closeDrawer = document.getElementById('closeDrawer');
+        const sideDrawer = document.getElementById('sideDrawer');
+        const drawerOverlay = document.getElementById('drawerOverlay');
+
+        function toggleDrawer() {
+            sideDrawer.classList.toggle('open');
+            drawerOverlay.classList.toggle('active');
+        }
+
+        openDrawer.addEventListener('click', toggleDrawer);
+        closeDrawer.addEventListener('click', toggleDrawer);
+        drawerOverlay.addEventListener('click', toggleDrawer);
+
+        // 2. Sliding Sub-content inside Drawer
+        function setupSlideToggle(btnId, slideId) {
+            const btn = document.getElementById(btnId);
+            const slide = document.getElementById(slideId);
+
+            btn.addEventListener('click', function() {
+                btn.classList.toggle('active');
+                slide.classList.toggle('open');
+
+                if (slide.classList.contains('open')) {
+                    slide.style.maxHeight = slide.scrollHeight + "px";
+                } else {
+                    slide.style.maxHeight = null;
+                }
+            });
+        }
+
+        setupSlideToggle('contactBtn', 'contactSlide');
+        setupSlideToggle('detailsBtn', 'detailsSlide');
+    </script>
+
+</body>
+</html>
