@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - NextCraft Studio</title>
+    
+    <!-- Favicon Tag -->
+    <link rel="icon" type="image/png" href="https://www.image2url.com/r2/default/images/1781882691736-3ee3120a-c934-4702-b10b-c1ce0dc8c027.png">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ================= Brand Color Palette ================= */
+        :root {
+            --primary-blue: #163B5D;       
+            --secondary-blue: #3A81A9;     
+            --gold-accent: #C4A265;        
+            --gold-hover: #d8b475;         
+            --dark-bg: #0D2135;            
+            --card-bg: #132D47;            
+            --light-bg: #F4F7F9;           
+            --text-dark: #1E293B;          
+            --text-light: #E0E8F0;         
+            --text-muted: #94A3B8;         
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-blue) 100%);
+            color: var(--white);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 650px;
+            width: 100%;
+            background-color: var(--card-bg);
+            border: 2px solid var(--gold-accent);
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .icon-box {
+            font-size: 3.5rem;
+            color: var(--gold-accent);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            color: var(--white);
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .phone-text {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: #25D366;
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #20ba5a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-btn i {
+            font-size: 1.4rem;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            p {
+                font-size: 0.95rem;
+            }
+            .whatsapp-btn {
+                width: 100%;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="icon-box">
+            <i class="fas fa-tools"></i>
+        </div>
+        
+        <h2>🚧 আমাদের এই পেজের কাজ এখনও চলমান।</h2>
+        
+        <p>ইনশাআল্লাহ খুব শীঘ্রই সম্পূর্ণ নতুন রূপে আপনাদের সামনে আসবে।</p>
+        
+        <p class="phone-text">
+            এই সার্ভিস সম্পর্কে বিস্তারিত জানতে আমাদের WhatsApp-এ মেসেজ করুন।<br>
+            📱 WhatsApp: 01810546079
+        </p>
+
+        <a href="https://wa.me/8801810546079" class="whatsapp-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp-এ মেসেজ দিন
+        </a>
+    </div>
+
+</body>
+</html>
