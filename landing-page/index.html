@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<!-- ================= Favicon Tags ================= -->
+    <!-- ================= Favicon Tags ================= -->
     <link rel="icon" href="https://www.image2url.com/r2/default/images/1785860745679-a479f8f8-7be3-4a74-9d32-27d5958146bd.png" type="image/png">
     <link rel="shortcut icon" href="https://www.image2url.com/r2/default/images/1785860745679-a479f8f8-7be3-4a74-9d32-27d5958146bd.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="https://www.image2url.com/r2/default/images/1785860745679-a479f8f8-7be3-4a74-9d32-27d5958146bd.png">
@@ -10,7 +10,7 @@
     
     <!-- SEO Meta Tags -->
     <title>প্রফেশনাল ল্যান্ডিং পেজ ডিজাইন - NextCraft Studio</title>
-    <meta name="description" content="NextCraft Studio থেকে মাত্র ৬৯৯ টাকায় আপনার ব্যবসার জন্য নিন প্রফেশনাল ওয়ান পেজ ল্যান্ডিং পেজ ডিজাইন। নো অ্যাডভান্স পেমেন্ট!">
+    <meta name="description" content="NextCraft Studio থেকে আপনার ব্যবসার জন্য নিন প্রফেশনাল ল্যান্ডিং পেজ ডিজাইন।">
     <meta name="keywords" content="NextCraft Studio, ল্যান্ডিং পেজ, Landing Page Design, ওয়ান পেজ ওয়েবসাইট, ওয়েবসাইট ডিজাইন">
     <meta name="author" content="NextCraft Studio">
     <meta name="robots" content="index, follow">
@@ -18,7 +18,7 @@
     <!-- Open Graph / Facebook SEO Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="প্রফেশনাল ল্যান্ডিং পেজ ডিজাইন - NextCraft Studio">
-    <meta property="og:description" content="আপনার ব্যবসার সেলস বাড়াতে নিন প্রফেশনাল ল্যান্ডিং পেজ। কাজ পছন্দ হলে পেমেন্ট করবেন!">
+    <meta property="og:description" content="আপনার ব্যবসার সেলস বাড়াতে নিন প্রফেশনাল ল্যান্ডিং পেজ।">
     <meta property="og:image" content="https://www.image2url.com/r2/default/images/1781882691736-3ee3120a-c934-4702-b10b-c1ce0dc8c027.png">
 
     <!-- Font Awesome Icons -->
@@ -317,7 +317,7 @@
         }
 
         .hero-container h1 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             margin-bottom: 18px;
             line-height: 1.3;
         }
@@ -333,11 +333,10 @@
             margin-bottom: 25px;
         }
 
-        /* ================= Features Section ================= */
-        .features-section {
+        /* ================= Demo Section ================= */
+        .demo-showcase-section {
+            background-color: #EEF3F7;
             padding: 60px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
         .section-title {
@@ -355,117 +354,44 @@
             color: var(--gold-accent);
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .feature-card {
-            background: var(--white);
-            padding: 30px 25px;
-            border-radius: 12px;
-            border: 1px solid #E2E8F0;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--gold-accent);
-        }
-
-        .feature-icon {
-            width: 65px;
-            height: 65px;
-            background: rgba(196, 162, 101, 0.12);
-            color: var(--gold-accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            margin: 0 auto 18px;
-        }
-
-        .feature-card h3 {
-            color: var(--primary-blue);
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-        }
-
-        .feature-card p {
+        .section-title p {
             color: #555;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
             line-height: 1.5;
-        }
-
-        /* ================= Free Bonus Offer ================= */
-        .bonus-box {
-            background: rgba(196, 162, 101, 0.1);
-            border: 2px dashed var(--gold-accent);
-            border-radius: 12px;
-            padding: 20px;
-            margin-top: 35px;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .bonus-box i {
-            font-size: 2.2rem;
-            color: var(--gold-accent);
-        }
-
-        .bonus-box h4 {
-            color: var(--primary-blue);
-            font-size: 1.2rem;
-        }
-
-        .bonus-box p {
-            color: #555;
-            font-size: 0.9rem;
-        }
-
-        /* ================= Demo Section ================= */
-        .demo-showcase-section {
-            background-color: #EEF3F7;
-            padding: 60px 20px;
         }
 
         .demo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
-            max-width: 900px;
+            max-width: 1100px;
             margin: 30px auto 0;
         }
 
         .demo-card {
             background: var(--white);
             border-radius: 12px;
-            padding: 30px 20px;
+            padding: 25px 20px;
             text-align: center;
             border: 1px solid #E2E8F0;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: transform 0.3s ease;
+        }
+
+        .demo-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-accent);
         }
 
         .demo-card h3 {
             color: var(--primary-blue);
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-
-        .demo-card p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 20px;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
         }
 
         .btn-view-demo {
@@ -491,18 +417,38 @@
         /* ================= Pricing Section ================= */
         .pricing-section {
             padding: 70px 20px;
-            max-width: 700px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
-        .pricing-card-single {
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .pricing-card {
             background-color: var(--white);
             border-radius: 16px;
-            padding: 40px 30px;
-            border: 2px solid var(--gold-accent);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            padding: 35px 25px;
+            border: 2px solid #E2E8F0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
             text-align: center;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--gold-accent);
+            box-shadow: 0 8px 25px rgba(196, 162, 101, 0.2);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
         }
 
         .trust-badge {
@@ -518,8 +464,14 @@
             font-weight: bold;
         }
 
+        .pricing-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.4rem;
+            margin-top: 10px;
+        }
+
         .pricing-price {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 800;
             color: var(--primary-blue);
             margin: 15px 0;
@@ -527,15 +479,15 @@
 
         .pricing-features {
             list-style: none;
-            margin: 25px 0;
+            margin: 20px 0 30px;
             text-align: left;
         }
 
         .pricing-features li {
-            padding: 12px 0;
+            padding: 10px 0;
             border-bottom: 1px solid #F0F2F5;
             color: #444;
-            font-size: 1rem;
+            font-size: 0.95rem;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -546,25 +498,14 @@
             font-size: 1.1rem;
         }
 
-        .no-advance-tag {
-            background-color: rgba(37, 211, 102, 0.1);
-            color: #15803D;
-            padding: 10px 15px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin-bottom: 25px;
-            border: 1px dashed #10B981;
-        }
-
         .btn-order-wa {
             background-color: var(--whatsapp-green);
             color: var(--white);
-            padding: 15px 24px;
+            padding: 14px 20px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -579,8 +520,8 @@
         }
 
         /* ================= WhatsApp Contact Banner ================= */
-        .demo-section {
-            padding: 60px 20px;
+        .contact-banner-section {
+            padding: 40px 20px 60px;
             max-width: 1000px;
             margin: 0 auto;
             text-align: center;
@@ -609,6 +550,9 @@
             color: var(--text-muted);
             margin-bottom: 25px;
             font-size: 1rem;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .btn-wa-large {
@@ -631,7 +575,7 @@
             transform: scale(1.05);
         }
 
-        /* ================= Footer Area (Exact Original Layout) ================= */
+        /* ================= Footer Area ================= */
         .footer-section {
             background-color: var(--dark-bg);
             color: var(--text-light);
@@ -745,14 +689,10 @@
 
         @media (max-width: 768px) {
             .hero-container h1 {
-                font-size: 1.9rem;
+                font-size: 1.8rem;
             }
             .side-drawer {
                 width: 300px;
-            }
-            .bonus-box {
-                flex-direction: column;
-                text-align: center;
             }
         }
     </style>
@@ -788,7 +728,7 @@
         <div class="slide-content" id="contactSlide">
             <div class="drawer-contact-item">
                 <i class="fab fa-whatsapp"></i>
-                <a href="https://wa.me/8801810546079?text=Hello%20NextCraft%20Studio,%20I%20want%20to%20order%20a%20Landing%20Page" target="_blank">+8801810546079</a>
+                <a href="https://wa.me/8801810546079" target="_blank">+8801810546079</a>
             </div>
             <div class="drawer-contact-item">
                 <i class="fas fa-envelope"></i>
@@ -828,73 +768,51 @@
     <section class="hero-section">
         <div class="hero-container">
             <span class="hero-badge"><i class="fas fa-laptop-code"></i> প্রফেশনাল ওয়েব ডিজাইন</span>
-            <h1>আসসালামু আলাইকুম, <span>আপনার ব্যবসার জন্য</span> তৈরি করুন প্রফেশনাল ল্যান্ডিং পেজ</h1>
-            <p>আপনার পণ্যের সেলস বহুগুণ বাড়িয়ে নিতে আমরা তৈরি করে দিচ্ছি আকর্ষণীয় ও হাই-কনভার্টিং One Page Landing Page।</p>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features-section">
-        <div class="section-title">
-            <h2>আমাদের ল্যান্ডিং পেজে <span>যা যা থাকছে</span></h2>
-            <p>আপনার কাস্টমারদের সহজ কেনাকাটার জন্য সেরা ফিচারসমূহ</p>
-        </div>
-
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
-                <h3>মোবাইল ও কম্পিউটার সাপোর্ট</h3>
-                <p>সব ধরনের ডিভাইস (মোবাইল, ট্যাবলেট, ল্যাপটপ)-এ ১০০% রেসপন্সিভ এবং ফাস্ট লোডিং।</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-shopping-cart"></i></div>
-                <h3>সহজ অর্ডার ফর্ম</h3>
-                <p>কাস্টমার যেন ১ ক্লিকে নাম, ঠিকানা ও মোবাইল নম্বর দিয়ে অর্ডার করতে পারে সেই ব্যবস্থা।</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fab fa-whatsapp"></i></div>
-                <h3>ডাইরেক্ট WhatsApp বাটন</h3>
-                <p>কাস্টমার সরাসরি হোয়াটসঅ্যাপে যোগাযোগ ও মেসেজ পাঠানোর সুবিধা পাবে।</p>
-            </div>
-        </div>
-
-        <!-- Free Bonus Highlight -->
-        <div class="bonus-box">
-            <i class="fas fa-qrcode"></i>
-            <div>
-                <h4>🎁 স্পেশাল ফ্রী বোনাস!</h4>
-                <p>আমরা আপনাকে আপনার ব্যবসার নাম ও পেজ লিংক দিয়ে একটি প্রফেশনাল <strong>QR কোড তৈরি করে দিব একদম ফ্রিতে!</strong></p>
-            </div>
+            <h1>আপনার প্রয়োজন অনুযায়ী তৈরি করে নিন প্রফেশনাল <span>Landing Page</span></h1>
+            <p>আপনার প্রয়োজন অনুযায়ী ডিজাইন ও কনটেন্ট সাজিয়ে একটি সুন্দর, প্রফেশনাল Landing Page তৈরি করে দিতে পারি।</p>
         </div>
     </section>
 
     <!-- Demo Showcase Section -->
     <section class="demo-showcase-section">
         <div class="section-title">
-            <h2>আমাদের তৈরি <span>লাইভ ডেমো দেখুন</span></h2>
-            <p>নিচের লিংকগুলোতে ক্লিক করে আমাদের কাজের মান দেখে নিন</p>
+            <h2>আমাদের তৈরি কিছু <span>Landing Page-এর Demo</span></h2>
+            <p>আমাদের তৈরি কিছু Landing Page-এর Demo নিচে দিলাম। এগুলো দেখে আপনি আমাদের কাজের মান ও ডিজাইন সম্পর্কে ধারণা নিতে পারবেন—</p>
         </div>
 
         <div class="demo-grid">
             <div class="demo-card">
-                <div>
-                    <h3>ল্যান্ডিং পেজ ডেমো - ১</h3>
-                    <p>আধুনিক ই-কমার্স ও প্রোডাক্ট সেলস লেআউট</p>
-                </div>
-                <a href="https://wild-blue-yzppc4yy.edgeone.dev/" target="_blank" class="btn-view-demo">
-                    <i class="fas fa-external-link-alt"></i> লাইভ ডেমো ১ দেখুন
+                <h3>🔗 Demo 1</h3>
+                <a href="https://anacardiumori.com/step/anacardium-orientale/" target="_blank" class="btn-view-demo">
+                    <i class="fas fa-external-link-alt"></i> ডেমো দেখুন
                 </a>
             </div>
 
             <div class="demo-card">
-                <div>
-                    <h3>ল্যান্ডিং পেজ ডেমো - ২</h3>
-                    <p>প্রিমিয়াম ব্র‍্যান্ডিং ও ক্লিন ডিজাইন</p>
-                </div>
+                <h3>🔗 Demo 2</h3>
+                <a href="https://favlis.com/step/genuine-leather-mens-chelsea-boot/" target="_blank" class="btn-view-demo">
+                    <i class="fas fa-external-link-alt"></i> ডেমো দেখুন
+                </a>
+            </div>
+
+            <div class="demo-card">
+                <h3>🔗 Demo 3</h3>
                 <a href="https://whispering-copper-nd81iwtu.edgeone.dev/" target="_blank" class="btn-view-demo">
-                    <i class="fas fa-external-link-alt"></i> লাইভ ডেমো ২ দেখুন
+                    <i class="fas fa-external-link-alt"></i> ডেমো দেখুন
+                </a>
+            </div>
+
+            <div class="demo-card">
+                <h3>🔗 Demo 4</h3>
+                <a href="https://wild-blue-yzppc4yy.edgeone.dev/" target="_blank" class="btn-view-demo">
+                    <i class="fas fa-external-link-alt"></i> ডেমো দেখুন
+                </a>
+            </div>
+
+            <div class="demo-card">
+                <h3>🔗 Demo 5</h3>
+                <a href="https://various-orange-0o0d4vt6.edgeone.dev/" target="_blank" class="btn-view-demo">
+                    <i class="fas fa-external-link-alt"></i> ডেমো দেখুন
                 </a>
             </div>
         </div>
@@ -903,46 +821,63 @@
     <!-- Pricing Section -->
     <section class="pricing-section">
         <div class="section-title">
-            <h2>অফার <span>মূল্য</span></h2>
-            <p>সীমিত সময়ের জন্য বিশেষ মূল্য ছাড়</p>
+            <h2>প্যাকেজ ও <span>মূল্যতালিকা</span></h2>
+            <p>আপনার চাহিদা অনুযায়ী নিচের যেকোনো প্যাকেজ সিলেক্ট করুন</p>
         </div>
 
-        <div class="pricing-card-single">
-            <span class="trust-badge">ধামাকা অফার</span>
-            <h3>One Page Landing Page</h3>
-            <div class="pricing-price">৳৯৯৯</div>
+        <div class="pricing-grid">
+            <!-- Package 1 -->
+            <div class="pricing-card featured">
+                <span class="trust-badge">সবচেয়ে জনপ্রিয়</span>
+                <h3>অর্ডার ফর্মসহ Landing Page</h3>
+                <div class="pricing-price">১১৯৯৳</div>
 
-            <div class="no-advance-tag">
-                <i class="fas fa-shield-alt"></i> এক টাকাও এডভান্স দেওয়া লাগবে না! কাজ পছন্দ হলে তারপরেই পেমেন্ট করতে পারবেন।
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check-circle"></i> ১০০% রেসপন্সিভ ডিজাইন</li>
+                    <li><i class="fas fa-check-circle"></i> ইজি ও কাস্টম অর্ডার ফর্ম</li>
+                    <li><i class="fas fa-check-circle"></i> সরাসরি WhatsApp সংযোগ</li>
+                    <li><i class="fas fa-check-circle"></i> প্রয়োজনীয় সকল তথ্য ও ছবি সাজানো</li>
+                    <li><i class="fas fa-check-circle"></i> ফাস্ট পেজ লোডিং স্পিড</li>
+                </ul>
+
+                <a href="https://wa.me/8801810546079" target="_blank" class="btn-order-wa">
+                    <i class="fab fa-whatsapp"></i> অর্ডার করুন
+                </a>
             </div>
 
-            <ul class="pricing-features">
-                <li><i class="fas fa-check-circle"></i> ১০০% রেসপন্সিভ মোবাইল ও ডেস্কটপ ভিউ</li>
-                <li><i class="fas fa-check-circle"></i> ইজি প্রোডাক্ট অর্ডার ফর্ম সেটআপ</li>
-                <li><i class="fas fa-check-circle"></i> সরাসরি WhatsApp চ্যাট বাটন</li>
-                <li><i class="fas fa-check-circle"></i> ১টি ফ্রি কাস্টমাইজড QR কোড</li>
-                <li><i class="fas fa-check-circle"></i> সুপার ফাস্ট পেজ লোডিং স্পিড</li>
-            </ul>
+            <!-- Package 2 -->
+            <div class="pricing-card">
+                <h3>অর্ডার ফর্ম ছাড়া Landing Page</h3>
+                <div class="pricing-price">৮০০৳</div>
 
-            <a href="https://wa.me/8801810546079?text=আসসালামু%20আলাইকুম,%20আমি%20৬৯৯%20টাকার%20ল্যান্ডিং%20পেজটি%20তৈরি%20করতে%20চাই" target="_blank" class="btn-order-wa">
-                <i class="fab fa-whatsapp"></i> এখনই অর্ডার করুন
-            </a>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check-circle"></i> ১০০% রেসপন্সিভ ডিজাইন</li>
+                    <li><i class="fas fa-check-circle"></i> প্রয়োজনীয় সকল তথ্য ও কনটেন্ট</li>
+                    <li><i class="fas fa-check-circle"></i> প্রয়োজনীয় কল/মেসেজ বাটন</li>
+                    <li><i class="fas fa-check-circle"></i> Contact Details সেকশন</li>
+                    <li><i class="fas fa-check-circle"></i> প্রফেশনাল ও ক্লিন লুক</li>
+                </ul>
+
+                <a href="https://wa.me/8801810546079" target="_blank" class="btn-order-wa">
+                    <i class="fab fa-whatsapp"></i> অর্ডার করুন
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Direct WhatsApp Contact Banner -->
-    <section class="demo-section">
+    <section class="contact-banner-section">
         <div class="demo-box">
             <i class="fab fa-whatsapp icon"></i>
-            <h3>সরাসরি হোয়াটসঅ্যাপে কথা বলুন</h3>
-            <p>আপনার ব্যবসার জন্য পছন্দমতো ল্যান্ডিং পেজ বানাতে আমাদের সাথে সরাসরি আলোচনা করুন</p>
-            <a href="https://wa.me/8801810546079?text=Hello%20NextCraft%20Studio,%20I%20want%20a%20Landing%20Page" target="_blank" class="btn-wa-large">
+            <h3>আপনার ব্যবসার জন্য ল্যান্ডিং পেজ তৈরি করতে চান?</h3>
+            <p>আপনার প্রয়োজন অনুযায়ী ডিজাইন ও কনটেন্ট সাজিয়ে একটি সুন্দর, প্রফেশনাল Landing Page তৈরি করে নিতে সরাসরি হোয়াটসঅ্যাপে কথা বলুন।</p>
+            <a href="https://wa.me/8801810546079" target="_blank" class="btn-wa-large">
                 <i class="fab fa-whatsapp"></i> WhatsApp-এ চ্যাট শুরু করুন
             </a>
         </div>
     </section>
 
-    <!-- Footer Area (Exact Original Layout) -->
+    <!-- Footer Area -->
     <footer class="footer-section" id="contact">
         <div class="footer-container">
             
@@ -974,9 +909,10 @@
                         <i class="fas fa-angle-right"></i>
                         <a href="http://nextcraftstudio.site/logo-design/">প্রফেশনাল লোগো ডিজাইন</a>
                     </li>
-                      <li>
-                            <i class="fas fa-angle-right"></i>
+                    <li>
+                        <i class="fas fa-angle-right"></i>
                         <a href="https://nextcraftstudio.site/printing-design/">প্রিন্টিং ডিজাইন এবং প্রিন্ট</a>
+                    </li>
                 </ul>
             </div>
 
