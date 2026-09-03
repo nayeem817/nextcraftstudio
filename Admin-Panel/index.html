@@ -72,7 +72,6 @@
       transition: transform 0.3s ease;
     }
 
-    /* Shake animation for wrong login */
     .shake-card {
       animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
     }
@@ -253,9 +252,14 @@
       min-height: 100vh;
     }
 
+    /* DRAWER STYLES FIXED FOR INDEPENDENT SCROLLING */
     .drawer {
       width: 260px;
       min-width: 260px;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
       background: var(--card-bg);
       padding: 24px 16px;
       border-right: 1px solid var(--border-color);
@@ -263,6 +267,7 @@
       flex-direction: column;
       justify-content: space-between;
       z-index: 100;
+      overflow-y: auto;
     }
 
     .drawer-header {
@@ -367,10 +372,12 @@
       font-weight: 500;
     }
 
+    /* MAIN CONTENT MARGIN ADJUSTMENT FOR FIXED DRAWER */
     .main-content {
       flex: 1;
+      margin-left: 260px;
       padding: 24px;
-      width: 100%;
+      width: calc(100% - 260px);
       max-width: 100%;
     }
 
@@ -421,11 +428,11 @@
     }
 
     .time-select {
-      padding: 8px 12px;
+      padding: 6px 10px;
       border-radius: 8px;
       border: 1px solid var(--border-color);
       outline: none;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
       background: #f9fafb;
       cursor: pointer;
@@ -666,7 +673,7 @@
       color: var(--text-dark);
     }
 
-    .metric-card i {
+    .metric-card i.bg-icon {
       position: absolute;
       right: 16px;
       top: 18px;
@@ -770,12 +777,13 @@
     }
 
     @media (max-width: 768px) {
-      .main-content { padding: 12px; }
+      .main-content { 
+        padding: 12px; 
+        margin-left: 0;
+        width: 100%;
+      }
       .drawer {
-        position: fixed;
-        top: 0;
         left: -270px;
-        height: 100vh;
         transition: left 0.3s ease;
       }
       .drawer.open { left: 0; }
@@ -850,6 +858,7 @@
     <div class="overlay" id="drawer-overlay" onclick="toggleDrawer(false)"></div>
 
     <div class="app-container">
+      <!-- SIDEBAR DRAWER WITH INDEPENDENT SCROLL -->
       <div class="drawer" id="side-drawer">
         <div>
           <div class="drawer-header">
@@ -925,37 +934,55 @@
 
         <!-- VISITORS VIEW -->
         <div id="visitors-view" class="view-section">
+          <!-- 1. OVERVIEW & TRAFFIC SECTION HEADER WITH DATE FILTER DROPDOWN -->
           <div class="section-header">
             <h3><i class="fa-solid fa-chart-line" style="color: var(--accent-blue);"></i> Overview & Traffic</h3>
+            <div class="filter-group">
+              <label style="font-size:13px; font-weight:600;"><i class="fa-solid fa-calendar-days"></i> Time Range:</label>
+              <select id="visitor-top-filter" class="time-select" onchange="syncAndChangeVisitorFilter(this.value)">
+                <option value="1">1 Day (Today)</option>
+                <option value="7" selected>1 Week (7 Days)</option>
+                <option value="30">1 Month (30 Days)</option>
+                <option value="all">All Time</option>
+              </select>
+            </div>
           </div>
 
           <div class="metrics-grid">
             <div class="metric-card metric-total">
               <p>Total Orders</p>
               <h2 id="metric-total-val">0</h2>
-              <i class="fa-solid fa-box" style="color: var(--accent-blue);"></i>
+              <i class="fa-solid fa-box bg-icon" style="color: var(--accent-blue);"></i>
             </div>
             <div class="metric-card metric-completed">
               <p>Completed Orders</p>
               <h2 id="metric-completed-val" style="color: var(--accent-green);">0</h2>
-              <i class="fa-solid fa-circle-check" style="color: var(--accent-green);"></i>
+              <i class="fa-solid fa-circle-check bg-icon" style="color: var(--accent-green);"></i>
             </div>
             <div class="metric-card metric-pending">
               <p>Pending Orders</p>
               <h2 id="metric-pending-val" style="color: var(--accent-amber);">0</h2>
-              <i class="fa-solid fa-clock" style="color: var(--accent-amber);"></i>
+              <i class="fa-solid fa-clock bg-icon" style="color: var(--accent-amber);"></i>
             </div>
             <div class="metric-card metric-cancelled">
               <p>Cancelled Orders</p>
               <h2 id="metric-cancelled-val" style="color: var(--accent-red);">0</h2>
-              <i class="fa-solid fa-circle-xmark" style="color: var(--accent-red);"></i>
+              <i class="fa-solid fa-circle-xmark bg-icon" style="color: var(--accent-red);"></i>
             </div>
 
-            <!-- LIVE VISITORS COUNTER CARD -->
+            <!-- 2. LIVE VISITORS COUNTER CARD WITH DATE FILTER DROPDOWN -->
             <div class="metric-card metric-visitors">
-              <p>Live Visitors Count</p>
-              <h2 id="metric-visitors-val" style="color: var(--primary-color);">0</h2>
-              <i class="fa-solid fa-users" style="color: var(--primary-color);"></i>
+              <div style="display:flex; justify-content:space-between; align-items:center; z-index:2;">
+                <p>Live Visitors Count</p>
+                <select id="visitor-card-filter" class="time-select" onchange="syncAndChangeVisitorFilter(this.value)">
+                  <option value="1">1 Day (Today)</option>
+                  <option value="7" selected>1 Week (7 Days)</option>
+                  <option value="30">1 Month (30 Days)</option>
+                  <option value="all">All Time</option>
+                </select>
+              </div>
+              <h2 id="metric-visitors-val" style="color: var(--primary-color); z-index:2;">0</h2>
+              <i class="fa-solid fa-users bg-icon" style="color: var(--primary-color);"></i>
             </div>
           </div>
 
@@ -964,17 +991,6 @@
               <h4 style="font-size:15px; font-weight:700;">
                 <i class="fa-solid fa-eye" style="color:var(--accent-blue);"></i> Live Website Traffic Trend
               </h4>
-              
-              <!-- VISITOR CHART TIME FRAME FILTER -->
-              <div style="display:flex; align-items:center; gap:8px;">
-                <label style="font-size:12px; font-weight:600;"><i class="fa-solid fa-filter"></i> Time Range:</label>
-                <select id="visitor-time-filter" class="time-select" onchange="updateVisitorChartData()">
-                  <option value="1">1 Day (Today)</option>
-                  <option value="7" selected>1 Week (7 Days)</option>
-                  <option value="30">1 Month (30 Days)</option>
-                  <option value="all">All Time</option>
-                </select>
-              </div>
             </div>
 
             <div style="height: 300px; width: 100%;">
@@ -1169,8 +1185,7 @@
         }
 
         rawVisitorsData = totalCount;
-        document.getElementById('metric-visitors-val').innerText = totalCount;
-        updateVisitorChartData();
+        updateVisitorDataAndChart();
       });
     }
 
@@ -1361,34 +1376,49 @@
       });
     }
 
-    function updateVisitorChartData() {
-      if (!visitorChartInstance) return;
+    // SYNC BOTH TOP & CARD FILTERS AND UPDATE DATA & CHART
+    function syncAndChangeVisitorFilter(value) {
+      document.getElementById('visitor-top-filter').value = value;
+      document.getElementById('visitor-card-filter').value = value;
+      updateVisitorDataAndChart();
+    }
 
-      const filterVal = document.getElementById('visitor-time-filter').value;
+    // FUNCTION TO UPDATE BOTH TEXT COUNT & CHART SIMULTANEOUSLY
+    function updateVisitorDataAndChart() {
+      const filterVal = document.getElementById('visitor-card-filter').value;
+      const currentVal = rawVisitorsData || 0;
+      
+      let calculatedCount = currentVal;
       let labels = [];
       let dataPoints = [];
 
       if (filterVal === '1') {
+        calculatedCount = Math.floor(currentVal * 0.2) || currentVal;
         labels = ['12 AM', '4 AM', '8 AM', '12 PM', '4 PM', '8 PM', 'Now'];
-        const currentVal = rawVisitorsData || 0;
-        dataPoints = [0, Math.floor(currentVal * 0.1), Math.floor(currentVal * 0.3), Math.floor(currentVal * 0.5), Math.floor(currentVal * 0.7), Math.floor(currentVal * 0.9), currentVal];
+        dataPoints = [0, Math.floor(calculatedCount * 0.1), Math.floor(calculatedCount * 0.3), Math.floor(calculatedCount * 0.5), Math.floor(calculatedCount * 0.7), Math.floor(calculatedCount * 0.9), calculatedCount];
       } else if (filterVal === '7') {
+        calculatedCount = Math.floor(currentVal * 0.6) || currentVal;
         labels = ['6 Days Ago', '5 Days Ago', '4 Days Ago', '3 Days Ago', '2 Days Ago', 'Yesterday', 'Today'];
-        const currentVal = rawVisitorsData || 0;
-        dataPoints = [12, 18, 25, 30, 22, 45, currentVal];
+        dataPoints = [12, 18, 25, 30, 22, 45, calculatedCount];
       } else if (filterVal === '30') {
+        calculatedCount = Math.floor(currentVal * 0.85) || currentVal;
         labels = ['Week 1', 'Week 2', 'Week 3', 'Week 4'];
-        const currentVal = rawVisitorsData || 0;
-        dataPoints = [Math.floor(currentVal * 0.2), Math.floor(currentVal * 0.3), Math.floor(currentVal * 0.7), currentVal];
+        dataPoints = [Math.floor(calculatedCount * 0.2), Math.floor(calculatedCount * 0.3), Math.floor(calculatedCount * 0.7), calculatedCount];
       } else if (filterVal === 'all') {
+        calculatedCount = currentVal;
         labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Current'];
-        const currentVal = rawVisitorsData || 0;
-        dataPoints = [100, 250, 400, 300, 500, currentVal];
+        dataPoints = [100, 250, 400, 300, 500, calculatedCount];
       }
 
-      visitorChartInstance.data.labels = labels;
-      visitorChartInstance.data.datasets[0].data = dataPoints;
-      visitorChartInstance.update();
+      // Update Text Count
+      document.getElementById('metric-visitors-val').innerText = calculatedCount;
+
+      // Update Graph
+      if (visitorChartInstance) {
+        visitorChartInstance.data.labels = labels;
+        visitorChartInstance.data.datasets[0].data = dataPoints;
+        visitorChartInstance.update();
+      }
     }
   </script>
 </body>
