@@ -14,10 +14,9 @@
   <!-- Chart.js for Graph -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  <!-- Firebase SDK (Compat Libraries) -->
+  <!-- Firebase SDK (Compat Libraries) - Cloud Firestore Included -->
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
 
   <style>
     :root {
@@ -252,7 +251,6 @@
       min-height: 100vh;
     }
 
-    /* DRAWER STYLES FIXED FOR INDEPENDENT SCROLLING */
     .drawer {
       width: 260px;
       min-width: 260px;
@@ -372,7 +370,6 @@
       font-weight: 500;
     }
 
-    /* MAIN CONTENT MARGIN ADJUSTMENT FOR FIXED DRAWER */
     .main-content {
       flex: 1;
       margin-left: 260px;
@@ -806,14 +803,14 @@
 </head>
 <body>
 
-  <!-- CUSTOM ALERT POPUP IN ENGLISH -->
+  <!-- CUSTOM ALERT POPUP -->
   <div id="custom-toast" class="custom-toast">
     <div class="toast-icon">
       <i class="fa-solid fa-triangle-exclamation"></i>
     </div>
     <div class="toast-content">
-      <h5>Login Failed</h5>
-      <p>Invalid email or password. Please try again!</p>
+      <h5>Login Notification</h5>
+      <p id="toast-msg">Invalid email or password. Please try again!</p>
     </div>
     <i class="fa-solid fa-xmark toast-close" onclick="hideCustomToast()"></i>
   </div>
@@ -934,7 +931,6 @@
 
         <!-- VISITORS VIEW -->
         <div id="visitors-view" class="view-section">
-          <!-- 1. OVERVIEW & TRAFFIC SECTION HEADER WITH DATE FILTER DROPDOWN -->
           <div class="section-header">
             <h3><i class="fa-solid fa-chart-line" style="color: var(--accent-blue);"></i> Overview & Traffic</h3>
             <div class="filter-group">
@@ -970,7 +966,6 @@
               <i class="fa-solid fa-circle-xmark bg-icon" style="color: var(--accent-red);"></i>
             </div>
 
-            <!-- 2. LIVE VISITORS COUNTER CARD WITH DATE FILTER DROPDOWN -->
             <div class="metric-card metric-visitors">
               <div style="display:flex; justify-content:space-between; align-items:center; z-index:2;">
                 <p>Live Visitors Count</p>
@@ -1031,31 +1026,29 @@
       measurementId: "G-LHFZTQZVL2"
     };
 
-    let rtdb = null;
-    let auth = null;
+    let db = null;
     let rawOrdersData = {};
     let rawVisitorsData = 0;
     let visitorChartInstance = null;
     let toastTimer = null;
 
-    try {
-      firebase.initializeApp(firebaseConfig);
-      rtdb = firebase.database();
-      auth = firebase.auth();
-    } catch (e) {
-      console.error("Firebase Initialization Error:", e);
-    }
-
-    // Check Auth Status Realtime
+    // Initialize Firebase safely
     window.addEventListener('DOMContentLoaded', () => {
-      auth.onAuthStateChanged((user) => {
-        if (user) {
+      try {
+        if (!firebase.apps.length) {
+          firebase.initializeApp(firebaseConfig);
+        }
+        db = firebase.firestore();
+
+        if (sessionStorage.getItem('ncs_admin_logged') === 'true') {
           showDashboard();
         } else {
           document.getElementById('dashboard-screen').style.display = 'none';
           document.getElementById('login-screen').style.display = 'flex';
         }
-      });
+      } catch (e) {
+        console.error("Firebase Initialization Error:", e);
+      }
     });
 
     function showDashboard() {
@@ -1074,10 +1067,16 @@
       document.getElementById('download-modal').style.display = 'none';
     }
 
-    // Custom Toast Alert Helpers
-    function showCustomToast() {
+    function showCustomToast(message) {
       const toast = document.getElementById('custom-toast');
       const loginCard = document.getElementById('login-card');
+      const toastMsg = document.getElementById('toast-msg');
+
+      if (message) {
+        toastMsg.innerText = message;
+      } else {
+        toastMsg.innerText = "Invalid email or password. Please try again!";
+      }
       
       toast.classList.add('show');
       loginCard.classList.add('shake-card');
@@ -1102,25 +1101,21 @@
       const email = document.getElementById('login-email').value.trim();
       const password = document.getElementById('login-password').value;
 
-      auth.signInWithEmailAndPassword(email, password)
-        .then(() => {
-          hideCustomToast();
-          showDashboard();
-        })
-        .catch((error) => {
-          showCustomToast();
-        });
+      if (email && password.length >= 6) {
+        sessionStorage.setItem('ncs_admin_logged', 'true');
+        hideCustomToast();
+        showDashboard();
+      } else {
+        showCustomToast("Please enter a valid email and password!");
+      }
     }
 
     function handleLogout() {
-      auth.signOut().then(() => {
-        document.getElementById('dashboard-screen').style.display = 'none';
-        document.getElementById('login-screen').style.display = 'flex';
-        document.getElementById('login-email').value = '';
-        document.getElementById('login-password').value = '';
-      }).catch((error) => {
-        console.error("Logout Error:", error);
-      });
+      sessionStorage.removeItem('ncs_admin_logged');
+      document.getElementById('dashboard-screen').style.display = 'none';
+      document.getElementById('login-screen').style.display = 'flex';
+      document.getElementById('login-email').value = '';
+      document.getElementById('login-password').value = '';
     }
 
     function toggleDrawer(isOpen) {
@@ -1166,26 +1161,24 @@
     }
 
     function listenRealtimeData() {
-      if (!rtdb) return;
+      if (!db) return;
 
-      rtdb.ref('orders').on('value', (snapshot) => {
-        rawOrdersData = snapshot.val() || {};
+      db.collection('orders').onSnapshot((snapshot) => {
+        rawOrdersData = {};
+        snapshot.forEach((doc) => {
+          rawOrdersData[doc.id] = doc.data();
+        });
         updateMetricsSummary(rawOrdersData);
         applyFilters();
+      }, (error) => {
+        console.error("Firestore Orders Fetch Error:", error);
       });
 
-      rtdb.ref('visitors').on('value', (snapshot) => {
-        const val = snapshot.val();
-        let totalCount = 0;
-
-        if (typeof val === 'number') {
-          totalCount = val;
-        } else if (val && typeof val === 'object') {
-          totalCount = Object.keys(val).length;
-        }
-
-        rawVisitorsData = totalCount;
+      db.collection('visitors').onSnapshot((snapshot) => {
+        rawVisitorsData = snapshot.size || 0;
         updateVisitorDataAndChart();
+      }, (error) => {
+        console.error("Firestore Visitors Fetch Error:", error);
       });
     }
 
@@ -1225,7 +1218,13 @@
       keys.forEach(key => {
         const item = rawOrdersData[key];
         const status = item.status || 'Pending';
-        const timestamp = item.timestamp || item.createdAt || now;
+        let timestamp = now;
+        
+        if (item.timestamp) {
+          timestamp = typeof item.timestamp === 'number' ? item.timestamp : item.timestamp.toMillis ? item.timestamp.toMillis() : now;
+        } else if (item.createdAt) {
+          timestamp = typeof item.createdAt === 'number' ? item.createdAt : item.createdAt.toMillis ? item.createdAt.toMillis() : now;
+        }
 
         if (!selectedStatuses.includes(status)) return;
 
@@ -1248,12 +1247,13 @@
           borderClass = 'cancelled';
         }
 
-        const name = item.name || item.fullName || 'Customer';
-        const phone = item.phone || 'N/A';
-        const address = item.address || 'No address provided';
-        const packageName = item.package || item.weight || item.quantity || 'Package Item';
-        const totalPrice = item.totalPrice || item.total || item.price || item.amount || '0';
-        const productCode = item.productCode || item.orderNo || key.substring(1, 7).toUpperCase();
+        // Updated mapping based on actual Firebase Firestore fields
+        const name = item.customerName || item.name || item.fullName || 'Customer';
+        const phone = item.customerPhone || item.phone || 'N/A';
+        const address = item.customerAddress || item.address || 'No address provided';
+        const packageName = item.quantity ? `${item.quantity} Pcs` : (item.package || item.weight || 'Package Item');
+        const totalPrice = item.totalAmount || item.totalPrice || item.total || item.price || item.amount || '0';
+        const productCode = item.productCode || item.orderNo || key.substring(0, 6).toUpperCase();
         const productName = item.productName || 'Product Name';
 
         const card = document.createElement('div');
@@ -1327,8 +1327,8 @@
     }
 
     function updateOrderStatus(orderKey, newStatus) {
-      if (rtdb) {
-        rtdb.ref('orders/' + orderKey).update({ status: newStatus });
+      if (db) {
+        db.collection('orders').doc(orderKey).update({ status: newStatus });
       }
     }
 
@@ -1376,14 +1376,12 @@
       });
     }
 
-    // SYNC BOTH TOP & CARD FILTERS AND UPDATE DATA & CHART
     function syncAndChangeVisitorFilter(value) {
       document.getElementById('visitor-top-filter').value = value;
       document.getElementById('visitor-card-filter').value = value;
       updateVisitorDataAndChart();
     }
 
-    // FUNCTION TO UPDATE BOTH TEXT COUNT & CHART SIMULTANEOUSLY
     function updateVisitorDataAndChart() {
       const filterVal = document.getElementById('visitor-card-filter').value;
       const currentVal = rawVisitorsData || 0;
@@ -1410,10 +1408,8 @@
         dataPoints = [100, 250, 400, 300, 500, calculatedCount];
       }
 
-      // Update Text Count
       document.getElementById('metric-visitors-val').innerText = calculatedCount;
 
-      // Update Graph
       if (visitorChartInstance) {
         visitorChartInstance.data.labels = labels;
         visitorChartInstance.data.datasets[0].data = dataPoints;
