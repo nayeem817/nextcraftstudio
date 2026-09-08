@@ -1212,23 +1212,50 @@
       const selectedStatuses = Array.from(document.querySelectorAll('.status-checkbox-group input:checked')).map(cb => cb.value);
 
       const now = Date.now();
-      const keys = Object.keys(rawOrdersData).reverse();
+
+      // ১. সমস্ত অর্ডারকে তাদের ID সহ একটি অ্যারেতে রূপান্তর
+      let ordersArray = Object.keys(rawOrdersData).map(key => {
+        const item = rawOrdersData[key];
+        let timestamp = 0;
+
+        if (item.timestamp) {
+          if (typeof item.timestamp === 'number') {
+            timestamp = item.timestamp;
+          } else if (item.timestamp.toMillis) {
+            timestamp = item.timestamp.toMillis();
+          } else if (item.timestamp.seconds) {
+            timestamp = item.timestamp.seconds * 1000;
+          }
+        } else if (item.createdAt) {
+          if (typeof item.createdAt === 'number') {
+            timestamp = item.createdAt;
+          } else if (item.createdAt.toMillis) {
+            timestamp = item.createdAt.toMillis();
+          }
+        }
+
+        return {
+          key: key,
+          data: item,
+          timestamp: timestamp
+        };
+      });
+
+      // ২. টাইমস্ট্যাম্প অনুযায়ী সর্টিং: নতুন অর্ডার (বড় টাইমস্ট্যাম্প) সবসময় উপরে থাকবে
+      ordersArray.sort((a, b) => b.timestamp - a.timestamp);
+
       let displayedCount = 0;
 
-      keys.forEach(key => {
-        const item = rawOrdersData[key];
+      // ৩. সোর্ট করা লিস্ট অনুযায়ী ফিল্টারিং ও রেন্ডারিং
+      ordersArray.forEach(orderObj => {
+        const key = orderObj.key;
+        const item = orderObj.data;
+        const timestamp = orderObj.timestamp;
         const status = item.status || 'Pending';
-        let timestamp = now;
-        
-        if (item.timestamp) {
-          timestamp = typeof item.timestamp === 'number' ? item.timestamp : item.timestamp.toMillis ? item.timestamp.toMillis() : now;
-        } else if (item.createdAt) {
-          timestamp = typeof item.createdAt === 'number' ? item.createdAt : item.createdAt.toMillis ? item.createdAt.toMillis() : now;
-        }
 
         if (!selectedStatuses.includes(status)) return;
 
-        if (timeFrame !== 'all') {
+        if (timeFrame !== 'all' && timestamp > 0) {
           const daysLimit = parseInt(timeFrame, 10);
           const diffDays = (now - timestamp) / (1000 * 60 * 60 * 24);
           if (diffDays > daysLimit) return;
@@ -1247,7 +1274,6 @@
           borderClass = 'cancelled';
         }
 
-        // Updated mapping based on actual Firebase Firestore fields
         const name = item.customerName || item.name || item.fullName || 'Customer';
         const phone = item.customerPhone || item.phone || 'N/A';
         const address = item.customerAddress || item.address || 'No address provided';
