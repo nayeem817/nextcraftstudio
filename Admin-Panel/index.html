@@ -3,17 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Admin Portal - NextCraft Studio</title>
+  <title>NCS Admin Panel - NextCraft Studio</title>
   
-  <!-- Favicon -->
+  <!-- Favicon / Logo -->
   <link rel="icon" type="image/jpeg" href="https://www.image2url.com/r2/default/images/1786858120186-60450843-0701-4497-b462-d5bb013b8349.jpg">
   
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <!-- Chart.js for Graph -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
   <!-- Firebase SDK (Compat Libraries) - Cloud Firestore Included -->
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
@@ -88,16 +85,18 @@
     }
 
     .login-header .icon-box {
-      width: 60px;
-      height: 60px;
-      background-color: #e0e7ff;
-      color: var(--primary-color);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
+      width: 70px;
+      height: 70px;
       margin: 0 auto 12px auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .login-header .icon-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .login-header h2 {
@@ -281,13 +280,15 @@
       gap: 10px;
     }
 
-    .drawer-title i {
-      font-size: 22px;
-      color: var(--primary-color);
+    .drawer-title img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      object-fit: cover;
     }
 
     .drawer-title h2 {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 700;
       color: var(--text-dark);
     }
@@ -686,6 +687,133 @@
       margin-bottom: 20px;
     }
 
+    /* HELP & ABOUT SECTION STYLES */
+    .info-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .info-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .info-card-header h4 {
+      font-size: 16px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-dark);
+    }
+
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #f3f4f6;
+      padding: 4px 8px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .lang-switcher select {
+      border: none;
+      background: transparent;
+      font-weight: 600;
+      font-size: 12px;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .notice-box {
+      background: #e0e7ff;
+      border-left: 4px solid var(--primary-color);
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .notice-box p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #3730a3;
+      font-weight: 500;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .contact-card {
+      background: #f9fafb;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .contact-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .icon-wa { background: #25D366; }
+    .icon-mail { background: #EA4335; }
+    .icon-fb { background: #1877F2; }
+    .icon-web { background: var(--primary-color); }
+
+    .contact-info h5 {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .contact-info p {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+      word-break: break-all;
+    }
+
+    .about-text-box {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-dark);
+    }
+
+    .about-text-box p {
+      margin-bottom: 12px;
+    }
+
     .overlay {
       display: none;
       position: fixed;
@@ -820,9 +948,9 @@
     <div class="login-card" id="login-card">
       <div class="login-header">
         <div class="icon-box">
-          <i class="fa-solid fa-user-shield"></i>
+          <img src="https://www.image2url.com/r2/default/images/1786858120186-60450843-0701-4497-b462-d5bb013b8349.jpg" alt="NCS Logo">
         </div>
-        <h2>Admin Login</h2>
+        <h2>NCS Admin Login</h2>
         <p>Enter your credentials to access the panel</p>
       </div>
 
@@ -860,8 +988,8 @@
         <div>
           <div class="drawer-header">
             <div class="drawer-title">
-              <i class="fa-solid fa-border-all"></i>
-              <h2>Admin Panel</h2>
+              <img src="https://www.image2url.com/r2/default/images/1786858120186-60450843-0701-4497-b462-d5bb013b8349.jpg" alt="NCS Logo">
+              <h2>NCS Admin Panel</h2>
             </div>
             <i class="fa-solid fa-xmark drawer-close-btn" onclick="toggleDrawer(false)"></i>
           </div>
@@ -872,6 +1000,12 @@
             </li>
             <li class="menu-item" id="menu-visitors" onclick="switchView('visitors-view')">
               <i class="fa-solid fa-chart-line"></i> Visitors Analytics
+            </li>
+            <li class="menu-item" id="menu-support" onclick="switchView('support-view')">
+              <i class="fa-solid fa-headset"></i> Help & Support
+            </li>
+            <li class="menu-item" id="menu-about" onclick="switchView('about-view')">
+              <i class="fa-solid fa-circle-info"></i> About Us
             </li>
           </ul>
         </div>
@@ -981,15 +1115,106 @@
             </div>
           </div>
 
-          <div class="chart-container-card">
-            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:16px;">
-              <h4 style="font-size:15px; font-weight:700;">
-                <i class="fa-solid fa-eye" style="color:var(--accent-blue);"></i> Live Website Traffic Trend
-              </h4>
+        </div>
+
+        <!-- HELP & SUPPORT VIEW -->
+        <div id="support-view" class="view-section">
+          <div class="info-card">
+            <div class="info-card-header">
+              <h4><i class="fa-solid fa-bullhorn" style="color:var(--primary-color);"></i> Notice Board</h4>
+              <div class="lang-switcher">
+                <i class="fa-solid fa-language"></i>
+                <select id="notice-lang" onchange="switchNoticeLanguage(this.value)">
+                  <option value="en">English</option>
+                  <option value="bn">বাংলা</option>
+                </select>
+              </div>
+            </div>
+            <div class="notice-box">
+              <p id="notice-text">The Admin Panel is currently running smoothly and fully operational. If you encounter any issues or need technical assistance while operating the panel, feel free to contact our support team anytime!</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <h4><i class="fa-solid fa-headset" style="color:var(--accent-green);"></i> Help & Technical Support</h4>
+            </div>
+            <p style="font-size:13px; color:var(--text-muted);">Reach out to us via any of the channels below for fast support & assistance:</p>
+
+            <div class="contact-grid">
+              <a href="https://wa.me/8801810546079" target="_blank" class="contact-card">
+                <div class="contact-icon icon-wa">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div class="contact-info">
+                  <h5>WhatsApp Support</h5>
+                  <p>+8801810546079</p>
+                </div>
+              </a>
+
+              <a href="mailto:nextcraftstudio02@gmail.com" class="contact-card">
+                <div class="contact-icon icon-mail">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="contact-info">
+                  <h5>Email Support</h5>
+                  <p>nextcraftstudio02@gmail.com</p>
+                </div>
+              </a>
+
+              <a href="https://www.facebook.com/share/18HXDirNk4/" target="_blank" class="contact-card">
+                <div class="contact-icon icon-fb">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </div>
+                <div class="contact-info">
+                  <h5>Facebook Page</h5>
+                  <p>NextCraft Studio</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ABOUT US VIEW -->
+        <div id="about-view" class="view-section">
+          <div class="info-card">
+            <div class="info-card-header">
+              <h4><i class="fa-solid fa-circle-info" style="color:var(--accent-blue);"></i> About NCS Admin Panel</h4>
+              <div class="lang-switcher">
+                <i class="fa-solid fa-language"></i>
+                <select id="about-lang" onchange="switchAboutLanguage(this.value)">
+                  <option value="en">English</option>
+                  <option value="bn">বাংলা</option>
+                </select>
+              </div>
             </div>
 
-            <div style="height: 300px; width: 100%;">
-              <canvas id="visitorChart"></canvas>
+            <div class="about-text-box" id="about-text-content">
+              <p>This customized <strong>NCS Admin Panel</strong> is exclusively developed for clients who purchase high-converting landing pages or single-page websites from <strong>NextCraft Studio</strong>. Access is restricted exclusively to authorized website owners.</p>
+              <p>It provides full control over real-time customer orders, visitor analytics, and management features to help scale your online business effortlessly.</p>
+              <p>To explore more digital marketing services, custom web design, or premium tools, feel free to visit our official platform.</p>
+            </div>
+
+            <div class="contact-grid" style="margin-top:20px;">
+              <a href="https://nextcraftstudio.site" target="_blank" class="contact-card">
+                <div class="contact-icon icon-web">
+                  <i class="fa-solid fa-globe"></i>
+                </div>
+                <div class="contact-info">
+                  <h5>Official Website</h5>
+                  <p>nextcraftstudio.site</p>
+                </div>
+              </a>
+
+              <a href="https://wa.me/8801810546079" target="_blank" class="contact-card">
+                <div class="contact-icon icon-wa">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div class="contact-info">
+                  <h5>WhatsApp Business</h5>
+                  <p>+8801810546079</p>
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -1029,8 +1254,23 @@
     let db = null;
     let rawOrdersData = {};
     let rawVisitorsData = 0;
-    let visitorChartInstance = null;
+
     let toastTimer = null;
+
+    // Translation Data
+    const noticeTranslations = {
+      en: "The Admin Panel is currently running smoothly and fully operational. If you encounter any issues or need technical assistance while operating the panel, feel free to contact our support team anytime!",
+      bn: "বর্তমানে Admin Panel-টা একদম সুন্দরভাবে সচল অবস্থায় আছে। অ্যাডমিন প্যানেলটি চালাতে আপনার যদি কোনো সমস্যা হয় অথবা সাপোর্টের প্রয়োজন হয়, নির্দ্বিধে আমাদের জানাতে পারেন।"
+    };
+
+    const aboutTranslations = {
+      en: `<p>This customized <strong>NCS Admin Panel</strong> is exclusively developed for clients who purchase high-converting landing pages or single-page websites from <strong>NextCraft Studio</strong>. Access is restricted exclusively to authorized website owners.</p>
+           <p>It provides full control over real-time customer orders, visitor analytics, and management features to help scale your online business effortlessly.</p>
+           <p>To explore more digital marketing services, custom web design, or premium tools, feel free to visit our official platform.</p>`,
+      bn: `<p>এই অ্যাডমিন প্যানেলটি মূলত যারা <strong>NextCraft Studio</strong> থেকে ল্যান্ডিং পেজ অথবা ওয়ান পেজ ওয়েবসাইট পারচেজ করবেন, শুধুমাত্র তাদের জন্য বিশেষভাবে তৈরি করা হয়েছে। শুধুমাত্র অনুমোদিত ক্লায়েন্টরাই এটি ব্যবহার করতে পারবেন।</p>
+           <p>এর মাধ্যমে খুব সহজেই রিয়েল-টাইম কাস্টমার অর্ডার, ভিজিটর অ্যানালিটিক্স এবং আপনার ই-কমার্স বা সার্ভিস বিজনেসের সামগ্রিক কার্যক্রম নিয়ন্ত্রণ করতে পারবেন।</p>
+           <p>আমাদের অন্যান্য সার্ভিস সম্পর্কে জানতে এবং বিস্তারিত তথ্যের জন্য আমাদের অফিসিয়াল ওয়েবসাইট ভিজিট করতে পারেন।</p>`
+    };
 
     // Initialize Firebase safely
     window.addEventListener('DOMContentLoaded', () => {
@@ -1040,7 +1280,7 @@
         }
         db = firebase.firestore();
 
-        if (sessionStorage.getItem('ncs_admin_logged') === 'true') {
+        if (localStorage.getItem('ncs_admin_logged') === 'true') {
           showDashboard();
         } else {
           document.getElementById('dashboard-screen').style.display = 'none';
@@ -1054,7 +1294,6 @@
     function showDashboard() {
       document.getElementById('login-screen').style.display = 'none';
       document.getElementById('dashboard-screen').style.display = 'block';
-      initVisitorChart();
       listenRealtimeData();
     }
 
@@ -1102,7 +1341,7 @@
       const password = document.getElementById('login-password').value;
 
       if (email && password.length >= 6) {
-        sessionStorage.setItem('ncs_admin_logged', 'true');
+        localStorage.setItem('ncs_admin_logged', 'true');
         hideCustomToast();
         showDashboard();
       } else {
@@ -1111,7 +1350,7 @@
     }
 
     function handleLogout() {
-      sessionStorage.removeItem('ncs_admin_logged');
+      localStorage.removeItem('ncs_admin_logged');
       document.getElementById('dashboard-screen').style.display = 'none';
       document.getElementById('login-screen').style.display = 'flex';
       document.getElementById('login-email').value = '';
@@ -1142,9 +1381,23 @@
       } else if (viewId === 'visitors-view') {
         document.getElementById('menu-visitors').classList.add('active');
         document.getElementById('mobile-page-title').innerText = "Visitors Analytics";
+      } else if (viewId === 'support-view') {
+        document.getElementById('menu-support').classList.add('active');
+        document.getElementById('mobile-page-title').innerText = "Help & Support";
+      } else if (viewId === 'about-view') {
+        document.getElementById('menu-about').classList.add('active');
+        document.getElementById('mobile-page-title').innerText = "About Us";
       }
 
       toggleDrawer(false);
+    }
+
+    function switchNoticeLanguage(lang) {
+      document.getElementById('notice-text').innerText = noticeTranslations[lang];
+    }
+
+    function switchAboutLanguage(lang) {
+      document.getElementById('about-text-content').innerHTML = aboutTranslations[lang];
     }
 
     function toggleOrderDetails(key) {
@@ -1213,7 +1466,6 @@
 
       const now = Date.now();
 
-      // ১. সমস্ত অর্ডারকে তাদের ID সহ একটি অ্যারেতে রূপান্তর
       let ordersArray = Object.keys(rawOrdersData).map(key => {
         const item = rawOrdersData[key];
         let timestamp = 0;
@@ -1241,12 +1493,10 @@
         };
       });
 
-      // ২. টাইমস্ট্যাম্প অনুযায়ী সর্টিং: নতুন অর্ডার (বড় টাইমস্ট্যাম্প) সবসময় উপরে থাকবে
       ordersArray.sort((a, b) => b.timestamp - a.timestamp);
 
       let displayedCount = 0;
 
-      // ৩. সোর্ট করা লিস্ট অনুযায়ী ফিল্টারিং ও রেন্ডারিং
       ordersArray.forEach(orderObj => {
         const key = orderObj.key;
         const item = orderObj.data;
@@ -1358,50 +1608,6 @@
       }
     }
 
-    function initVisitorChart() {
-      const canvas = document.getElementById('visitorChart');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-
-      if (visitorChartInstance) {
-        visitorChartInstance.destroy();
-      }
-
-      visitorChartInstance = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ['6 Days Ago', '5 Days Ago', '4 Days Ago', '3 Days Ago', '2 Days Ago', 'Yesterday', 'Today'],
-          datasets: [{
-            label: 'Visitors Count',
-            data: [0, 0, 0, 0, 0, 0, 0],
-            borderColor: '#3b82f6',
-            backgroundColor: 'rgba(59, 130, 246, 0.1)',
-            fill: true,
-            tension: 0.4,
-            borderWidth: 2,
-            pointRadius: 4,
-            pointBackgroundColor: '#3b82f6'
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: { display: false }
-          },
-          scales: {
-            y: {
-              beginAtZero: true,
-              grid: { color: '#f3f4f6' }
-            },
-            x: {
-              grid: { display: false }
-            }
-          }
-        }
-      });
-    }
-
     function syncAndChangeVisitorFilter(value) {
       document.getElementById('visitor-top-filter').value = value;
       document.getElementById('visitor-card-filter').value = value;
@@ -1411,36 +1617,20 @@
     function updateVisitorDataAndChart() {
       const filterVal = document.getElementById('visitor-card-filter').value;
       const currentVal = rawVisitorsData || 0;
-      
+
       let calculatedCount = currentVal;
-      let labels = [];
-      let dataPoints = [];
 
       if (filterVal === '1') {
         calculatedCount = Math.floor(currentVal * 0.2) || currentVal;
-        labels = ['12 AM', '4 AM', '8 AM', '12 PM', '4 PM', '8 PM', 'Now'];
-        dataPoints = [0, Math.floor(calculatedCount * 0.1), Math.floor(calculatedCount * 0.3), Math.floor(calculatedCount * 0.5), Math.floor(calculatedCount * 0.7), Math.floor(calculatedCount * 0.9), calculatedCount];
       } else if (filterVal === '7') {
         calculatedCount = Math.floor(currentVal * 0.6) || currentVal;
-        labels = ['6 Days Ago', '5 Days Ago', '4 Days Ago', '3 Days Ago', '2 Days Ago', 'Yesterday', 'Today'];
-        dataPoints = [12, 18, 25, 30, 22, 45, calculatedCount];
       } else if (filterVal === '30') {
         calculatedCount = Math.floor(currentVal * 0.85) || currentVal;
-        labels = ['Week 1', 'Week 2', 'Week 3', 'Week 4'];
-        dataPoints = [Math.floor(calculatedCount * 0.2), Math.floor(calculatedCount * 0.3), Math.floor(calculatedCount * 0.7), calculatedCount];
       } else if (filterVal === 'all') {
         calculatedCount = currentVal;
-        labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Current'];
-        dataPoints = [100, 250, 400, 300, 500, calculatedCount];
       }
 
       document.getElementById('metric-visitors-val').innerText = calculatedCount;
-
-      if (visitorChartInstance) {
-        visitorChartInstance.data.labels = labels;
-        visitorChartInstance.data.datasets[0].data = dataPoints;
-        visitorChartInstance.update();
-      }
     }
   </script>
 </body>
