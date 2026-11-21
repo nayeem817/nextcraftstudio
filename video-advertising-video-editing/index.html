@@ -77,6 +77,49 @@
     @media(max-width:850px){.service-hero-grid{grid-template-columns:1fr;gap:32px}.price-card{max-width:520px}.benefit-grid{grid-template-columns:1fr 1fr}}
     @media(max-width:560px){.service-hero{padding:60px 0 55px}.service-hero h1{font-size:39px;letter-spacing:-1.6px}.service-hero .lead{font-size:14px}.price-card{padding:24px}.included-grid,.benefit-grid{grid-template-columns:1fr}.detail-section{padding:65px 0}.delivery-band{padding:25px;display:block}.delivery-time{display:block;margin-top:16px}.service-actions a{width:100%}}
 
+
+    /* Service detail refresh: predominantly deep-green sections with clean white cards */
+    body{background:#061b14;color:#f1fff4}
+    .service-hero{background:radial-gradient(circle at 82% 18%,rgba(35,205,83,.16),transparent 29%),linear-gradient(130deg,#041b14 0%,#06271b 58%,#03160f 100%);color:#f4fff6}
+    .service-hero:before{border-color:rgba(104,231,135,.16)}
+    .service-hero h1{color:#f5fff7}.service-hero h1 span{color:#48df6b}.service-hero .lead{color:#b7cbbd}
+    .service-hero .eyebrow{background:rgba(24,89,49,.35);border-color:rgba(99,222,126,.25);color:#79ed91}
+    .service-hero .hero-note{color:#a9c0b0}.service-hero .hero-note b{color:#e9fff0}
+    .service-hero .btn-outline,.service-hero .demo-btn{background:rgba(255,255,255,.06);border-color:rgba(203,239,211,.25);color:#edfff1}
+    .service-hero .demo-btn:hover,.service-hero .btn-outline:hover{background:#fff;color:#063d2a}
+    .price-card{background:#f7fff8;color:#10251a;border:1px solid rgba(255,255,255,.75);box-shadow:0 25px 65px rgba(0,0,0,.28)}
+    .price-card h2{color:#123c25}.price{color:#087b3e}.price small,.price-note{color:#61766a}.price-points li{color:#304b39}.price-points b{color:#0b9b49}
+    .price-label{background:#e5f8e9;color:#087b3e}
+    .detail-section{background:#061b14;color:#f2fff5}
+    .detail-section.soft{background:#09251a}
+    .detail-heading h2{color:#f4fff6}.detail-heading p{color:#a9bfb0}.detail-heading .kicker{color:#68e986}
+    .included-card,.benefit-card,.service-faq details{background:#f8fff9;border-color:rgba(201,235,207,.8);color:#14251a}
+    .included-card h3,.benefit-card h3,.service-faq summary{color:#143b24}
+    .included-card p,.benefit-card p,.service-faq details p{color:#63766a}
+    .included-icon{background:#e5f8e9;color:#078b42}
+    .included-icon svg,.benefit-card .symbol svg{width:23px;height:23px;display:block}
+    .benefit-card .symbol{color:#078b42}
+    .delivery-band{background:#f7fff8;color:#123b24;border:1px solid rgba(199,235,207,.8);box-shadow:0 18px 45px rgba(0,0,0,.16)}
+    .delivery-band p{color:#64776a}.delivery-time{color:#078b42}
+    .cta{background:#061b14}
+    .cta-panel{background:#f7fff8;color:#123b24;border:1px solid rgba(199,235,207,.8);box-shadow:0 18px 50px rgba(0,0,0,.18)}
+    .cta-panel p{color:#62766a}.cta-panel .btn{background:#11984b;color:#fff}.cta-panel .btn:hover{background:#075d34;color:#fff}
+    .service-faq details{border-color:rgba(201,235,207,.8)}
+    .video-samples{background:#09251a}
+    .video-gallery{display:grid;grid-template-columns:minmax(0,760px);justify-content:center}
+    .video-card{background:#f8fff9;border:1px solid rgba(203,238,210,.85);border-radius:20px;overflow:hidden;box-shadow:0 20px 48px rgba(0,0,0,.2)}
+    .video-frame{width:100%;aspect-ratio:16/9;background:#020906;position:relative;overflow:hidden}
+    .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .video-caption{display:flex;align-items:center;gap:13px;padding:17px 20px;color:#183b25}
+    .video-caption h3{font:800 14px Manrope,sans-serif}.video-caption p{font-size:11px;color:#718276;margin-top:3px}
+    .video-play{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:#e3f7e8;color:#078b42;flex:none}
+    .video-play svg{width:19px;height:19px}.video-caption>a{margin-left:auto;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#e7f8eb;color:#087b3e}
+    .video-caption>a svg{width:19px;height:19px}.video-note{text-align:center;color:#a8bdae;font-size:11px;line-height:1.7;margin:18px auto 0;max-width:760px}
+    .inline-icon{width:18px;height:18px;display:inline-block;vertical-align:-3px;margin-right:5px}
+    .service-hero .inline-icon{color:#66e985}
+    .service-actions .demo-btn svg{width:16px;height:16px}
+    @media(max-width:560px){.video-caption{padding:14px}.video-caption h3{font-size:13px}.video-note{font-size:10px}}
+
   </style>
 
 <body>
@@ -103,9 +146,9 @@
           <p class="lead">আপনার পণ্য বা সার্ভিসকে আকর্ষণীয়ভাবে উপস্থাপন করতে তৈরি করুন প্রফেশনাল ভিডিও বিজ্ঞাপন। কৌশলগত কনটেন্ট, মানসম্মত ভয়েসওভার ও মনকাড়া মোশন ডিজাইনের সমন্বয়ে আপনার ব্র্যান্ডের বার্তা পৌঁছে দিন সঠিকভাবে।</p>
           <div class="service-actions">
             <a class="btn" href="https://wa.me/8801810546079?text=Assalamu%20Alaikum%2C%20I%20want%20to%20order%20a%20video%20advertisement%20from%20NextCraft%20Studio." target="_blank" rel="noopener">Order on WhatsApp <span>↗</span></a>
-            <a class="demo-btn" href="https://drive.google.com/drive/folders/1Oe_SDwS3GztS55MXJlKeJ0qPA3A1eTA1" target="_blank" rel="noopener">▶ Watch Demo Videos</a>
+            <a class="demo-btn" href="#video-samples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg> Watch Video Samples</a>
           </div>
-          <div class="hero-note"><span>✦</span><span><b>Creative quality. Strategic storytelling.</b> — Designed around your business goals.</span></div>
+          <div class="hero-note"><svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 2.3 7.7L22 12l-7.7 2.3L12 22l-2.3-7.7L2 12l7.7-2.3z" fill="currentColor"/></svg><span><b>Creative quality. Strategic storytelling.</b> — Designed around your business goals.</span></div>
         </div>
         <aside class="price-card" aria-label="Video advertising service price">
           <span class="price-label">Our Service Package</span>
@@ -124,12 +167,12 @@
 
     <section class="detail-section">
       <div class="container">
-        <div class="detail-heading"><span class="kicker">What You Get</span><h2>✨ প্রতিটি ভিডিওতে থাকছে</h2><p>শুধু ভিডিও এডিটিং নয়—আপনার ব্যবসার পণ্য বা সার্ভিসকে সুন্দরভাবে তুলে ধরতে পরিকল্পিত ক্রিয়েটিভ উপস্থাপনা।</p></div>
+        <div class="detail-heading"><span class="kicker">What You Get</span><h2>প্রতিটি ভিডিওতে থাকছে</h2><p>শুধু ভিডিও এডিটিং নয়—আপনার ব্যবসার পণ্য বা সার্ভিসকে সুন্দরভাবে তুলে ধরতে পরিকল্পিত ক্রিয়েটিভ উপস্থাপনা।</p></div>
         <div class="included-grid">
-          <article class="included-card"><div class="included-icon">💡</div><div><h3>Sales-Focused Strategic Content</h3><p>আপনার পণ্য, সার্ভিস ও কাস্টমারের প্রয়োজন বুঝে আকর্ষণীয় কনটেন্ট সাজানো হয়, যাতে ভিডিওটি দর্শকের কাছে সহজে বার্তা পৌঁছে দিতে পারে।</p></div></article>
-          <article class="included-card"><div class="included-icon">🎙</div><div><h3>Professional Voiceover</h3><p>ভিডিওর বিষয়বস্তু ও ব্র্যান্ডের উপযোগী ভয়েসওভারের মাধ্যমে বিজ্ঞাপনকে আরও পরিষ্কার, সাবলীল ও প্রাণবন্ত করে তোলা হয়।</p></div></article>
-          <article class="included-card"><div class="included-icon">🎨</div><div><h3>Engaging Animation &amp; Premium Design</h3><p>মনকাড়া টেক্সট অ্যানিমেশন, মোশন গ্রাফিক্স ও পরিপাটি ভিজ্যুয়াল ডিজাইনে আপনার বিজ্ঞাপন পাবে প্রফেশনাল উপস্থাপনা।</p></div></article>
-          <article class="included-card"><div class="included-icon">⚡</div><div><h3>Fast Video Delivery</h3><p>প্রজেক্টের প্রয়োজনীয় তথ্য ও উপকরণ হাতে পাওয়ার পর সর্বোচ্চ ৩ ঘণ্টার মধ্যে ভিডিও ডেলিভারির লক্ষ্য রাখা হয়।</p></div></article>
+          <article class="included-card"><div class="included-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6m-5 3h4m-5-6.5a7 7 0 1 1 6 0c-.8.5-1 1.2-1 1.5h-4c0-.3-.2-1-1-1.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><div><h3>Sales-Focused Strategic Content</h3><p>আপনার পণ্য, সার্ভিস ও কাস্টমারের প্রয়োজন বুঝে আকর্ষণীয় কনটেন্ট সাজানো হয়, যাতে ভিডিওটি দর্শকের কাছে সহজে বার্তা পৌঁছে দিতে পারে।</p></div></article>
+          <article class="included-card"><div class="included-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4m-4 0h8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><div><h3>Professional Voiceover</h3><p>ভিডিওর বিষয়বস্তু ও ব্র্যান্ডের উপযোগী ভয়েসওভারের মাধ্যমে বিজ্ঞাপনকে আরও পরিষ্কার, সাবলীল ও প্রাণবন্ত করে তোলা হয়।</p></div></article>
+          <article class="included-card"><div class="included-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18h1.2a2 2 0 0 0 1.5-3.3 1.7 1.7 0 0 1 1.3-2.8H18a3 3 0 0 0 3-3c0-5-4-8.9-9-8.9Z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="7.5" cy="10" r="1" fill="currentColor"/><circle cx="11" cy="7" r="1" fill="currentColor"/><circle cx="16" cy="8.5" r="1" fill="currentColor"/></svg></div><div><h3>Engaging Animation &amp; Premium Design</h3><p>মনকাড়া টেক্সট অ্যানিমেশন, মোশন গ্রাফিক্স ও পরিপাটি ভিজ্যুয়াল ডিজাইনে আপনার বিজ্ঞাপন পাবে প্রফেশনাল উপস্থাপনা।</p></div></article>
+          <article class="included-card"><div class="included-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 10-13h-7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div><div><h3>Fast Video Delivery</h3><p>প্রজেক্টের প্রয়োজনীয় তথ্য ও উপকরণ হাতে পাওয়ার পর সর্বোচ্চ ৩ ঘণ্টার মধ্যে ভিডিও ডেলিভারির লক্ষ্য রাখা হয়।</p></div></article>
         </div>
       </div>
     </section>
@@ -138,22 +181,29 @@
       <div class="container">
         <div class="detail-heading"><span class="kicker">Why NextCraft Studio</span><h2>ভিডিও বিজ্ঞাপনে সৃজনশীলতা ও কৌশলের সমন্বয়</h2><p>আপনার ব্র্যান্ডের পরিচিতি, অফার ও মূল বার্তাকে গুরুত্ব দিয়ে প্রতিটি ভিডিও সাজানো হয়।</p></div>
         <div class="benefit-grid">
-          <article class="benefit-card"><div class="symbol">✦</div><h3>Brand-Focused Presentation</h3><p>আপনার ব্র্যান্ডের রং, পরিচিতি ও পণ্যের বৈশিষ্ট্যের সঙ্গে মিল রেখে ভিডিওর ভিজ্যুয়াল তৈরি করা হয়।</p></article>
-          <article class="benefit-card"><div class="symbol">◈</div><h3>Clear Marketing Message</h3><p>দর্শক যেন অল্প সময়েই আপনার অফার ও সার্ভিস সম্পর্কে বুঝতে পারেন, সেভাবে কনটেন্ট সাজানো হয়।</p></article>
-          <article class="benefit-card"><div class="symbol">◎</div><h3>Platform-Ready Creative</h3><p>আপনার ব্যবহারের প্রয়োজন অনুযায়ী Facebook ও অন্যান্য ডিজিটাল প্ল্যাটফর্মে প্রকাশের উপযোগী ভিডিও তৈরি করা হয়।</p></article>
+          <article class="benefit-card"><div class="symbol"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 2.3 7.7L22 12l-7.7 2.3L12 22l-2.3-7.7L2 12l7.7-2.3z" fill="currentColor"/></svg></div><h3>Brand-Focused Presentation</h3><p>আপনার ব্র্যান্ডের রং, পরিচিতি ও পণ্যের বৈশিষ্ট্যের সঙ্গে মিল রেখে ভিডিওর ভিজ্যুয়াল তৈরি করা হয়।</p></article>
+          <article class="benefit-card"><div class="symbol"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 9 10-9 10L3 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v10m-5-5h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><h3>Clear Marketing Message</h3><p>দর্শক যেন অল্প সময়েই আপনার অফার ও সার্ভিস সম্পর্কে বুঝতে পারেন, সেভাবে কনটেন্ট সাজানো হয়।</p></article>
+          <article class="benefit-card"><div class="symbol"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></div><h3>Platform-Ready Creative</h3><p>আপনার ব্যবহারের প্রয়োজন অনুযায়ী Facebook ও অন্যান্য ডিজিটাল প্ল্যাটফর্মে প্রকাশের উপযোগী ভিডিও তৈরি করা হয়।</p></article>
         </div>
       </div>
     </section>
 
     <section class="detail-section">
       <div class="container">
-        <div class="delivery-band"><div><h3>⚡ দ্রুত ডেলিভারি, যত্নসহকারে তৈরি</h3><p>প্রয়োজনীয় তথ্য, স্ক্রিপ্টের নির্দেশনা ও উপকরণ পাওয়ার পর সর্বোচ্চ ৩ ঘণ্টার মধ্যে ডেলিভারির লক্ষ্য। কাজের ধরন ও জটিলতার ওপর সময় নির্ভর করতে পারে।</p></div><div class="delivery-time">Within 3 Hours*</div></div>
+        <div class="delivery-band"><div><h3><svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 10-13h-7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg> দ্রুত ডেলিভারি, যত্নসহকারে তৈরি</h3><p>প্রয়োজনীয় তথ্য, স্ক্রিপ্টের নির্দেশনা ও উপকরণ পাওয়ার পর সর্বোচ্চ ৩ ঘণ্টার মধ্যে ডেলিভারির লক্ষ্য। কাজের ধরন ও জটিলতার ওপর সময় নির্ভর করতে পারে।</p></div><div class="delivery-time">Within 3 Hours*</div></div>
       </div>
     </section>
 
-    <section class="detail-section soft">
+    <section class="detail-section video-samples" id="video-samples">
       <div class="container">
-        <div class="detail-heading"><span class="kicker">Our Work</span><h2>আমাদের ভিডিও ডেমো দেখুন</h2><p>NextCraft Studio-এর তৈরি ভিডিও কাজের নমুনা দেখতে নিচের বাটনে ক্লিক করুন।</p><a class="btn" style="margin-top:18px" href="https://drive.google.com/drive/folders/1Oe_SDwS3GztS55MXJlKeJ0qPA3A1eTA1" target="_blank" rel="noopener">View Demo Portfolio <span>↗</span></a></div>
+        <div class="detail-heading"><span class="kicker">Video Samples</span><h2>আমাদের ভিডিও স্যাম্পল দেখুন</h2><p>NextCraft Studio-এর ভিডিও কাজের নমুনা দেখুন। ভিডিওটি YouTube-এ প্রকাশিত মূল অনুপাত বজায় রেখে responsive player-এ দেখানো হবে।</p></div>
+        <div class="video-gallery">
+          <article class="video-card">
+            <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/sNjyOSADDxE" title="NextCraft Studio video sample" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+            <div class="video-caption"><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><div><h3>Video Editing Sample</h3><p>Watch on YouTube</p></div><a href="https://youtu.be/sNjyOSADDxE" target="_blank" rel="noopener" aria-label="Open video on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+          </article>
+        </div>
+        <p class="video-note">আপনার দেওয়া ৬টি YouTube URL একই ভিডিওর লিংক ছিল। তাই একই ভিডিও বারবার না দেখিয়ে Gallery-তে একটি স্বতন্ত্র স্যাম্পল রাখা হয়েছে। অন্য ভিডিওগুলোর আলাদা লিংক দিলে সেগুলোও এখানে যোগ করা যাবে।</p>
       </div>
     </section>
 
