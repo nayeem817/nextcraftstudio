@@ -106,19 +106,30 @@
     .cta-panel p{color:#62766a}.cta-panel .btn{background:#11984b;color:#fff}.cta-panel .btn:hover{background:#075d34;color:#fff}
     .service-faq details{border-color:rgba(201,235,207,.8)}
     .video-samples{background:#09251a}
-    .video-gallery{display:grid;grid-template-columns:minmax(0,760px);justify-content:center}
-    .video-card{background:#f8fff9;border:1px solid rgba(203,238,210,.85);border-radius:20px;overflow:hidden;box-shadow:0 20px 48px rgba(0,0,0,.2)}
-    .video-frame{width:100%;aspect-ratio:16/9;background:#020906;position:relative;overflow:hidden}
-    .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-    .video-caption{display:flex;align-items:center;gap:13px;padding:17px 20px;color:#183b25}
-    .video-caption h3{font:800 14px Manrope,sans-serif}.video-caption p{font-size:11px;color:#718276;margin-top:3px}
-    .video-play{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:#e3f7e8;color:#078b42;flex:none}
-    .video-play svg{width:19px;height:19px}.video-caption>a{margin-left:auto;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#e7f8eb;color:#087b3e}
-    .video-caption>a svg{width:19px;height:19px}.video-note{text-align:center;color:#a8bdae;font-size:11px;line-height:1.7;margin:18px auto 0;max-width:760px}
+    .video-samples{background:#061b14;padding-top:72px;padding-bottom:76px}
+    .sample-group{margin-top:44px}
+    .sample-group + .sample-group{margin-top:62px}
+    .sample-group-heading{display:flex;align-items:center;gap:15px;margin-bottom:20px}
+    .sample-index{width:43px;height:43px;flex:none;border-radius:13px;background:#f4fff6;color:#078b42;display:grid;place-items:center;font:800 14px Manrope,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.16)}
+    .sample-group-heading h3{font:800 20px Manrope,sans-serif;color:#f4fff6;letter-spacing:-.4px}
+    .sample-group-heading p{font-size:12px;color:#a9bfb0;margin-top:3px}
+    .video-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .video-card{min-width:0;background:#f8fff9;border:1px solid rgba(203,238,210,.85);border-radius:18px;overflow:hidden;box-shadow:0 18px 42px rgba(0,0,0,.2);transition:transform .25s,box-shadow .25s}
+    .video-card:hover{transform:translateY(-5px);box-shadow:0 24px 48px rgba(0,0,0,.28)}
+    .video-frame{width:100%;background:#020906;position:relative;overflow:hidden;line-height:0}
+    .video-frame video{display:block;width:100%;height:auto;max-width:100%;background:#020906;object-fit:contain}
+    .video-caption{display:flex;align-items:center;gap:12px;padding:14px 15px;color:#183b25;min-height:68px}
+    .video-caption h3{font:800 12px Manrope,sans-serif}.video-caption p{font-size:10px;color:#718276;margin-top:3px}
+    .video-play{width:35px;height:35px;display:grid;place-items:center;border-radius:11px;background:#e3f7e8;color:#078b42;flex:none}
+    .video-play svg{width:18px;height:18px}
+    .video-note{text-align:center;color:#a8bdae;font-size:11px;line-height:1.8;margin:25px auto 0;max-width:850px}
+    .video-note code{color:#baf3c5;background:rgba(255,255,255,.08);padding:2px 5px;border-radius:5px}
+    @media(max-width:900px){.video-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:560px){.video-gallery{grid-template-columns:1fr;gap:16px}.sample-group{margin-top:35px}.sample-group + .sample-group{margin-top:48px}.sample-group-heading h3{font-size:17px}.video-caption{padding:13px}.video-note{font-size:10px}}
     .inline-icon{width:18px;height:18px;display:inline-block;vertical-align:-3px;margin-right:5px}
     .service-hero .inline-icon{color:#66e985}
     .service-actions .demo-btn svg{width:16px;height:16px}
-    @media(max-width:560px){.video-caption{padding:14px}.video-caption h3{font-size:13px}.video-note{font-size:10px}}
+    
 
   </style>
 
@@ -177,6 +188,60 @@
       </div>
     </section>
 
+    <!-- VIDEO SAMPLES: Replace the MP4 filenames in each source tag with your own video files. -->
+    <section class="detail-section video-samples" id="video-samples">
+      <div class="container">
+        <div class="detail-heading">
+          <span class="kicker">Our Portfolio</span>
+          <h2>ভিডিও স্যাম্পল</h2>
+          <p>আমাদের কাজের নমুনা দেখুন। ভিডিওগুলো এই পেজেই সরাসরি প্লে করতে পারবেন।</p>
+        </div>
+
+        <div class="sample-group">
+          <div class="sample-group-heading">
+            <span class="sample-index">01</span>
+            <div><h3>Video Advertising Samples</h3><p>ব্যবসা ও পণ্যের প্রচারের জন্য তৈরি ভিডিও বিজ্ঞাপনের নমুনা</p></div>
+          </div>
+          <div class="video-gallery">
+            <article class="video-card">
+              <div class="video-frame"><video controls playsinline preload="metadata" aria-label="Video Advertising Sample 01"><source src="video-advertising-sample-01.mp4" type="video/mp4">আপনার ব্রাউজার ভিডিও প্লে সমর্থন করে না।</video></div>
+              <div class="video-caption"><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><div><h3>Video Advertising Sample 01</h3><p>NextCraft Studio</p></div></div>
+            </article>
+            <article class="video-card">
+              <div class="video-frame"><video controls playsinline preload="metadata" aria-label="Video Advertising Sample 02"><source src="video-advertising-sample-02.mp4" type="video/mp4">আপনার ব্রাউজার ভিডিও প্লে সমর্থন করে না।</video></div>
+              <div class="video-caption"><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><div><h3>Video Advertising Sample 02</h3><p>NextCraft Studio</p></div></div>
+            </article>
+            <article class="video-card">
+              <div class="video-frame"><video controls playsinline preload="metadata" aria-label="Video Advertising Sample 03"><source src="video-advertising-sample-03.mp4" type="video/mp4">আপনার ব্রাউজার ভিডিও প্লে সমর্থন করে না।</video></div>
+              <div class="video-caption"><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><div><h3>Video Advertising Sample 03</h3><p>NextCraft Studio</p></div></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="sample-group ai-sample-group">
+          <div class="sample-group-heading">
+            <span class="sample-index">02</span>
+            <div><h3>AI Video Samples</h3><p>Cloud-based AI technology ব্যবহার করে তৈরি ভিডিওর নমুনা</p></div>
+          </div>
+          <div class="video-gallery">
+            <article class="video-card">
+              <div class="video-frame"><video controls playsinline preload="metadata" aria-label="AI Video Sample 01"><source src="ai-video-sample-01.mp4" type="video/mp4">আপনার ব্রাউজার ভিডিও প্লে সমর্থন করে না।</video></div>
+              <div class="video-caption"><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><div><h3>AI Video Sample 01</h3><p>NextCraft Studio</p></div></div>
+            </article>
+            <article class="video-card">
+              <div class="video-frame"><video controls playsinline preload="metadata" aria-label="AI Video Sample 02"><source src="ai-video-sample-02.mp4" type="video/mp4">আপনার ব্রাউজার ভিডিও প্লে সমর্থন করে না।</video></div>
+              <div class="video-caption"><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><div><h3>AI Video Sample 02</h3><p>NextCraft Studio</p></div></div>
+            </article>
+            <article class="video-card">
+              <div class="video-frame"><video controls playsinline preload="metadata" aria-label="AI Video Sample 03"><source src="ai-video-sample-03.mp4" type="video/mp4">আপনার ব্রাউজার ভিডিও প্লে সমর্থন করে না।</video></div>
+              <div class="video-caption"><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><div><h3>AI Video Sample 03</h3><p>NextCraft Studio</p></div></div>
+            </article>
+          </div>
+        </div>
+        <p class="video-note">ভিডিও পরিবর্তন করতে সংশ্লিষ্ট <code>&lt;source src="..."&gt;</code>-এর ফাইলের নাম বদলান। প্রতিটি ভিডিওর আসল অনুপাত অনুযায়ী প্লেয়ার নিজে থেকেই উচ্চতা ঠিক করবে।</p>
+      </div>
+    </section>
+
     <section class="detail-section soft">
       <div class="container">
         <div class="detail-heading"><span class="kicker">Why NextCraft Studio</span><h2>ভিডিও বিজ্ঞাপনে সৃজনশীলতা ও কৌশলের সমন্বয়</h2><p>আপনার ব্র্যান্ডের পরিচিতি, অফার ও মূল বার্তাকে গুরুত্ব দিয়ে প্রতিটি ভিডিও সাজানো হয়।</p></div>
@@ -194,18 +259,6 @@
       </div>
     </section>
 
-    <section class="detail-section video-samples" id="video-samples">
-      <div class="container">
-        <div class="detail-heading"><span class="kicker">Video Samples</span><h2>আমাদের ভিডিও স্যাম্পল দেখুন</h2><p>NextCraft Studio-এর ভিডিও কাজের নমুনা দেখুন। ভিডিওটি YouTube-এ প্রকাশিত মূল অনুপাত বজায় রেখে responsive player-এ দেখানো হবে।</p></div>
-        <div class="video-gallery">
-          <article class="video-card">
-            <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/sNjyOSADDxE" title="NextCraft Studio video sample" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-            <div class="video-caption"><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><div><h3>Video Editing Sample</h3><p>Watch on YouTube</p></div><a href="https://youtu.be/sNjyOSADDxE" target="_blank" rel="noopener" aria-label="Open video on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-          </article>
-        </div>
-        <p class="video-note">আপনার দেওয়া ৬টি YouTube URL একই ভিডিওর লিংক ছিল। তাই একই ভিডিও বারবার না দেখিয়ে Gallery-তে একটি স্বতন্ত্র স্যাম্পল রাখা হয়েছে। অন্য ভিডিওগুলোর আলাদা লিংক দিলে সেগুলোও এখানে যোগ করা যাবে।</p>
-      </div>
-    </section>
 
     <section class="detail-section">
       <div class="container">
