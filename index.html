@@ -1,1308 +1,170 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- ================= Favicon Tags ================= -->
-    <link rel="icon" href="https://www.image2url.com/r2/default/images/1785860745679-a479f8f8-7be3-4a74-9d32-27d5958146bd.png" type="image/png">
-    <link rel="shortcut icon" href="https://www.image2url.com/r2/default/images/1785860745679-a479f8f8-7be3-4a74-9d32-27d5958146bd.png" type="image/x-icon">
-    <link rel="apple-touch-icon" href="https://www.image2url.com/r2/default/images/1785860745679-a479f8f8-7be3-4a74-9d32-27d5958146bd.png">
-    
-    <!-- ================= SEO Meta Tags ================= -->
-    <title>NextCraft Studio - ভিডিও বিজ্ঞাপন, ফেসবুক মার্কেটিং, লোগো ডিজাইন ও ল্যান্ডিং পেজ</title>
-    <meta name="description" content="NextCraft Studio একটি প্রফেশনাল ডিজিটাল এজেন্সী। আমরা ভিডিও বিজ্ঞাপন তৈরি, ফেসবুক মার্কেটিং, বুস্টিং, লোগো ডিজাইন এবং প্রফেশনাল ল্যান্ডিং পেজ তৈরি করে থাকি।">
-    <meta name="keywords" content="NextCraft Studio, ভিডিও বিজ্ঞাপন তৈরি, ফেসবুক মার্কেটিং, লোগো ডিজাইন, ফেসবুক বুস্ট, প্রফেশনাল ল্যান্ডিং পেজ তৈরি, video ads making BD, facebook marketing agency bangladesh, logo design service, landing page design bangladesh, digital marketing service BD, graphic design BD, printing design bangladesh">
-    
-    <meta name="author" content="NextCraft Studio">
-    <meta name="robots" content="index, follow">
-
-    <!-- Open Graph / Facebook SEO Meta Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="http://nextcraftstudio.site/">
-    <meta property="og:title" content="NextCraft Studio - ডিজিটাল প্রমোশন ও মার্কেটিং সলিউশন">
-    <meta property="og:description" content="ভিডিও বিজ্ঞাপন, লোগো ডিজাইন, ফেসবুক এডস ক্যাম্পেইন ও প্রফেশনাল ল্যান্ডিং পেজ দিয়ে আপনার ব্যবসাকে নিয়ে যান পরবর্তী ধাপে।">
-    <meta property="og:image" content="https://www.image2url.com/r2/default/images/1785860745679-a479f8f8-7be3-4a74-9d32-27d5958146bd.png">
-
-    <!-- Schema.org JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "NextCraft Studio",
-      "image": "https://www.image2url.com/r2/default/images/1785860745679-a479f8f8-7be3-4a74-9d32-27d5958146bd.png",
-      "telephone": "+8801810546079",
-      "email": "nextcraftstudio02@gmail.com",
-      "url": "http://nextcraftstudio.site",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "BD"
-      },
-      "sameAs": [
-        "https://www.facebook.com/share/1HoWnZpURf/"
-      ]
-    }
-    </script>
-
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        /* ================= Brand Color Palette ================= */
-        :root {
-            --primary-blue: #163B5D;       
-            --secondary-blue: #3A81A9;     
-            --gold-accent: #C4A265;        
-            --gold-hover: #d8b475;         
-            --dark-bg: #0D2135;            
-            --card-bg: #132D47;            
-            --light-bg: #F4F7F9;           
-            --text-dark: #1E293B;          
-            --text-light: #E0E8F0;         
-            --text-muted: #94A3B8;         
-            --white: #FFFFFF;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--light-bg);
-            color: var(--text-dark);
-            overflow-x: hidden;
-        }
-
-        /* ================= Preloader Screen ================= */
-        #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background-color: var(--dark-bg);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 99999;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
-        }
-
-        .loader-logo {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            border: 3px solid var(--gold-accent);
-            margin-bottom: 25px;
-            animation: pulse 1.5s infinite alternate;
-        }
-
-        .progress-box {
-            width: 250px;
-            height: 6px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-            border: 1px solid rgba(196, 162, 101, 0.3);
-        }
-
-        .progress-bar {
-            width: 0%;
-            height: 100%;
-            background: linear-gradient(90deg, var(--secondary-blue), var(--gold-accent));
-            border-radius: 10px;
-            animation: loadProgress 1.5s ease-in-out forwards;
-        }
-
-        @keyframes loadProgress {
-            0% { width: 0%; }
-            100% { width: 100%; }
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(0.95); opacity: 0.8; }
-            100% { transform: scale(1.05); opacity: 1; }
-        }
-
-        /* ================= Header Navigation ================= */
-        .header {
-            background-color: var(--dark-bg);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            border-bottom: 2px solid var(--gold-accent);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 12px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-box {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .logo-img {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--gold-accent);
-        }
-
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--white);
-        }
-
-        .logo-text span {
-            color: var(--gold-accent);
-        }
-
-        .menu-toggle {
-            background: none;
-            border: none;
-            color: var(--gold-accent);
-            font-size: 1.8rem;
-            cursor: pointer;
-            padding: 5px;
-            transition: transform 0.3s ease;
-        }
-
-        .menu-toggle:hover {
-            transform: scale(1.1);
-        }
-
-        /* ================= Side Navigation Drawer ================= */
-        .side-drawer {
-            position: fixed;
-            top: 0;
-            right: -380px;
-            width: 350px;
-            height: 100vh;
-            background-color: var(--dark-bg);
-            box-shadow: -5px 0 25px rgba(0,0,0,0.5);
-            z-index: 10000;
-            transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-            padding: 25px 20px;
-            overflow-y: auto;
-            border-left: 2px solid var(--gold-accent);
-        }
-
-        .side-drawer.open {
-            right: 0;
-        }
-
-        .drawer-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: rgba(0,0,0,0.6);
-            backdrop-filter: blur(2px);
-            z-index: 9999;
-            display: none;
-        }
-
-        .drawer-overlay.active {
-            display: block;
-        }
-
-        .drawer-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 15px;
-        }
-
-        .drawer-header h3 {
-            color: var(--gold-accent);
-            font-size: 1.3rem;
-        }
-
-        .close-drawer {
-            background: none;
-            border: none;
-            color: var(--white);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .drawer-btn {
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(196, 162, 101, 0.3);
-            color: var(--white);
-            padding: 14px 18px;
-            border-radius: 8px;
-            text-align: left;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            margin-bottom: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-
-        .drawer-btn:hover {
-            background-color: var(--primary-blue);
-            border-color: var(--gold-accent);
-        }
-
-        .drawer-btn i.arrow {
-            transition: transform 0.3s ease;
-            color: var(--gold-accent);
-        }
-
-        .drawer-btn.active i.arrow {
-            transform: rotate(90deg);
-        }
-
-        .slide-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out;
-            background-color: rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-            margin-top: -5px;
-            margin-bottom: 15px;
-            padding: 0 15px;
-        }
-
-        .slide-content.open {
-            padding: 15px;
-        }
-
-        .drawer-contact-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-
-        .drawer-contact-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .drawer-contact-item i {
-            color: var(--gold-accent);
-            font-size: 1.1rem;
-            width: 20px;
-        }
-
-        .drawer-contact-item a {
-            color: var(--text-light);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .drawer-contact-item a:hover {
-            color: var(--gold-accent);
-        }
-
-        .mini-form .form-group {
-            margin-bottom: 12px;
-        }
-
-        .mini-form label {
-            display: block;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 4px;
-        }
-
-        .mini-form input, .mini-form textarea {
-            width: 100%;
-            padding: 8px 12px;
-            background-color: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 5px;
-            color: var(--white);
-            font-size: 0.85rem;
-            outline: none;
-        }
-
-        .mini-form button {
-            width: 100%;
-            padding: 10px;
-            background-color: var(--gold-accent);
-            color: var(--dark-bg);
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            cursor: pointer;
-            margin-top: 5px;
-        }
-
-        /* ================= Hero Banner ================= */
-        .hero-section {
-            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-blue) 100%);
-            padding: 80px 20px;
-            color: var(--white);
-            text-align: center;
-            border-bottom: 4px solid var(--gold-accent);
-        }
-
-        .hero-container {
-            max-width: 850px;
-            margin: 0 auto;
-        }
-
-        .hero-container h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            line-height: 1.3;
-        }
-
-        .hero-container h1 span {
-            color: var(--gold-accent);
-        }
-
-        .hero-container p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .hero-btns {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn-gold {
-            background-color: var(--gold-accent);
-            color: var(--dark-bg);
-            padding: 12px 28px;
-            border-radius: 6px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .btn-gold:hover {
-            background-color: var(--gold-hover);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            border: 2px solid var(--secondary-blue);
-            color: var(--white);
-            padding: 10px 26px;
-            border-radius: 6px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .btn-outline:hover {
-            background-color: var(--secondary-blue);
-        }
-
-        /* ================= Trust Elements: Why Choose Us ================= */
-        .trust-section {
-            background-color: var(--white);
-            padding: 60px 20px;
-            border-bottom: 1px solid #E2E8F0;
-        }
-
-        .trust-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 25px;
-            text-align: center;
-        }
-
-        .trust-item {
-            padding: 20px;
-        }
-
-        .trust-icon {
-            font-size: 2.5rem;
-            color: var(--gold-accent);
-            margin-bottom: 15px;
-        }
-
-        .trust-item h4 {
-            color: var(--primary-blue);
-            font-size: 1.15rem;
-            margin-bottom: 8px;
-        }
-
-        .trust-item p {
-            color: #666;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        /* ================= Services Section ================= */
-        .services-section {
-            padding: 70px 20px 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 45px;
-        }
-
-        .section-title h2 {
-            font-size: 2.2rem;
-            color: var(--primary-blue);
-            margin-bottom: 10px;
-        }
-
-        .section-title h2 span {
-            color: var(--gold-accent);
-        }
-
-        .section-title p {
-            color: #666;
-            font-size: 1rem;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-        }
-
-        .service-card {
-            background-color: var(--white);
-            padding: 35px 25px;
-            border-radius: 10px;
-            text-align: center;
-            border: 1px solid #E2E8F0;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .service-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--gold-accent);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background-color: rgba(58, 129, 169, 0.1);
-            color: var(--secondary-blue);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin: 0 auto 20px;
-        }
-
-        .service-card h3 {
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
-
-        .service-card p {
-            color: #555;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-
-        .card-btn {
-            background-color: var(--primary-blue);
-            color: var(--white);
-            padding: 11px 22px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: background-color 0.3s ease;
-            display: inline-block;
-        }
-
-        .card-btn:hover {
-            background-color: var(--secondary-blue);
-        }
-
-        /* ================= Facebook Style Posts Section ================= */
-        .fb-posts-section {
-            background-color: #EEF3F7;
-            padding: 70px 20px;
-        }
-
-        .fb-posts-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .fb-post-card {
-            background-color: var(--white);
-            border-radius: 12px;
-            border: 1px solid #CED0D4;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Post Header */
-        .fb-post-header {
-            display: flex;
-            align-items: center;
-            padding: 12px 16px;
-            gap: 12px;
-        }
-
-        .fb-profile-img {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1px solid var(--gold-accent);
-        }
-
-        .fb-profile-info h5 {
-            font-size: 1rem;
-            color: var(--text-dark);
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .fb-profile-info h5 i {
-            color: #1877F2;
-            font-size: 0.85rem;
-        }
-
-        .fb-profile-info span {
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        /* Post Caption */
-        .fb-post-caption {
-            padding: 0 16px 12px 16px;
-            font-size: 0.95rem;
-            color: #1C1E21;
-            line-height: 1.6;
-            white-space: pre-line;
-        }
-
-        /* Post Image */
-        .fb-post-image {
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            border-top: 1px solid #F0F2F5;
-            background-color: #F0F2F5;
-        }
-
-        /* ================= Order Form Section ================= */
-        .order-form-section {
-            padding: 70px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .form-wrapper {
-            background-color: var(--dark-bg);
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(196, 162, 101, 0.4);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .form-wrapper h3 {
-            color: var(--gold-accent);
-            font-size: 1.8rem;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .form-wrapper p {
-            color: var(--text-muted);
-            text-align: center;
-            font-size: 0.95rem;
-            margin-bottom: 30px;
-        }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .form-group-full {
-            grid-column: span 2;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-
-        .form-group input, 
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            background-color: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            border-radius: 6px;
-            color: var(--white);
-            font-size: 0.95rem;
-            outline: none;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus, 
-        .form-group textarea:focus {
-            border-color: var(--secondary-blue);
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 14px;
-            background-color: var(--gold-accent);
-            color: var(--dark-bg);
-            border: none;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 1.05rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            background-color: var(--gold-hover);
-            transform: translateY(-2px);
-        }
-
-        /* ================= Footer Section ================= */
-        .footer-section {
-            background-color: var(--dark-bg);
-            color: var(--text-light);
-            padding-top: 60px;
-            border-top: 4px solid var(--gold-accent);
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
-
-        .footer-col h4 {
-            color: var(--gold-accent);
-            font-size: 1.25rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 8px;
-        }
-
-        .footer-col h4::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--secondary-blue);
-        }
-
-        .footer-col p {
-            color: var(--text-muted);
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-
-        .contact-list {
-            list-style: none;
-        }
-
-        .contact-list li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .contact-list i {
-            color: var(--secondary-blue);
-            margin-right: 12px;
-            font-size: 1.1rem;
-        }
-
-        .contact-list a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-list a:hover {
-            color: var(--gold-accent);
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-        }
-
-        .social-icons a {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.08);
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            background-color: var(--gold-accent);
-            color: var(--dark-bg);
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-            margin-top: 50px;
-            padding: 20px 0;
-            background-color: #071524;
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .footer-bottom strong {
-            color: var(--gold-accent);
-        }
-
-        /* ================= Floating WhatsApp Button ================= */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 50px;
-            height: 50px;
-            background-color: #25D366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 28px;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-            z-index: 999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            background-color: #20ba5a;
-            color: #FFF;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .hero-container h1 {
-                font-size: 2rem;
-            }
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-            .form-group-full {
-                grid-column: span 1;
-            }
-            .form-wrapper {
-                padding: 25px 20px;
-            }
-            .side-drawer {
-                width: 300px;
-            }
-            .whatsapp-float {
-                bottom: 20px;
-                right: 20px;
-                width: 45px;
-                height: 45px;
-                font-size: 24px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#079b52" />
+  <meta name="description" content="NextCraft Studio is a creative digital agency offering video advertising, video editing, digital marketing, graphic design, branding and web solutions." />
+  <title>NextCraft Studio | Creative Digital Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--green:#079b52;--green2:#28cf38;--deep:#063d2a;--ink:#101713;--muted:#66736b;--pale:#effaf2;--line:#e5eee7;--white:#fff;--shadow:0 18px 55px rgba(10,70,39,.10);--radius:24px}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;color:var(--ink);background:#fff;line-height:1.65}a{text-decoration:none;color:inherit}button{font:inherit;cursor:pointer}.container{width:min(1160px,calc(100% - 40px));margin:auto}.topline{height:5px;background:linear-gradient(90deg,#078448,#29d52f)}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(229,238,231,.8)}.nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:11px;min-width:205px}.brand img{width:56px;height:56px;object-fit:contain;border-radius:50%;background:#fff;border:1px solid #e3eee5;padding:2px;box-shadow:0 4px 12px rgba(4,55,28,.10);flex:none}.brand strong{font-family:Manrope,sans-serif;font-size:19px;letter-spacing:-.7px;line-height:1.1}.brand small{display:block;font-size:9px;letter-spacing:5px;color:#647168;margin-top:4px}.navlinks{display:flex;align-items:center;gap:27px;font-size:13px;font-weight:700;color:#39443d}.navlinks a:hover{color:var(--green)}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 21px;border-radius:999px;background:var(--green);color:#fff;font-weight:800;font-size:13px;box-shadow:0 9px 22px rgba(7,155,82,.18);transition:.25s}.nav-cta:hover,.btn:hover{background:var(--deep);transform:translateY(-2px)}.menu-btn{display:none;background:#eff8f1;border:0;border-radius:12px;padding:10px;color:var(--deep);font-size:22px}
+    .hero{position:relative;overflow:hidden;padding:94px 0 82px;background:radial-gradient(circle at 83% 28%,rgba(40,207,56,.14),transparent 29%),linear-gradient(130deg,#f7fcf8 0%,#fff 54%,#f0fbf3 100%)}.hero:before{content:"";position:absolute;width:450px;height:450px;border:1px solid rgba(7,155,82,.11);border-radius:50%;right:-180px;top:-190px}.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:58px;position:relative}.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border:1px solid #d7efdf;border-radius:99px;background:#fff;color:var(--green);font-size:11px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase}.eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:#27c957;box-shadow:0 0 0 4px #e5f8e9}.hero h1{font-family:Manrope,sans-serif;font-size:clamp(40px,5.2vw,65px);line-height:1.1;letter-spacing:-2.7px;margin:22px 0 20px;max-width:680px}.hero h1 span{color:var(--green)}.hero p{max-width:570px;color:#647168;font-size:16px;line-height:1.85}.hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}.btn-outline{display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border:1px solid #d5e4d9;border-radius:99px;font-size:13px;font-weight:800;background:#fff}.btn-outline:hover{border-color:var(--green);color:var(--green)}.hero-note{display:flex;align-items:center;gap:12px;margin-top:30px;color:#69766e;font-size:12px}.hero-note b{color:#1c2920}.hero-visual{position:relative;min-height:440px;display:flex;align-items:center;justify-content:center}.visual-main{width:100%;height:410px;border-radius:34px;overflow:hidden;position:relative;box-shadow:0 28px 70px rgba(4,76,39,.18);background:#0b3826}.visual-main img{width:100%;height:100%;object-fit:cover;opacity:.78}.visual-main:after{content:"";position:absolute;inset:0;background:linear-gradient(140deg,rgba(4,57,34,.05),rgba(4,57,34,.55))}.visual-label{position:absolute;z-index:2;bottom:28px;left:28px;color:white}.visual-label span{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#b8f6c6;font-weight:800}.visual-label h3{font:800 28px Manrope,sans-serif;line-height:1.2;margin-top:7px}.float-card{position:absolute;z-index:3;right:-22px;top:45px;background:white;padding:17px 20px;border-radius:18px;box-shadow:var(--shadow);font-size:12px;color:#6c786f}.float-card strong{display:block;font:800 20px Manrope;color:var(--deep)}.float-card2{position:absolute;z-index:3;left:-24px;bottom:34px;background:#fff;padding:15px 18px;border-radius:17px;box-shadow:var(--shadow);font-size:11px;font-weight:700}.float-card2 span{color:var(--green);font-size:20px;margin-right:7px;vertical-align:middle}
+    .trust-strip{border-bottom:1px solid var(--line);padding:22px 0}.trust-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}.trust-inner p{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#849087;font-weight:800}.trust-pill{font-size:12px;font-weight:700;color:#435047;display:flex;align-items:center;gap:8px}.trust-pill i{font-style:normal;color:var(--green);font-size:17px}
+    section{padding:92px 0}.section-head{text-align:center;max-width:690px;margin:0 auto 45px}.kicker{color:var(--green);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:800}.section-head h2{font:800 clamp(30px,4vw,43px)/1.2 Manrope,sans-serif;letter-spacing:-1.5px;margin:12px 0}.section-head p{color:var(--muted);font-size:14px}.services{background:#fbfdfb}.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.service-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.28s;display:flex;flex-direction:column;min-height:320px}.service-card:hover{transform:translateY(-7px);box-shadow:var(--shadow);border-color:#bce8c8}.service-img{height:145px;overflow:hidden;position:relative;background:#eaf7ee}.service-img img{width:100%;height:100%;object-fit:cover;transition:.4s}.service-card:hover .service-img img{transform:scale(1.06)}.service-img:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,52,29,.28),transparent 70%)}.service-content{padding:19px 18px 18px;display:flex;flex-direction:column;flex:1}.service-icon{width:36px;height:36px;border-radius:11px;background:#e9f8ed;color:var(--green);display:grid;place-items:center;font-size:17px;margin-top:-37px;position:relative;z-index:2;border:3px solid white}.service-content h3{font:800 16px Manrope,sans-serif;margin:12px 0 7px}.service-content p{font-size:12px;color:var(--muted);line-height:1.65;flex:1}.learn{margin-top:14px;color:var(--green);font-size:12px;font-weight:800;display:flex;align-items:center;gap:7px}.learn span{transition:.2s}.service-card:hover .learn span{transform:translateX(5px)}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:65px;align-items:center}.about-art{position:relative;padding:20px}.about-art img{width:100%;height:390px;object-fit:cover;border-radius:28px;box-shadow:var(--shadow)}.about-art:before{content:"";position:absolute;left:0;bottom:0;width:150px;height:150px;border-left:8px solid #2acb46;border-bottom:8px solid #2acb46;border-radius:0 0 0 25px;z-index:-1}.about-copy h2{font:800 clamp(30px,4vw,42px)/1.2 Manrope,sans-serif;letter-spacing:-1.4px;margin:12px 0 17px}.about-copy p{font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:14px}.feature-list{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;margin:24px 0 28px}.feature{display:flex;gap:10px;align-items:flex-start;font-size:13px;font-weight:700}.check{flex:none;width:22px;height:22px;border-radius:50%;background:#e8f8ec;color:var(--green);display:grid;place-items:center;font-size:12px}
+    .process{background:linear-gradient(135deg,#073e2a,#075b38);color:white}.process .section-head p{color:#c1d7c9}.process .kicker{color:#8cf0a4}.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.process-card{padding:25px 21px;border:1px solid rgba(255,255,255,.16);border-radius:19px;background:rgba(255,255,255,.055)}.process-card .num{font:800 30px Manrope;color:#65e582}.process-card h3{font:800 16px Manrope;margin:14px 0 7px}.process-card p{font-size:12px;color:#c4d8cb;line-height:1.75}
+    .reviews{background:#f8fcf9}.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.review-slot{min-height:220px;border:2px dashed #b9d9c2;border-radius:19px;background:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;color:#718078}.review-slot .plus{width:43px;height:43px;margin:0 auto 12px;border-radius:50%;display:grid;place-items:center;background:#eaf8ed;color:var(--green);font-size:25px}.review-slot strong{display:block;color:#34463a;font-size:13px}.review-slot small{font-size:11px;display:block;margin-top:5px;line-height:1.6}.review-help{text-align:center;color:#87948b;font-size:11px;margin-top:18px}
+    .cta{padding:0 0 92px;background:#f8fcf9}.cta-panel{background:linear-gradient(110deg,#078348,#0aaf58 65%,#27c943);border-radius:28px;padding:48px 55px;display:flex;align-items:center;justify-content:space-between;gap:30px;color:white;position:relative;overflow:hidden}.cta-panel:after{content:"";position:absolute;width:300px;height:300px;border:1px solid rgba(255,255,255,.2);border-radius:50%;right:24%;top:-210px}.cta-panel h2{font:800 clamp(25px,3.5vw,37px)/1.2 Manrope;letter-spacing:-1px;max-width:570px}.cta-panel p{font-size:13px;color:#e2ffea;margin-top:10px}.cta-panel .btn{background:white;color:var(--deep);box-shadow:none;position:relative;z-index:1;white-space:nowrap}.cta-panel .btn:hover{background:#e9ffed}
+    footer{background:#071d13;color:#d9e8de;padding:62px 0 22px}.footer-grid{display:grid;grid-template-columns:1.4fr .8fr 1fr 1fr;gap:40px;padding-bottom:42px}.footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:17px}.footer-brand img{width:54px;height:54px;object-fit:contain;background:white;border-radius:50%;border:1px solid rgba(255,255,255,.22);padding:2px;flex:none}.footer-brand strong{font:800 18px Manrope;color:white}.footer-brand small{display:block;font-size:9px;letter-spacing:4px;color:#aabeb1}.footer-about p{font-size:12px;color:#a8bdb0;line-height:1.85;max-width:290px}.footer-col h4{font:800 13px Manrope;color:#fff;margin-bottom:17px}.footer-col a,.footer-col p{display:block;color:#a8bdb0;font-size:12px;margin:10px 0;line-height:1.6}.footer-col a:hover{color:#6ee78a}.socials{display:flex;gap:9px;margin-top:17px}.socials button{width:35px;height:35px;border:1px solid #355343;border-radius:50%;background:transparent;color:#d9e8de;font-size:12px;font-weight:800}.socials button:hover{background:var(--green);border-color:var(--green)}
+    .socials .social-icon{width:38px;height:38px;display:grid;place-items:center;padding:0;border:1px solid #355343;border-radius:50%;background:transparent;color:#e5f4e9;transition:background .2s,border-color .2s,transform .2s}
+    .socials .social-icon svg{width:19px;height:19px;display:block}
+    .socials .social-icon:hover{background:var(--green);border-color:var(--green);transform:translateY(-2px)}
+    .fb-mark{width:20px;height:20px;display:inline-grid;place-items:center}
+    .fb-mark svg{width:18px;height:18px;display:block}
+    .close-modal:focus-visible,.social-icon:focus-visible{outline:3px solid #72e88e;outline-offset:3px}
+    @media(max-width:480px){.modal{padding:32px 22px 28px;border-radius:25px}.close-modal{right:13px;top:13px;width:42px;height:42px;font-size:29px}.modal h3{padding:0 12px;font-size:25px}}
+.copyright{border-top:1px solid #1e392a;padding-top:20px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:#80998a;font-size:11px}.copyright a{color:#a9c5b3}
+    .modal-backdrop{position:fixed;inset:0;background:rgba(3,22,13,.65);backdrop-filter:blur(6px);z-index:100;display:none;align-items:center;justify-content:center;padding:20px}.modal-backdrop.show{display:flex}.modal{width:min(430px,100%);background:#fff;border-radius:24px;padding:34px;text-align:center;box-shadow:0 25px 90px rgba(0,0,0,.25);position:relative;animation:pop .2s ease}.modal-mark{width:58px;height:58px;margin:0 auto 15px;border-radius:18px;background:linear-gradient(135deg,#e7f9ec,#c8f3d2);display:grid;place-items:center;color:var(--green);font-size:26px}.modal .tag{font-size:10px;letter-spacing:2px;color:var(--green);font-weight:800;text-transform:uppercase}.modal h3{font:800 26px Manrope;margin:8px 0}.modal p{font-size:13px;color:var(--muted);margin-bottom:22px}.fb-link{display:flex;align-items:center;justify-content:center;gap:10px;padding:13px;border-radius:13px;background:#0866ff;color:#fff;font-size:13px;font-weight:800}.close-modal{position:absolute;right:15px;top:13px;border:0;background:#f0f5f1;border-radius:50%;width:30px;height:30px;font-size:18px;color:#425148}.close-modal:hover{background:#e2eee5}@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+    @media(max-width:1000px){.navlinks{gap:15px}.service-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1.2fr 1fr 1fr}.footer-about{grid-column:span 3}.hero-grid{gap:35px}.float-card{right:-8px}.float-card2{left:-8px}}
+    @media(max-width:760px){.container{width:min(100% - 30px,560px)}.nav{height:70px}.brand img{width:47px;height:47px}.brand strong{font-size:16px}.menu-btn{display:block}.nav-cta{display:none}.navlinks{display:none;position:absolute;top:70px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:18px 25px 23px;flex-direction:column;align-items:flex-start;gap:16px;box-shadow:0 16px 25px rgba(0,0,0,.06)}.navlinks.open{display:flex}.hero{padding:65px 0 58px}.hero-grid{grid-template-columns:1fr;gap:35px}.hero h1{font-size:43px;letter-spacing:-1.8px}.hero p{font-size:14px}.hero-visual{min-height:330px}.visual-main{height:320px}.float-card{top:20px}.trust-inner{justify-content:center}.trust-inner p{width:100%;text-align:center}.trust-pill{font-size:11px}section{padding:68px 0}.section-head{margin-bottom:32px}.service-grid{gap:12px}.service-card{min-height:310px}.service-img{height:125px}.service-content{padding:16px 14px}.service-content h3{font-size:14px}.service-content p{font-size:11px}.about-grid{grid-template-columns:1fr;gap:35px}.about-art img{height:300px}.about-copy h2{font-size:33px}.process-grid{grid-template-columns:1fr 1fr;gap:12px}.process-card{padding:19px 16px}.review-grid{grid-template-columns:1fr}.review-slot{min-height:170px}.cta{padding-bottom:68px}.cta-panel{padding:32px 25px;display:block}.cta-panel .btn{margin-top:22px}.footer-grid{grid-template-columns:1fr 1fr;gap:28px}.footer-about{grid-column:span 2}.copyright{font-size:10px}}
+    @media(max-width:390px){.hero h1{font-size:37px}.service-grid{grid-template-columns:1fr}.service-card{min-height:300px}.service-img{height:155px}.process-grid{grid-template-columns:1fr}.feature-list{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-about{grid-column:auto}}
+
+    /* NextCraft Studio: deep-forest and fresh-green visual system */
+    :root{--green:#20c653;--green2:#62e77a;--deep:#061d17;--ink:#101a16;--muted:#7a8981;--pale:#eff5f0;--line:#dce7df;--white:#fff;--shadow:0 18px 55px rgba(0,0,0,.18)}
+    body{background:#f5f8f5;color:#101a16}
+    header{background:rgba(4,22,17,.96);border-bottom:1px solid rgba(125,224,151,.12)}
+    .brand strong{color:#f5fff7}.brand small{color:#a6b9ac}.navlinks{color:#d8e5dc}.navlinks a:hover{color:#61e77c}.menu-btn{background:#102d22;color:#75eb8b}
+    .nav-cta,.btn{background:#18a94d;color:#fff}.nav-cta:hover,.btn:hover{background:#35cf5d;color:#03170d}
+    .hero{background:radial-gradient(circle at 78% 35%,rgba(26,197,78,.16),transparent 34%),linear-gradient(125deg,#041b14 0%,#06251a 55%,#03150f 100%);color:#f6fff8;padding:78px 0 76px}
+    .hero:before{border-color:rgba(79,226,111,.15)}.eyebrow{background:rgba(20,74,44,.38);border-color:rgba(85,226,116,.24);color:#78ed91}.hero h1 span{color:#39d95e}.hero p{color:#bdcec2}.hero-note{color:#9eb5a6}.hero-note b{color:#e2f4e7}.btn-outline{background:rgba(255,255,255,.04);border-color:rgba(210,239,218,.24);color:#effff2}.btn-outline:hover{border-color:#4de36e;color:#72f08b}
+    .hero-visual{min-height:430px;padding:12px 8px}.growth-dashboard{width:100%;max-width:530px;min-height:365px;padding:23px;border:1px solid rgba(117,228,145,.2);border-radius:24px;background:linear-gradient(145deg,rgba(14,47,34,.98),rgba(5,28,20,.98));box-shadow:0 30px 75px rgba(0,0,0,.34);position:relative;overflow:hidden;animation:dashboardFloat 7s ease-in-out infinite}
+    .growth-dashboard:before{content:"";position:absolute;width:250px;height:250px;border-radius:50%;background:rgba(32,198,83,.10);filter:blur(35px);right:-100px;top:-130px;pointer-events:none}
+    .dashboard-top,.dashboard-heading,.chart-caption,.chart-legend,.dashboard-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;position:relative}.dashboard-top{padding-bottom:18px;border-bottom:1px solid rgba(218,255,227,.1)}.dashboard-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#42d965;margin-right:5px}.dashboard-dot:first-child{background:#f2c66a}.dashboard-dot:nth-child(2){background:#76c9ff}.dashboard-label,.live-indicator{font-size:8px;letter-spacing:1.4px;color:#a8c4b1;font-weight:800}.live-indicator{color:#5be27b}.dashboard-heading{padding:20px 0 16px}.dashboard-heading small{color:#94ad9c;font-size:10px}.dashboard-heading h3{font:800 17px Manrope,sans-serif;color:#f1fff4;max-width:280px;line-height:1.3;margin-top:4px}.trend-icon{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:rgba(38,208,86,.13);color:#6aee87;font-size:23px}.metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;position:relative}.metric-card{padding:12px 10px;border:1px solid rgba(208,244,217,.1);border-radius:12px;background:rgba(255,255,255,.035)}.metric-card span,.metric-card small{display:block;font-size:8px;color:#9db5a5}.metric-card strong{display:block;color:#eaffed;font:800 13px Manrope;margin:5px 0 3px}.chart-area{margin-top:18px;padding:14px 13px 10px;border:1px solid rgba(208,244,217,.1);border-radius:14px;background:rgba(0,0,0,.12);position:relative}.chart-caption strong{font:700 10px Manrope;color:#e6f7e9}.chart-caption span{font-size:8px;color:#8da99a}.chart-grid{height:105px;position:relative;margin-top:10px;display:flex;flex-direction:column;justify-content:space-between}.chart-grid>span{height:1px;background:rgba(214,242,221,.09);width:100%}.chart-grid svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.chart-fill{fill:url(#chartFill)}.chart-line{fill:none;stroke:#4ee574;stroke-width:3;stroke-linecap:round;stroke-dasharray:700;stroke-dashoffset:700;animation:drawLine 3s ease forwards .4s}.chart-point{fill:#b5ffc4;stroke:#27c958;stroke-width:4;animation:pointPulse 2.4s ease-in-out infinite}.chart-legend{font-size:8px;color:#8eaa98;margin-top:7px}.dashboard-foot{justify-content:flex-start;flex-wrap:wrap;margin-top:14px;color:#a9cbb4;font-size:8px}.dashboard-foot span{padding:6px 8px;border-radius:7px;background:rgba(45,196,88,.09)}.float-card{right:-14px;top:8px;background:#0c3021;border:1px solid rgba(117,228,145,.22);color:#a9c6b3;box-shadow:0 14px 35px rgba(0,0,0,.25)}.float-card strong{color:#7bef91}
+    .trust-strip{background:#0b211a;border-color:rgba(150,211,166,.12)}.trust-inner p{color:#7e9b89}.trust-pill{color:#d4e7d9}.trust-pill i{color:#5be47a}
+    .services{background:#061a14;color:#f4fff6}.services .section-head p{color:#9db2a4}.services .kicker{color:#67e985}.services .section-head h2{color:#f3fff5}.service-grid{grid-template-columns:repeat(3,1fr);gap:18px}.service-card{min-height:235px;background:linear-gradient(145deg,#0d241d,#0a1c16);border:1px solid rgba(174,223,185,.12);border-radius:18px;overflow:hidden;transition:transform .28s,border-color .28s,box-shadow .28s}.service-card:hover{transform:translateY(-6px);border-color:rgba(83,224,117,.55);box-shadow:0 18px 38px rgba(0,0,0,.25)}.service-content{padding:23px 22px;min-height:235px}.service-icon{margin:0;width:40px;height:40px;border:1px solid rgba(92,229,124,.2);border-radius:12px;background:rgba(38,199,83,.12);color:#6bed89;font-size:19px}.service-content h3{color:#f0fff3;font-size:16px;margin:17px 0 9px}.service-content p{color:#9bb0a2;font-size:12px;line-height:1.8}.learn{color:#6dea87;margin-top:18px}.learn span{transition:transform .25s}.service-card:hover .learn span{transform:translateX(5px)}
+    #about{background:#f4f7f4;color:#142019}#about .kicker{color:#159c48}.about-copy p{color:#65736a}.about-art img{box-shadow:0 20px 55px rgba(4,36,20,.13)}
+    .process{background:linear-gradient(135deg,#061b14,#0a3321)}.process .section-head h2{color:#f2fff5}.process-card{background:rgba(255,255,255,.045);border-color:rgba(190,239,199,.13)}.process-card p{color:#adc4b4}
+    .reviews{background:#f4f8f4}.reviews .kicker{color:#159c48}.review-slot{border-color:#b9d7c1;background:#fff}.cta{background:#f4f8f4}.cta-panel{background:linear-gradient(110deg,#087b3e,#0b9f4b 62%,#27c653)}
+    footer{background:#041710;color:#e7f4ea}.footer-col a,.footer-about p{color:#a9bdb0}.footer-col a:hover{color:#67e985}.copyright{border-color:rgba(195,232,203,.13);color:#81998a}
+    .modal-backdrop{background:rgba(0,13,8,.78)}.modal{background:#0b2419;color:#effff2;border:1px solid rgba(107,226,132,.2)}.modal p{color:#adc4b4}.close-modal{display:grid;place-items:center;width:42px;height:42px;line-height:1;padding:0;font-family:Arial,sans-serif;font-size:29px;font-weight:500;color:#063d2a!important;background:#e9fff0!important;border:1px solid rgba(51,190,91,.35);border-radius:50%;box-shadow:0 4px 14px rgba(0,0,0,.18);z-index:5;opacity:1}.close-modal:hover{background:#c9f8d7!important;color:#042719!important;transform:rotate(90deg)}.fb-link{background:#168b45;color:#fff}
+    @keyframes dashboardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}@keyframes drawLine{to{stroke-dashoffset:0}}@keyframes pointPulse{0%,100%{filter:drop-shadow(0 0 0 rgba(75,232,115,0))}50%{filter:drop-shadow(0 0 7px rgba(75,232,115,.8))}}
+    @media(max-width:1000px){.service-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:760px){header{background:rgba(4,22,17,.98)}.navlinks{background:#071d15;border-color:rgba(125,224,151,.15)}.navlinks a{color:#d8e5dc}.hero{padding:58px 0 52px}.hero-visual{min-height:355px;padding:8px 3px}.growth-dashboard{padding:18px;min-height:340px}.dashboard-heading h3{font-size:15px}.float-card{right:-4px;top:-5px}.metric-card{padding:10px 8px}.metric-card strong{font-size:11px}.dashboard-foot{gap:5px}.dashboard-foot span{font-size:7px}.service-grid{grid-template-columns:1fr 1fr}.service-card,.service-content{min-height:250px}.service-content{padding:19px 16px}.service-content h3{font-size:14px}.service-content p{font-size:11px}}
+    @media(max-width:390px){.service-grid{grid-template-columns:1fr}.service-card,.service-content{min-height:220px}.growth-dashboard{padding:15px}.dashboard-label{font-size:7px}.live-indicator{font-size:7px}.chart-caption span{font-size:7px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+  </style>
 </head>
 <body>
-
-    <!-- ================= Intro Preloader ================= -->
-    <div id="preloader">
-        <img src="https://www.image2url.com/r2/default/images/1785860745679-a479f8f8-7be3-4a74-9d32-27d5958146bd.png" alt="NextCraft Studio Logo" class="loader-logo">
-        <div class="progress-box">
-            <div class="progress-bar"></div>
-        </div>
+  <div class="topline"></div>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="https://nextcraftstudio.site/" aria-label="NextCraft Studio home">
+        <img src="https://www.image2url.com/r2/default/images/1795247168690-f16366ec-ddc2-49da-b216-d337aa0de663.jpg" alt="NextCraft Studio logo">
+        <span><strong>NEXTCRAFT</strong><small>STUDIO</small></span>
+      </a>
+      <nav class="navlinks" id="navlinks">
+        <a href="#home">Home</a><a href="#services">Services</a><a href="#about">About Us</a><a href="#process">Our Process</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta" href="https://wa.me/8801810546079" target="_blank" rel="noopener">Let's Talk <span>↗</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
     </div>
+  </header>
 
-    <!-- ================= Header Area ================= -->
-    <header class="header">
-        <div class="nav-container">
-            <a href="http://nextcraftstudio.site" class="logo-box">
-                <img src="https://www.image2url.com/r2/default/images/1785860745679-a479f8f8-7be3-4a74-9d32-27d5958146bd.png" alt="NextCraft Studio Logo" class="logo-img">
-                <span class="logo-text">NextCraft <span>Studio</span></span>
-            </a>
-            <button class="menu-toggle" id="openDrawer" aria-label="Open Navigation Menu">
-                <i class="fas fa-bars"></i>
-            </button>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Creative Digital Agency</div>
+          <h1>Build Your Brand.<br><span>Grow Beyond</span><br>Limits.</h1>
+          <p>NextCraft Studio combines creativity, modern technology and strategic thinking to help businesses build a stronger online presence and a brand people remember.</p>
+          <div class="hero-actions"><a class="btn" href="#services">Explore Our Services <span>→</span></a><a class="btn-outline" href="https://wa.me/8801810546079" target="_blank" rel="noopener">✆ &nbsp; Talk to Our Team</a></div>
+          <div class="hero-note"><b>Creative thinking</b><span>•</span><b>Strategic execution</b><span>•</span><b>Quality-focused work</b></div>
         </div>
-    </header>
-
-    <!-- ================= Side Drawer Navigation ================= -->
-    <div class="drawer-overlay" id="drawerOverlay"></div>
-    <aside class="side-drawer" id="sideDrawer">
-        <div class="drawer-header">
-            <h3>নেভিগেশন মেনু</h3>
-            <button class="close-drawer" id="closeDrawer"><i class="fas fa-times"></i></button>
+        <div class="hero-visual" aria-label="Illustrative business growth dashboard">
+          <div class="growth-dashboard">
+            <div class="dashboard-top"><div><span class="dashboard-dot"></span><span class="dashboard-dot"></span><span class="dashboard-dot"></span></div><span class="dashboard-label">GROWTH OVERVIEW</span><span class="live-indicator">● LIVE CONCEPT</span></div>
+            <div class="dashboard-heading"><div><small>Business performance</small><h3>Growth starts with the right strategy.</h3></div><span class="trend-icon">↗</span></div>
+            <div class="metric-row"><div class="metric-card"><span>Audience reach</span><strong>Visibility</strong><small>Get noticed by more people</small></div><div class="metric-card"><span>Customer interest</span><strong>Engagement</strong><small>Turn attention into interest</small></div><div class="metric-card"><span>Business results</span><strong>Conversions</strong><small>Encourage meaningful action</small></div></div>
+            <div class="chart-area"><div class="chart-caption"><strong>Illustrative growth journey</strong><span>Reach · Leads · Sales</span></div><div class="chart-grid"><span></span><span></span><span></span><span></span><svg viewBox="0 0 520 170" preserveAspectRatio="none" role="img" aria-label="An upward trending illustrative line graph"><defs><linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#35d65b" stop-opacity=".28"/><stop offset="1" stop-color="#35d65b" stop-opacity="0"/></linearGradient></defs><path class="chart-fill" d="M0 145 C55 137 62 116 110 120 S180 105 220 92 S285 103 330 67 S405 77 450 36 S490 34 520 8 L520 170 L0 170Z"/><path class="chart-line" d="M0 145 C55 137 62 116 110 120 S180 105 220 92 S285 103 330 67 S405 77 450 36 S490 34 520 8"/><circle class="chart-point" cx="520" cy="8" r="5"/></svg></div><div class="chart-legend"><span>Start</span><span>Build momentum</span><span>Move forward</span></div></div>
+            <div class="dashboard-foot"><span>✦ Creative direction</span><span>◎ Strategic marketing</span><span>↗ Better opportunities</span></div>
+          </div>
+          <div class="float-card"><strong>One clear goal</strong>Make every digital move count</div>
         </div>
-
-        <!-- Sliding Contact Button -->
-        <button class="drawer-btn" id="contactBtn">
-            <span><i class="fas fa-address-book" style="margin-right:8px;"></i> Contact</span>
-            <i class="fas fa-chevron-right arrow"></i>
-        </button>
-        <div class="slide-content" id="contactSlide">
-            <div class="drawer-contact-item">
-                <i class="fab fa-whatsapp"></i>
-                <a href="https://wa.me/8801810546079" target="_blank">01810546079</a>
-            </div>
-            
-            <div class="drawer-contact-item">
-                <i class="fas fa-envelope"></i>
-                <a href="mailto:nextcraftstudio02@gmail.com">nextcraftstudio02@gmail.com</a>
-            </div>
-
-            <div class="drawer-contact-item">
-                <i class="fab fa-facebook"></i>
-                <a href="https://www.facebook.com/share/1HoWnZpURf/" target="_blank">অফিশিয়াল ফেসবুক পেজ</a>
-            </div>
-        </div>
-
-        <!-- Sliding Details / Form Button -->
-        <button class="drawer-btn" id="detailsBtn">
-            <span><i class="fas fa-pen-to-square" style="margin-right:8px;"></i> বিস্তারিত বলুন</span>
-            <i class="fas fa-chevron-right arrow"></i>
-        </button>
-        <div class="slide-content" id="detailsSlide">
-            <form class="mini-form" action="https://formspree.io/f/xvzejkdr" method="POST">
-                <div class="form-group">
-                    <label>আপনার নাম *</label>
-                    <input type="text" name="name" placeholder="আপনার নাম লিখুন" required>
-                </div>
-                <div class="form-group">
-                    <label>WhatsApp নম্বর *</label>
-                    <input type="tel" name="whatsapp" placeholder="01810546079" required>
-                </div>
-                <div class="form-group">
-                    <label>সার্ভিস বিবরণ *</label>
-                    <textarea name="details" rows="3" placeholder="কেমন সার্ভিস নিতে চান তা লিখুন..." required></textarea>
-                </div>
-                <button type="submit"><i class="fas fa-paper-plane"></i> বার্তা পাঠান</button>
-            </form>
-        </div>
-    </aside>
-
-    <!-- ================= Hero Section ================= -->
-    <section class="hero-section" id="home">
-        <div class="hero-container">
-            <h1>ডিজিটাল প্রমোশনের মাধ্যমে বাড়ান আপনার <span>সেলস ও ব্র্যান্ড ভ্যালু</span></h1>
-            <p>NextCraft Studio দিচ্ছে হাই-কনভার্টিং ভিডিও বিজ্ঞাপন, লোগো ডিজাইন, ফেসবুক এডস ক্যাম্পেইন এবং দ্রুতগতির ল্যান্ডিং পেজ তৈরির বিশ্বস্ত সমাধান।</p>
-            <div class="hero-btns">
-                <a href="#order-form" class="btn-gold">সার্ভিস বুক করুন</a>
-                <a href="#services" class="btn-outline">সার্ভিসসমূহ দেখুন</a>
-            </div>
-        </div>
+      </div>
     </section>
 
-    <!-- ================= Trust Elements: Why Choose Us ================= -->
-    <section class="trust-section">
-        <div class="trust-container">
-            <div class="trust-grid">
-                <div class="trust-item">
-                    <div class="trust-icon"><i class="fas fa-award"></i></div>
-                    <h4>প্রফেশনাল কোয়ালিটি</h4>
-                    <p>অভিজ্ঞ ডিজাইনার ও মার্কেটারদের মাধ্যমে আধুনিক ও ইউনিক মান নিশ্চিত করি।</p>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon"><i class="fas fa-clock"></i></div>
-                    <h4>দ্রুত ডেলিভারি</h4>
-                    <p>নির্ধারিত সময়ের মধ্যে শতভাগ নির্ভুলভাবে প্রজেক্ট বুঝিয়ে দিতে আমরা প্রতিশ্রুতিবদ্ধ।</p>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon"><i class="fas fa-headset"></i></div>
-                    <h4>২৪/৭ কাস্টমার সাপোর্ট</h4>
-                    <p>যেকোনো প্রয়োজন বা পরামর্শে WhatsApp-এ সরাসরি সার্বক্ষণিক সাপোর্ট সুবিধা।</p>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h4>১০০% বিশ্বস্ততা</h4>
-                    <p>আপনার বিজনেস ডেটা সম্পূর্ণ সুরক্ষিত এবং ক্লায়েন্টের সন্তুষ্টিই আমাদের মূল লক্ষ্য।</p>
-                </div>
-            </div>
+    <div class="trust-strip"><div class="container trust-inner"><p>One creative partner for your digital growth</p><span class="trust-pill"><i>✦</i> Creative solutions</span><span class="trust-pill"><i>✓</i> Quality-focused delivery</span><span class="trust-pill"><i>↗</i> Growth-minded strategy</span></div></div>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head"><div class="kicker">What We Do</div><h2>Creative Services, Built for Growth</h2><p>From a powerful first impression to a complete digital presence, explore the services that can move your business forward.</p></div>
+        <div class="service-grid">
+          <a class="service-card" href="https://nextcraftstudio.site/video-advertising-video-editing/"><div class="service-content"><div class="service-icon">▶</div><h3>Video Advertising &amp; Video Editing</h3><p>Promotional videos and polished edits that present your products clearly, capture attention and support your marketing goals.</p><span class="learn">Explore service <span>→</span></span></div></a>
+          <a class="service-card" href="https://nextcraftstudio.site/facebook-ads-campaign/"><div class="service-content"><div class="service-icon">f</div><h3>Facebook Ads Campaign</h3><p>Audience-focused campaign planning and optimization to help your business reach potential customers and generate enquiries.</p><span class="learn">Explore service <span>→</span></span></div></a>
+          <a class="service-card" href="https://nextcraftstudio.site/google-ads-campaign/"><div class="service-content"><div class="service-icon">⌕</div><h3>Google Ads Campaign</h3><p>Search advertising strategies that connect your products and services with people actively looking for solutions.</p><span class="learn">Explore service <span>→</span></span></div></a>
+          <a class="service-card" href="https://nextcraftstudio.site/graphic-design-branding/"><div class="service-content"><div class="service-icon">✧</div><h3>Graphic Design &amp; Branding</h3><p>Professional visual design and consistent brand identity that help your business communicate with clarity and confidence.</p><span class="learn">Explore service <span>→</span></span></div></a>
+          <a class="service-card" href="https://nextcraftstudio.site/landing-page-design-development/"><div class="service-content"><div class="service-icon">▤</div><h3>Landing Page Design &amp; Development</h3><p>Purposeful, responsive landing pages that explain your offer, build trust and guide visitors toward taking action.</p><span class="learn">Explore service <span>→</span></span></div></a>
+          <a class="service-card" href="https://nextcraftstudio.site/web-development/"><div class="service-content"><div class="service-icon">⌘</div><h3>Web Development</h3><p>Modern, responsive websites structured around your business goals and designed to deliver a smooth user experience.</p><span class="learn">Explore service <span>→</span></span></div></a>
         </div>
+      </div>
     </section>
 
-    <!-- ================= Services Section ================= -->
-    <section class="services-section" id="services">
-        <div class="section-title">
-            <h2>আমাদের <span>বিশেষ সার্ভিসসমূহ</span></h2>
-            <p>আপনার ব্যবসাকে দ্রুত বড় করতে আমাদের কার্যকরী সার্ভিসগুলো থেকে বেছে নিন</p>
-        </div>
+    <section id="about"><div class="container about-grid">
+      <div class="about-art"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=85" alt="Creative professionals working together"></div>
+      <div class="about-copy"><div class="kicker">About NextCraft Studio</div><h2>We Turn Creative Thinking Into Digital Progress.</h2><p>NextCraft Studio is a creative digital agency focused on helping businesses strengthen their online presence and brand value. We bring together modern technology, creative execution and strategic planning to create practical digital solutions.</p><p>Every business has a different story. Our approach is to understand your goals first, then shape the right creative and digital solution around them.</p>
+        <div class="feature-list"><div class="feature"><span class="check">✓</span><span>Business-focused approach</span></div><div class="feature"><span class="check">✓</span><span>Creative visual solutions</span></div><div class="feature"><span class="check">✓</span><span>Clear communication</span></div><div class="feature"><span class="check">✓</span><span>Quality-conscious delivery</span></div></div>
+        <a class="btn" href="https://wa.me/8801810546079" target="_blank" rel="noopener">Discuss Your Project <span>↗</span></a>
+      </div>
+    </div></section>
 
-        <div class="services-grid">
-            
-            <!-- Service 1: Video Ads -->
-            <article class="service-card">
-                <div>
-                    <div class="service-icon"><i class="fas fa-video"></i></div>
-                    <h3>ভিডিও বিজ্ঞাপন তৈরি</h3>
-                    <p>পণ্য বা সেবার বিক্রয় দ্বিগুণ করতে আমরা তৈরি করি আকর্ষণীয় এবং হাই-কনভার্টিং প্রমোশনাল ভিডিও বিজ্ঞাপন।</p>
-                </div>
-                <a href="https://nextcraftstudio.site/video-ads/" class="card-btn">বিস্তারিত দেখুন <i class="fas fa-arrow-right"></i></a>
-            </article>
+    <section class="process" id="process"><div class="container"><div class="section-head"><div class="kicker">How We Work</div><h2>Simple Process. Thoughtful Results.</h2><p>A clear workflow keeps every project organized, collaborative and focused on your goals.</p></div>
+      <div class="process-grid"><div class="process-card"><div class="num">01</div><h3>Understand</h3><p>We discuss your business, goals, audience and project requirements.</p></div><div class="process-card"><div class="num">02</div><h3>Plan</h3><p>We shape a suitable creative direction and outline the work before starting.</p></div><div class="process-card"><div class="num">03</div><h3>Create</h3><p>Our team works on the project with attention to detail and your feedback.</p></div><div class="process-card"><div class="num">04</div><h3>Deliver</h3><p>We share the completed work and coordinate any agreed final adjustments.</p></div></div>
+    </div></section>
 
-            <!-- Service 2: Facebook Marketing -->
-            <article class="service-card">
-                <div>
-                    <div class="service-icon"><i class="fab fa-facebook-f"></i></div>
-                    <h3>ফেসবুক মার্কেটিং ও বুস্টিং</h3>
-                    <p>সঠিক অডিয়েন্স টার্গেট করে ফেসবুক পেজ প্রমোশন, বুস্টিং এবং এডস ক্যাম্পেইন পরিচালনা সলিউশন।</p>
-                </div>
-                <a href="https://nextcraftstudio.site/Facebook-marketing/" class="card-btn">বিস্তারিত দেখুন <i class="fas fa-arrow-right"></i></a>
-            </article>
+    <section class="reviews" id="reviews"><div class="container"><div class="section-head"><div class="kicker">Client Feedback</div><h2>Words From Our Clients</h2><p>Real conversations build real trust. Client feedback screenshots will be displayed here.</p></div>
+      <div class="review-grid">
+        <!-- Replace each placeholder below with: <img src="YOUR_WHATSAPP_SCREENSHOT_URL" alt="Client feedback" style="width:100%;height:100%;object-fit:contain;border-radius:17px"> -->
+        <div class="review-slot"><div><div class="plus">＋</div><strong>Client Review Screenshot 01</strong><small>Replace this box with your first WhatsApp feedback screenshot.</small></div></div>
+        <div class="review-slot"><div><div class="plus">＋</div><strong>Client Review Screenshot 02</strong><small>Replace this box with your second WhatsApp feedback screenshot.</small></div></div>
+        <div class="review-slot"><div><div class="plus">＋</div><strong>Client Review Screenshot 03</strong><small>Replace this box with your third WhatsApp feedback screenshot.</small></div></div>
+      </div><p class="review-help">You can add more review cards by duplicating a review-slot block in the HTML.</p>
+    </div></section>
 
-            <!-- Service 3: Landing Page -->
-            <article class="service-card">
-                <div>
-                    <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
-                    <h3>প্রফেশনাল ল্যান্ডিং পেজ</h3>
-                    <p>ই-কমার্স ও বিজনেসের সেলস বাড়াতে তৈরি করুন ফাস্ট-লোডিং, রেসপন্সিভ ও প্রফেশনাল ল্যান্ডিং পেজ।</p>
-                </div>
-                <a href="https://nextcraftstudio.site/landing-page/" class="card-btn">বিস্তারিত দেখুন <i class="fas fa-arrow-right"></i></a>
-            </article>
+    <section class="cta" id="contact"><div class="container"><div class="cta-panel"><div><h2>Have a Project in Mind? Let's Build Something Great.</h2><p>Tell us what your business needs. Let's discuss the right digital solution for your next step.</p></div><a class="btn" href="https://wa.me/8801810546079" target="_blank" rel="noopener">Chat on WhatsApp <span>↗</span></a></div></div></section>
+  </main>
 
-            <!-- Service 4: Logo Design -->
-            <article class="service-card">
-                <div>
-                    <div class="service-icon"><i class="fas fa-pen-nib"></i></div>
-                    <h3>প্রফেশনাল লোগো ডিজাইন</h3>
-                    <p>আপনার ব্র্যান্ডের স্বকীয়তা ও পেশাদারিত্ব ফুটিয়ে তুলতে আকর্ষণীয় ও ইউনিক লোগো ডিজাইন।</p>
-                </div>
-                <a href="https://nextcraftstudio.site/logo-design/" class="card-btn">বিস্তারিত দেখুন <i class="fas fa-arrow-right"></i></a>
-            </article>
+  <footer><div class="container"><div class="footer-grid">
+    <div class="footer-about"><div class="footer-brand"><img src="https://www.image2url.com/r2/default/images/1795247168690-f16366ec-ddc2-49da-b216-d337aa0de663.jpg" alt="NextCraft Studio logo"><span><strong>NEXTCRAFT</strong><small>STUDIO</small></span></div><p>A creative digital agency helping businesses grow their online presence through thoughtful design, marketing and digital solutions.</p><div class="socials">
+      <a class="social-icon" href="https://facebook.com/NextCraftStudio1" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H7.3v3.2h2.8V21z"/></svg>
+      </a>
+      <button class="social-icon" type="button" onclick="showComing('LinkedIn')" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.2 3.5a2.1 2.1 0 1 0 0 4.2 2.1 2.1 0 0 0 0-4.2ZM3.4 9.2H7V21H3.4zM9.2 9.2h3.4v1.6h.1a3.8 3.8 0 0 1 3.4-1.9c3.6 0 4.3 2.3 4.3 5.3V21h-3.6v-6c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3V21H9.2z"/></svg>
+      </button>
+      <button class="social-icon" type="button" onclick="showComing('Instagram')" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="igGradient" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#ffb13d"/><stop offset=".48" stop-color="#ed3b78"/><stop offset="1" stop-color="#8b43c8"/></linearGradient></defs><rect x="3" y="3" width="18" height="18" rx="5.2" fill="none" stroke="url(#igGradient)" stroke-width="2.2"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="url(#igGradient)" stroke-width="2.1"/><circle cx="17.6" cy="6.7" r="1.25" fill="#ed3b78"/></svg>
+      </button>
+    </div></div>
+    <div class="footer-col"><h4>Quick Links</h4><a href="#home">Home</a><a href="#about">About Us</a><a href="#services">Our Services</a><a href="#reviews">Client Reviews</a><a href="#contact">Contact</a></div>
+    <div class="footer-col"><h4>Our Services</h4><a href="https://nextcraftstudio.site/video-advertising-video-editing/">Video Advertising &amp; Editing</a><a href="https://nextcraftstudio.site/facebook-ads-campaign/">Facebook Ads Campaign</a><a href="https://nextcraftstudio.site/google-ads-campaign/">Google Ads Campaign</a><a href="https://nextcraftstudio.site/graphic-design-branding/">Graphic Design &amp; Branding</a><a href="https://nextcraftstudio.site/landing-page-design-development/">Landing Page Development</a><a href="https://nextcraftstudio.site/web-development/">Web Development</a></div>
+    <div class="footer-col"><h4>Get in Touch</h4><a href="https://wa.me/8801810546079" target="_blank" rel="noopener">WhatsApp: +880 1810-546079</a><a href="mailto:nextcraftstudio02@gmail.com">nextcraftstudio02@gmail.com</a><p>Magura, Bangladesh</p><a href="https://facebook.com/NextCraftStudio1" target="_blank" rel="noopener">Visit our Facebook Page ↗</a></div>
+  </div><div class="copyright"><span>© <span id="year"></span> NextCraft Studio. All rights reserved.</span><span>Designed with care by <a href="#home">NextCraft Studio</a></span></div></div></footer>
 
-            <!-- Service 5: Printing Design & Print -->
-            <article class="service-card">
-                <div>
-                    <div class="service-icon"><i class="fas fa-print"></i></div>
-                    <h3>প্রিন্টিং ডিজাইন এবং প্রিন্ট</h3>
-                    <p>বিজনেস কার্ড, ব্যানার, ফ্লায়ার ও প্রমোশনাল উপাদানের আকর্ষণীয় প্রিন্টিং ডিজাইন এবং উন্নত মানের পিন্টিং সেবা।</p>
-                </div>
-                <a href="https://nextcraftstudio.site/printing-design/" class="card-btn">বিস্তারিত দেখুন <i class="fas fa-arrow-right"></i></a>
-            </article>
-
-        </div>
-    </section>
-
-    <!-- ================= Facebook Style Posts Gallery ================= -->
-    <section class="fb-posts-section">
-        <div class="section-title">
-            <h2>আমাদের <span>রিসেন্ট আপডেট ও কাজ</span></h2>
-            <p>আমাদের সাম্প্রতিক কিছু কাজ ও ফেসবুক পেজের আপডেটগুলো নিচে দেওয়া হলো</p>
-        </div>
-
-        <div class="fb-posts-grid">
-            
-            <!-- Facebook Post 1 -->
-            <div class="fb-post-card">
-                <div class="fb-post-header">
-                    <img src="https://www.image2url.com/r2/default/images/1785860745679-a479f8f8-7be3-4a74-9d32-27d5958146bd.png" alt="NextCraft Studio Logo" class="fb-profile-img">
-                    <div class="fb-profile-info">
-                        <h5>NextCraft Studio <i class="fas fa-check-circle" title="Verified"></i></h5>
-                        <span>১ দিন আগে • <i class="fas fa-globe-americas"></i></span>
-                    </div>
-                </div>
-
-                <div class="fb-post-caption">আপনার ব্র্যান্ডের বিশ্বাসযোগ্যতা বাড়াতে এবং কাস্টমারের কাছে দ্রুত পৌঁছাতে আমরা দিচ্ছি প্রফেশনাল ভিডিও মেকিং সলিউশন। মানসম্মত ভিডিও বিজ্ঞাপন শুধু তথ্যই দেয় না, বরং কাস্টমারের মনে আপনার ব্র্যান্ডের প্রতি আস্থাও তৈরি করে।
-
-আমাদের সেবাসমূহ:
-✅ কাস্টম ভিডিও অ্যাড
-✅ প্রফেশনাল স্ক্রিপ্ট ও এডিটিং
-✅ সোশ্যাল মিডিয়া মার্কেটিং উপযোগী ভিডিও
-
-আপনার ব্যবসার জন্য আজই সেরা বিজ্ঞাপনটি তৈরি করুন আমাদের সাথে।
-📩 বিস্তারিত জানতে WhatsApp করুন: 📞 +8801810546079</div>
-
-                <img src="https://www.image2url.com/r2/default/images/1785597822321-09732ade-c101-4757-9c8e-d1519e3945eb.jpg" alt="Professional Video Making Solution 1" class="fb-post-image">
-            </div>
-
-            <!-- Facebook Post 2 -->
-            <div class="fb-post-card">
-                <div class="fb-post-header">
-                    <img src="https://www.image2url.com/r2/default/images/1785860745679-a479f8f8-7be3-4a74-9d32-27d5958146bd.png" alt="NextCraft Studio Logo" class="fb-profile-img">
-                    <div class="fb-profile-info">
-                        <h5>NextCraft Studio <i class="fas fa-check-circle" title="Verified"></i></h5>
-                        <span>৩ দিন আগে • <i class="fas fa-globe-americas"></i></span>
-                    </div>
-                </div>
-
-                <div class="fb-post-caption">আপনার ব্র্যান্ডের বিশ্বাসযোগ্যতা বাড়াতে এবং কাস্টমারের কাছে দ্রুত পৌঁছাতে আমরা দিচ্ছি প্রফেশনাল ভিডিও মেকিং সলিউশন। মানসম্মত ভিডিও বিজ্ঞাপন শুধু তথ্যই দেয় না, বরং কাস্টমারের মনে আপনার ব্র্যান্ডের প্রতি আস্থাও তৈরি করে।
-
-আমাদের সেবাসমূহ:
-✅ কাস্টম ভিডিও অ্যাড
-✅ প্রফেশনাল স্ক্রিপ্ট ও এডিটিং
-✅ সোশ্যাল মিডিয়া মার্কেটিং উপযোগী ভিডিও
-
-আপনার ব্যবসার জন্য আজই সেরা বিজ্ঞাপনটি তৈরি করুন আমাদের সাথে।
-📩 বিস্তারিত জানতে WhatsApp করুন: 📞 +8801810546079</div>
-
-                <img src="https://www.image2url.com/r2/default/images/1785598057828-c86a85f1-1ae5-4ea6-927c-9752889fe4e6.jpg" alt="Professional Video Making Solution 2" class="fb-post-image">
-            </div>
-
-            <!-- Facebook Post 3 -->
-            <div class="fb-post-card">
-                <div class="fb-post-header">
-                    <img src="https://www.image2url.com/r2/default/images/1785860745679-a479f8f8-7be3-4a74-9d32-27d5958146bd.png" alt="NextCraft Studio Logo" class="fb-profile-img">
-                    <div class="fb-profile-info">
-                        <h5>NextCraft Studio <i class="fas fa-check-circle" title="Verified"></i></h5>
-                        <span>৫ দিন আগে • <i class="fas fa-globe-americas"></i></span>
-                    </div>
-                </div>
-
-                <div class="fb-post-caption">আপনার ব্যবসার জন্য একটি প্রফেশনাল ল্যান্ডিং পেজ হতে পারে কাস্টমারের বিশ্বাস অর্জনের প্রথম ধাপ! 💼✨
-একটি সুন্দর ও কার্যকর ল্যান্ডিং পেজ শুধু আপনার ব্যবসার সৌন্দর্যই বাড়ায় না, বরং অর্ডার নেওয়ার পুরো প্রক্রিয়াকে করে তোলে একদম সহজ। এতে আপনার সময় বাঁচে এবং কাস্টমারও পায় একটি স্মুথ শপিং অভিজ্ঞতা। 🚀
-
-কেন আমাদের থেকে ল্যান্ডিং পেজ তৈরি করবেন?
-✅ ১০০% মোবাইল ও কম্পিউটার ফ্রেন্ডলি ডিজাইন
-✅ সহজ অর্ডার ফর্ম সুবিধা
-✅ সরাসরি WhatsApp বাটন ইন্টিগ্রেশন
-✅ সাথে পাচ্ছেন একটি ফ্রি QR কোড! 🎁
-
-অফার মূল্য: মাত্র ৪৯৯ টাকা!
-(সবচেয়ে মজার বিষয় হলো—আমাদের কোনো অগ্রিম পেমেন্ট দেওয়া লাগবে না। কাজ পছন্দ হলে তবেই পেমেন্ট করবেন!) 🤝
-
-আপনার ব্যবসার অনলাইন যাত্রা শুরু হোক আজই। বিস্তারিত জানতে বা অর্ডার করতে সরাসরি মেসেজ দিন অথবা হোয়াটসঅ্যাপ করুন।
-
-WhatsApp: 01810546079 📞</div>
-
-                <img src="https://www.image2url.com/r2/default/images/1785598343116-96d598d3-498d-457f-a465-74322aaeab19.png" alt="Professional Landing Page Solution Offer" class="fb-post-image">
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ================= Form Section ================= -->
-    <section class="order-form-section" id="order-form">
-        <div class="form-wrapper">
-            <h3>সরাসরি যোগাযোগ করুন</h3>
-            <p>আপনার প্রয়োজনীয় তথ্য দিয়ে নিচের ফর্মটি পূরণ করুন, আমরা খুব দ্রুত আপনার সাথে যোগাযোগ করব</p>
-            
-            <form action="https://formspree.io/f/xvzejkdr" method="POST">
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="name">আপনার নাম *</label>
-                        <input type="text" id="name" name="name" placeholder="আপনার নাম লিখুন" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="whatsapp">WhatsApp নম্বর *</label>
-                        <input type="tel" id="whatsapp" name="whatsapp" placeholder="01810546079" required>
-                    </div>
-
-                    <div class="form-group form-group-full">
-                        <label for="details">আপনি কেমন সার্ভিস নিতে চাচ্ছেন তা বিস্তারিত বলুন *</label>
-                        <textarea id="details" name="details" rows="4" placeholder="আপনার প্রজেক্ট বা কাজের চাহিদা সম্পর্কে সংক্ষেপে লিখুন..." required></textarea>
-                    </div>
-
-                    <div class="form-group form-group-full">
-                        <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> বার্তা পাঠান</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <!-- ================= Footer Area ================= -->
-    <footer class="footer-section" id="contact">
-        <div class="footer-container">
-            
-            <!-- Col 1: About -->
-            <div class="footer-col">
-                <h4>NextCraft Studio</h4>
-                <p>আমরা বিজনেসের সেলস বাড়াতে ডিজিটাল মার্কেটিং, লোগো ডিজাইন, প্রমোশনাল ভিডিও অ্যাডস এবং হাই-কনভার্টিং ল্যান্ডিং পেজ তৈরি করে থাকি।</p>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/share/1HoWnZpURf/" target="_blank" title="Facebook Page"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://wa.me/8801810546079" target="_blank" title="WhatsApp Business"><i class="fab fa-whatsapp"></i></a>
-                    <a href="mailto:nextcraftstudio02@gmail.com" title="Email Us"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-
-            <!-- Col 2: Services List -->
-            <div class="footer-col">
-                <h4>আমাদের সেবা সমূহ</h4>
-                <ul class="contact-list">
-                    <li>
-                        <i class="fas fa-angle-right"></i>
-                        <a href="https://nextcraftstudio.site/video-ads/">ভিডিও বিজ্ঞাপন তৈরি</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-angle-right"></i>
-                        <a href="https://nextcraftstudio.site/Facebook-marketing/">ফেসবুক এডস ও প্রমোশন</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-angle-right"></i>
-                        <a href="https://nextcraftstudio.site/landing-page/">ল্যান্ডিং পেজ ডিজাইন</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-angle-right"></i>
-                        <a href="https://nextcraftstudio.site/logo-design/">প্রফেশনাল লোগো ডিজাইন</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-angle-right"></i>
-                        <a href="https://nextcraftstudio.site/printing-design/">প্রিন্টিং ডিজাইন এবং প্রিন্ট</a>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Col 3: Direct Contact -->
-            <div class="footer-col">
-                <h4>যোগাযোগের তথ্য</h4>
-                <ul class="contact-list">
-                    <li>
-                        <i class="fab fa-whatsapp"></i>
-                        <a href="https://wa.me/8801810546079" target="_blank">01810546079</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:nextcraftstudio02@gmail.com">nextcraftstudio02@gmail.com</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-globe"></i>
-                        <a href="https://www.facebook.com/share/1HoWnZpURf/" target="_blank">Facebook Official Page</a>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-
-        <!-- Copyright -->
-        <div class="footer-bottom">
-            <p>&copy; 2026 <strong>NextCraft Studio</strong>. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <!-- ================= Floating WhatsApp Button ================= -->
-    <a href="https://wa.me/8801810546079" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp" title="WhatsApp-এ মেসেজ দিন">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- ================= JavaScript Interactions ================= -->
-    <script>
-        // 1. Preloader Timeout
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                const preloader = document.getElementById('preloader');
-                preloader.style.opacity = '0';
-                preloader.style.visibility = 'hidden';
-            }, 1500);
-        });
-
-        // 2. Drawer Navigation Controls
-        const openDrawer = document.getElementById('openDrawer');
-        const closeDrawer = document.getElementById('closeDrawer');
-        const sideDrawer = document.getElementById('sideDrawer');
-        const drawerOverlay = document.getElementById('drawerOverlay');
-
-        function toggleDrawer() {
-            sideDrawer.classList.toggle('open');
-            drawerOverlay.classList.toggle('active');
-        }
-
-        openDrawer.addEventListener('click', toggleDrawer);
-        closeDrawer.addEventListener('click', toggleDrawer);
-        drawerOverlay.addEventListener('click', toggleDrawer);
-
-        // 3. Sliding Sub-content inside Drawer
-        function setupSlideToggle(btnId, slideId) {
-            const btn = document.getElementById(btnId);
-            const slide = document.getElementById(slideId);
-
-            btn.addEventListener('click', function() {
-                btn.classList.toggle('active');
-                slide.classList.toggle('open');
-
-                if (slide.classList.contains('open')) {
-                    slide.style.maxHeight = slide.scrollHeight + "px";
-                } else {
-                    slide.style.maxHeight = null;
-                }
-            });
-        }
-
-        setupSlideToggle('contactBtn', 'contactSlide');
-        setupSlideToggle('detailsBtn', 'detailsSlide');
-    </script>
-
+  <div class="modal-backdrop" id="comingModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="if(event.target===this)closeComing()"><div class="modal"><button class="close-modal" type="button" onclick="closeComing()" aria-label="Close popup">×</button><div class="modal-mark">✦</div><div class="tag">Stay Connected</div><h3 id="modalTitle">Coming Soon!</h3><p id="modalText">Our social media profile is on its way. In the meantime, visit our Facebook page and stay connected with NextCraft Studio.</p><a class="fb-link" href="https://facebook.com/NextCraftStudio1" target="_blank" rel="noopener"><span class="fb-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H7.3v3.2h2.8V21z"/></svg></span> Visit Our Facebook Page ↗</a></div></div>
+  <script>
+    const menuBtn=document.getElementById('menuBtn');
+    const navlinks=document.getElementById('navlinks');
+    menuBtn.addEventListener('click',()=>{navlinks.classList.toggle('open');menuBtn.textContent=navlinks.classList.contains('open')?'×':'☰'});
+    navlinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navlinks.classList.remove('open');menuBtn.textContent='☰'}));
+    document.getElementById('year').textContent=new Date().getFullYear();
+    function showComing(platform){document.getElementById('modalTitle').textContent=platform+' — Coming Soon!';document.getElementById('modalText').textContent='Our '+platform+' account is coming soon. In the meantime, visit our Facebook page and stay connected with NextCraft Studio.';document.getElementById('comingModal').classList.add('show');document.body.style.overflow='hidden'}
+    function closeComing(){document.getElementById('comingModal').classList.remove('show');document.body.style.overflow=''}
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeComing()});
+  </script>
 </body>
 </html>
