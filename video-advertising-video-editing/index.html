@@ -61,6 +61,10 @@
     /* Service detail page — shares the homepage palette and typography */
     .service-hero{padding:82px 0 76px;background:radial-gradient(circle at 82% 18%,rgba(40,207,56,.14),transparent 28%),linear-gradient(130deg,#f7fcf8 0%,#fff 55%,#f0fbf3 100%);position:relative;overflow:hidden}
     .service-hero:before{content:"";position:absolute;width:430px;height:430px;border:1px solid rgba(7,155,82,.12);border-radius:50%;right:-180px;top:-220px}
+    .service-hero-grid > div:only-child{grid-column:1/-1;max-width:850px}
+    .price-section{background:#09251a}
+    .price-wrap{display:flex;justify-content:center;align-items:center}
+    .price-wrap .price-card{width:min(100%,560px)}
     .service-hero-grid{position:relative;display:grid;grid-template-columns:1.12fr .88fr;gap:55px;align-items:center}
     .service-hero h1{font:800 clamp(38px,5vw,59px)/1.12 Manrope,sans-serif;letter-spacing:-2.2px;margin:20px 0 18px;max-width:720px}
     .service-hero h1 span{color:var(--green)}.service-hero .lead{font-size:16px;line-height:1.85;color:#647168;max-width:620px}
@@ -122,10 +126,8 @@
     .video-caption h3{font:800 12px Manrope,sans-serif}.video-caption p{font-size:10px;color:#718276;margin-top:3px}
     .video-play{width:35px;height:35px;display:grid;place-items:center;border-radius:11px;background:#e3f7e8;color:#078b42;flex:none}
     .video-play svg{width:18px;height:18px}
-    .video-note{text-align:center;color:#a8bdae;font-size:11px;line-height:1.8;margin:25px auto 0;max-width:850px}
-    .video-note code{color:#baf3c5;background:rgba(255,255,255,.08);padding:2px 5px;border-radius:5px}
     @media(max-width:900px){.video-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:560px){.video-gallery{grid-template-columns:1fr;gap:16px}.sample-group{margin-top:35px}.sample-group + .sample-group{margin-top:48px}.sample-group-heading h3{font-size:17px}.video-caption{padding:13px}.video-note{font-size:10px}}
+    @media(max-width:560px){.video-gallery{grid-template-columns:1fr;gap:16px}.sample-group{margin-top:35px}.sample-group + .sample-group{margin-top:48px}.sample-group-heading h3{font-size:17px}.video-caption{padding:13px}}
     .inline-icon{width:18px;height:18px;display:inline-block;vertical-align:-3px;margin-right:5px}
     .service-hero .inline-icon{color:#66e985}
     .service-actions .demo-btn svg{width:16px;height:16px}
@@ -161,18 +163,7 @@
           </div>
           <div class="hero-note"><svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 2.3 7.7L22 12l-7.7 2.3L12 22l-2.3-7.7L2 12l7.7-2.3z" fill="currentColor"/></svg><span><b>Creative quality. Strategic storytelling.</b> — Designed around your business goals.</span></div>
         </div>
-        <aside class="price-card" aria-label="Video advertising service price">
-          <span class="price-label">Our Service Package</span>
-          <h2>Video Advertising &amp; Editing</h2>
-          <div class="price">১২৯৯৳</div>
-          <p class="price-note">একটি আকর্ষণীয় ভিডিও বিজ্ঞাপনের জন্য প্রয়োজনীয় ক্রিয়েটিভ কাজ ও এডিটিং সাপোর্ট। আপনার প্রয়োজন অনুযায়ী কাজের বিস্তারিত WhatsApp-এ আলোচনা করুন।</p>
-          <ul class="price-points">
-            <li><b>✓</b> Strategic content direction</li>
-            <li><b>✓</b> Professional voiceover</li>
-            <li><b>✓</b> Premium animation &amp; design</li>
-            <li><b>✓</b> Fast project delivery</li>
-          </ul>
-        </aside>
+
       </div>
     </section>
 
@@ -238,7 +229,24 @@
             </article>
           </div>
         </div>
-        <p class="video-note">ভিডিও পরিবর্তন করতে সংশ্লিষ্ট <code>&lt;source src="..."&gt;</code>-এর ফাইলের নাম বদলান। প্রতিটি ভিডিওর আসল অনুপাত অনুযায়ী প্লেয়ার নিজে থেকেই উচ্চতা ঠিক করবে।</p>
+      </div>
+    </section>
+
+    <section class="detail-section price-section" aria-label="Service pricing">
+      <div class="container">
+        <div class="detail-heading"><span class="kicker">Simple &amp; Clear Pricing</span><h2>আপনার ভিডিও বিজ্ঞাপনের মূল্য</h2><p>প্রফেশনাল ভিডিও বিজ্ঞাপন ও এডিটিং সার্ভিসের জন্য নির্ধারিত প্যাকেজ।</p></div>
+        <div class="price-wrap">        <aside class="price-card" aria-label="Video advertising service price">
+          <span class="price-label">Our Service Package</span>
+          <h2>Video Advertising &amp; Editing</h2>
+          <div class="price">১২৯৯৳</div>
+          <p class="price-note">একটি আকর্ষণীয় ভিডিও বিজ্ঞাপনের জন্য প্রয়োজনীয় ক্রিয়েটিভ কাজ ও এডিটিং সাপোর্ট। আপনার প্রয়োজন অনুযায়ী কাজের বিস্তারিত WhatsApp-এ আলোচনা করুন।</p>
+          <ul class="price-points">
+            <li><b>✓</b> Strategic content direction</li>
+            <li><b>✓</b> Professional voiceover</li>
+            <li><b>✓</b> Premium animation &amp; design</li>
+            <li><b>✓</b> Fast project delivery</li>
+          </ul>
+        </aside></div>
       </div>
     </section>
 
