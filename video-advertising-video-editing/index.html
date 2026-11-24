@@ -1,314 +1,317 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#079b52" />
-  <meta name="description" content="Strategic video advertising and professional video editing by NextCraft Studio. Creative content, professional voiceover and fast delivery." />
-  <title>Video Advertising & Video Editing | NextCraft Studio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{--green:#079b52;--green2:#28cf38;--deep:#063d2a;--ink:#101713;--muted:#66736b;--pale:#effaf2;--line:#e5eee7;--white:#fff;--shadow:0 18px 55px rgba(10,70,39,.10);--radius:24px}
-    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;color:var(--ink);background:#fff;line-height:1.65}a{text-decoration:none;color:inherit}button{font:inherit;cursor:pointer}.container{width:min(1160px,calc(100% - 40px));margin:auto}.topline{height:5px;background:linear-gradient(90deg,#078448,#29d52f)}
-    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(229,238,231,.8)}.nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:11px;min-width:205px}.brand img{width:56px;height:56px;object-fit:contain;border-radius:50%;background:#fff;border:1px solid #e3eee5;padding:2px;box-shadow:0 4px 12px rgba(4,55,28,.10);flex:none}.brand strong{font-family:Manrope,sans-serif;font-size:19px;letter-spacing:-.7px;line-height:1.1}.brand small{display:block;font-size:9px;letter-spacing:5px;color:#647168;margin-top:4px}.navlinks{display:flex;align-items:center;gap:27px;font-size:13px;font-weight:700;color:#39443d}.navlinks a:hover{color:var(--green)}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 21px;border-radius:999px;background:var(--green);color:#fff;font-weight:800;font-size:13px;box-shadow:0 9px 22px rgba(7,155,82,.18);transition:.25s}.nav-cta:hover,.btn:hover{background:var(--deep);transform:translateY(-2px)}.menu-btn{display:none;background:#eff8f1;border:0;border-radius:12px;padding:10px;color:var(--deep);font-size:22px}
-    .hero{position:relative;overflow:hidden;padding:94px 0 82px;background:radial-gradient(circle at 83% 28%,rgba(40,207,56,.14),transparent 29%),linear-gradient(130deg,#f7fcf8 0%,#fff 54%,#f0fbf3 100%)}.hero:before{content:"";position:absolute;width:450px;height:450px;border:1px solid rgba(7,155,82,.11);border-radius:50%;right:-180px;top:-190px}.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:58px;position:relative}.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border:1px solid #d7efdf;border-radius:99px;background:#fff;color:var(--green);font-size:11px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase}.eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:#27c957;box-shadow:0 0 0 4px #e5f8e9}.hero h1{font-family:Manrope,sans-serif;font-size:clamp(40px,5.2vw,65px);line-height:1.1;letter-spacing:-2.7px;margin:22px 0 20px;max-width:680px}.hero h1 span{color:var(--green)}.hero p{max-width:570px;color:#647168;font-size:16px;line-height:1.85}.hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}.btn-outline{display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border:1px solid #d5e4d9;border-radius:99px;font-size:13px;font-weight:800;background:#fff}.btn-outline:hover{border-color:var(--green);color:var(--green)}.hero-note{display:flex;align-items:center;gap:12px;margin-top:30px;color:#69766e;font-size:12px}.hero-note b{color:#1c2920}.hero-visual{position:relative;min-height:440px;display:flex;align-items:center;justify-content:center}.visual-main{width:100%;height:410px;border-radius:34px;overflow:hidden;position:relative;box-shadow:0 28px 70px rgba(4,76,39,.18);background:#0b3826}.visual-main img{width:100%;height:100%;object-fit:cover;opacity:.78}.visual-main:after{content:"";position:absolute;inset:0;background:linear-gradient(140deg,rgba(4,57,34,.05),rgba(4,57,34,.55))}.visual-label{position:absolute;z-index:2;bottom:28px;left:28px;color:white}.visual-label span{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#b8f6c6;font-weight:800}.visual-label h3{font:800 28px Manrope,sans-serif;line-height:1.2;margin-top:7px}.float-card{position:absolute;z-index:3;right:-22px;top:45px;background:white;padding:17px 20px;border-radius:18px;box-shadow:var(--shadow);font-size:12px;color:#6c786f}.float-card strong{display:block;font:800 20px Manrope;color:var(--deep)}.float-card2{position:absolute;z-index:3;left:-24px;bottom:34px;background:#fff;padding:15px 18px;border-radius:17px;box-shadow:var(--shadow);font-size:11px;font-weight:700}.float-card2 span{color:var(--green);font-size:20px;margin-right:7px;vertical-align:middle}
-    .trust-strip{border-bottom:1px solid var(--line);padding:22px 0}.trust-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}.trust-inner p{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#849087;font-weight:800}.trust-pill{font-size:12px;font-weight:700;color:#435047;display:flex;align-items:center;gap:8px}.trust-pill i{font-style:normal;color:var(--green);font-size:17px}
-    section{padding:92px 0}.section-head{text-align:center;max-width:690px;margin:0 auto 45px}.kicker{color:var(--green);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:800}.section-head h2{font:800 clamp(30px,4vw,43px)/1.2 Manrope,sans-serif;letter-spacing:-1.5px;margin:12px 0}.section-head p{color:var(--muted);font-size:14px}.services{background:#fbfdfb}.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.service-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.28s;display:flex;flex-direction:column;min-height:320px}.service-card:hover{transform:translateY(-7px);box-shadow:var(--shadow);border-color:#bce8c8}.service-img{height:145px;overflow:hidden;position:relative;background:#eaf7ee}.service-img img{width:100%;height:100%;object-fit:cover;transition:.4s}.service-card:hover .service-img img{transform:scale(1.06)}.service-img:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,52,29,.28),transparent 70%)}.service-content{padding:19px 18px 18px;display:flex;flex-direction:column;flex:1}.service-icon{width:36px;height:36px;border-radius:11px;background:#e9f8ed;color:var(--green);display:grid;place-items:center;font-size:17px;margin-top:-37px;position:relative;z-index:2;border:3px solid white}.service-content h3{font:800 16px Manrope,sans-serif;margin:12px 0 7px}.service-content p{font-size:12px;color:var(--muted);line-height:1.65;flex:1}.learn{margin-top:14px;color:var(--green);font-size:12px;font-weight:800;display:flex;align-items:center;gap:7px}.learn span{transition:.2s}.service-card:hover .learn span{transform:translateX(5px)}
-    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:65px;align-items:center}.about-art{position:relative;padding:20px}.about-art img{width:100%;height:390px;object-fit:cover;border-radius:28px;box-shadow:var(--shadow)}.about-art:before{content:"";position:absolute;left:0;bottom:0;width:150px;height:150px;border-left:8px solid #2acb46;border-bottom:8px solid #2acb46;border-radius:0 0 0 25px;z-index:-1}.about-copy h2{font:800 clamp(30px,4vw,42px)/1.2 Manrope,sans-serif;letter-spacing:-1.4px;margin:12px 0 17px}.about-copy p{font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:14px}.feature-list{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;margin:24px 0 28px}.feature{display:flex;gap:10px;align-items:flex-start;font-size:13px;font-weight:700}.check{flex:none;width:22px;height:22px;border-radius:50%;background:#e8f8ec;color:var(--green);display:grid;place-items:center;font-size:12px}
-    .process{background:linear-gradient(135deg,#073e2a,#075b38);color:white}.process .section-head p{color:#c1d7c9}.process .kicker{color:#8cf0a4}.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.process-card{padding:25px 21px;border:1px solid rgba(255,255,255,.16);border-radius:19px;background:rgba(255,255,255,.055)}.process-card .num{font:800 30px Manrope;color:#65e582}.process-card h3{font:800 16px Manrope;margin:14px 0 7px}.process-card p{font-size:12px;color:#c4d8cb;line-height:1.75}
-    .reviews{background:#f8fcf9}.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.review-slot{min-height:220px;border:2px dashed #b9d9c2;border-radius:19px;background:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;color:#718078}.review-slot .plus{width:43px;height:43px;margin:0 auto 12px;border-radius:50%;display:grid;place-items:center;background:#eaf8ed;color:var(--green);font-size:25px}.review-slot strong{display:block;color:#34463a;font-size:13px}.review-slot small{font-size:11px;display:block;margin-top:5px;line-height:1.6}.review-help{text-align:center;color:#87948b;font-size:11px;margin-top:18px}
-    .cta{padding:0 0 92px;background:#f8fcf9}.cta-panel{background:linear-gradient(110deg,#078348,#0aaf58 65%,#27c943);border-radius:28px;padding:48px 55px;display:flex;align-items:center;justify-content:space-between;gap:30px;color:white;position:relative;overflow:hidden}.cta-panel:after{content:"";position:absolute;width:300px;height:300px;border:1px solid rgba(255,255,255,.2);border-radius:50%;right:24%;top:-210px}.cta-panel h2{font:800 clamp(25px,3.5vw,37px)/1.2 Manrope;letter-spacing:-1px;max-width:570px}.cta-panel p{font-size:13px;color:#e2ffea;margin-top:10px}.cta-panel .btn{background:white;color:var(--deep);box-shadow:none;position:relative;z-index:1;white-space:nowrap}.cta-panel .btn:hover{background:#e9ffed}
-    footer{background:#071d13;color:#d9e8de;padding:62px 0 22px}.footer-grid{display:grid;grid-template-columns:1.4fr .8fr 1fr 1fr;gap:40px;padding-bottom:42px}.footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:17px}.footer-brand img{width:54px;height:54px;object-fit:contain;background:white;border-radius:50%;border:1px solid rgba(255,255,255,.22);padding:2px;flex:none}.footer-brand strong{font:800 18px Manrope;color:white}.footer-brand small{display:block;font-size:9px;letter-spacing:4px;color:#aabeb1}.footer-about p{font-size:12px;color:#a8bdb0;line-height:1.85;max-width:290px}.footer-col h4{font:800 13px Manrope;color:#fff;margin-bottom:17px}.footer-col a,.footer-col p{display:block;color:#a8bdb0;font-size:12px;margin:10px 0;line-height:1.6}.footer-col a:hover{color:#6ee78a}.socials{display:flex;gap:9px;margin-top:17px}.socials button{width:35px;height:35px;border:1px solid #355343;border-radius:50%;background:transparent;color:#d9e8de;font-size:12px;font-weight:800}.socials button:hover{background:var(--green);border-color:var(--green)}
-    .socials .social-icon{width:38px;height:38px;display:grid;place-items:center;padding:0;border:1px solid #355343;border-radius:50%;background:transparent;color:#e5f4e9;transition:background .2s,border-color .2s,transform .2s}
-    .socials .social-icon svg{width:19px;height:19px;display:block}
-    .socials .social-icon:hover{background:var(--green);border-color:var(--green);transform:translateY(-2px)}
-    .fb-mark{width:20px;height:20px;display:inline-grid;place-items:center}
-    .fb-mark svg{width:18px;height:18px;display:block}
-    .close-modal:focus-visible,.social-icon:focus-visible{outline:3px solid #72e88e;outline-offset:3px}
-    @media(max-width:480px){.modal{padding:32px 22px 28px;border-radius:25px}.close-modal{right:13px;top:13px;width:42px;height:42px;font-size:29px}.modal h3{padding:0 12px;font-size:25px}}
-.copyright{border-top:1px solid #1e392a;padding-top:20px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:#80998a;font-size:11px}.copyright a{color:#a9c5b3}
-    .modal-backdrop{position:fixed;inset:0;background:rgba(3,22,13,.65);backdrop-filter:blur(6px);z-index:100;display:none;align-items:center;justify-content:center;padding:20px}.modal-backdrop.show{display:flex}.modal{width:min(430px,100%);background:#fff;border-radius:24px;padding:34px;text-align:center;box-shadow:0 25px 90px rgba(0,0,0,.25);position:relative;animation:pop .2s ease}.modal-mark{width:58px;height:58px;margin:0 auto 15px;border-radius:18px;background:linear-gradient(135deg,#e7f9ec,#c8f3d2);display:grid;place-items:center;color:var(--green);font-size:26px}.modal .tag{font-size:10px;letter-spacing:2px;color:var(--green);font-weight:800;text-transform:uppercase}.modal h3{font:800 26px Manrope;margin:8px 0}.modal p{font-size:13px;color:var(--muted);margin-bottom:22px}.fb-link{display:flex;align-items:center;justify-content:center;gap:10px;padding:13px;border-radius:13px;background:#0866ff;color:#fff;font-size:13px;font-weight:800}.close-modal{position:absolute;right:15px;top:13px;border:0;background:#f0f5f1;border-radius:50%;width:30px;height:30px;font-size:18px;color:#425148}.close-modal:hover{background:#e2eee5}@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
-    @media(max-width:1000px){.navlinks{gap:15px}.service-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1.2fr 1fr 1fr}.footer-about{grid-column:span 3}.hero-grid{gap:35px}.float-card{right:-8px}.float-card2{left:-8px}}
-    @media(max-width:760px){.container{width:min(100% - 30px,560px)}.nav{height:70px}.brand img{width:47px;height:47px}.brand strong{font-size:16px}.menu-btn{display:block}.nav-cta{display:none}.navlinks{display:none;position:absolute;top:70px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:18px 25px 23px;flex-direction:column;align-items:flex-start;gap:16px;box-shadow:0 16px 25px rgba(0,0,0,.06)}.navlinks.open{display:flex}.hero{padding:65px 0 58px}.hero-grid{grid-template-columns:1fr;gap:35px}.hero h1{font-size:43px;letter-spacing:-1.8px}.hero p{font-size:14px}.hero-visual{min-height:330px}.visual-main{height:320px}.float-card{top:20px}.trust-inner{justify-content:center}.trust-inner p{width:100%;text-align:center}.trust-pill{font-size:11px}section{padding:68px 0}.section-head{margin-bottom:32px}.service-grid{gap:12px}.service-card{min-height:310px}.service-img{height:125px}.service-content{padding:16px 14px}.service-content h3{font-size:14px}.service-content p{font-size:11px}.about-grid{grid-template-columns:1fr;gap:35px}.about-art img{height:300px}.about-copy h2{font-size:33px}.process-grid{grid-template-columns:1fr 1fr;gap:12px}.process-card{padding:19px 16px}.review-grid{grid-template-columns:1fr}.review-slot{min-height:170px}.cta{padding-bottom:68px}.cta-panel{padding:32px 25px;display:block}.cta-panel .btn{margin-top:22px}.footer-grid{grid-template-columns:1fr 1fr;gap:28px}.footer-about{grid-column:span 2}.copyright{font-size:10px}}
-    @media(max-width:390px){.hero h1{font-size:37px}.service-grid{grid-template-columns:1fr}.service-card{min-height:300px}.service-img{height:155px}.process-grid{grid-template-columns:1fr}.feature-list{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-about{grid-column:auto}}
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+  <meta name="theme-color" content="#079b52" />  
+  <meta name="description" content="Strategic video advertising and professional video editing by NextCraft Studio. Creative content, professional voiceover and fast delivery." />  
+  <title>Video Advertising & Video Editing | NextCraft Studio</title>  
+  <link rel="preconnect" href="https://fonts.googleapis.com">  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">  
+  <style>  
+    :root{--green:#079b52;--green2:#28cf38;--deep:#063d2a;--ink:#101713;--muted:#66736b;--pale:#effaf2;--line:#e5eee7;--white:#fff;--shadow:0 18px 55px rgba(10,70,39,.10);--radius:24px}  
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;color:var(--ink);background:#fff;line-height:1.65}a{text-decoration:none;color:inherit}button{font:inherit;cursor:pointer}.container{width:min(1160px,calc(100% - 40px));margin:auto}.topline{height:5px;background:linear-gradient(90deg,#078448,#29d52f)}  
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(229,238,231,.8)}.nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:11px;min-width:205px}.brand img{width:56px;height:56px;object-fit:contain;border-radius:50%;background:#fff;border:1px solid #e3eee5;padding:2px;box-shadow:0 4px 12px rgba(4,55,28,.10);flex:none}.brand strong{font-family:Manrope,sans-serif;font-size:19px;letter-spacing:-.7px;line-height:1.1}.brand small{display:block;font-size:9px;letter-spacing:5px;color:#647168;margin-top:4px}.navlinks{display:flex;align-items:center;gap:27px;font-size:13px;font-weight:700;color:#39443d}.navlinks a:hover{color:var(--green)}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 21px;border-radius:999px;background:var(--green);color:#fff;font-weight:800;font-size:13px;box-shadow:0 9px 22px rgba(7,155,82,.18);transition:.25s}.nav-cta:hover,.btn:hover{background:var(--deep);transform:translateY(-2px)}.menu-btn{display:none;background:#eff8f1;border:0;border-radius:12px;padding:10px;color:var(--deep);font-size:22px}  
+    .hero{position:relative;overflow:hidden;padding:94px 0 82px;background:radial-gradient(circle at 83% 28%,rgba(40,207,56,.14),transparent 29%),linear-gradient(130deg,#f7fcf8 0%,#fff 54%,#f0fbf3 100%)}.hero:before{content:"";position:absolute;width:450px;height:450px;border:1px solid rgba(7,155,82,.11);border-radius:50%;right:-180px;top:-190px}.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:58px;position:relative}.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border:1px solid #d7efdf;border-radius:99px;background:#fff;color:var(--green);font-size:11px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase}.eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:#27c957;box-shadow:0 0 0 4px #e5f8e9}.hero h1{font-family:Manrope,sans-serif;font-size:clamp(40px,5.2vw,65px);line-height:1.1;letter-spacing:-2.7px;margin:22px 0 20px;max-width:680px}.hero h1 span{color:var(--green)}.hero p{max-width:570px;color:#647168;font-size:16px;line-height:1.85}.hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}.btn-outline{display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border:1px solid #d5e4d9;border-radius:99px;font-size:13px;font-weight:800;background:#fff}.btn-outline:hover{border-color:var(--green);color:var(--green)}.hero-note{display:flex;align-items:center;gap:12px;margin-top:30px;color:#69766e;font-size:12px}.hero-note b{color:#1c2920}.hero-visual{position:relative;min-height:440px;display:flex;align-items:center;justify-content:center}.visual-main{width:100%;height:410px;border-radius:34px;overflow:hidden;position:relative;box-shadow:0 28px 70px rgba(4,76,39,.18);background:#0b3826}.visual-main img{width:100%;height:100%;object-fit:cover;opacity:.78}.visual-main:after{content:"";position:absolute;inset:0;background:linear-gradient(140deg,rgba(4,57,34,.05),rgba(4,57,34,.55))}.visual-label{position:absolute;z-index:2;bottom:28px;left:28px;color:white}.visual-label span{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#b8f6c6;font-weight:800}.visual-label h3{font:800 28px Manrope,sans-serif;line-height:1.2;margin-top:7px}.float-card{position:absolute;z-index:3;right:-22px;top:45px;background:white;padding:17px 20px;border-radius:18px;box-shadow:var(--shadow);font-size:12px;color:#6c786f}.float-card strong{display:block;font:800 20px Manrope;color:var(--deep)}.float-card2{position:absolute;z-index:3;left:-24px;bottom:34px;background:#fff;padding:15px 18px;border-radius:17px;box-shadow:var(--shadow);font-size:11px;font-weight:700}.float-card2 span{color:var(--green);font-size:20px;margin-right:7px;vertical-align:middle}  
+    .trust-strip{border-bottom:1px solid var(--line);padding:22px 0}.trust-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}.trust-inner p{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#849087;font-weight:800}.trust-pill{font-size:12px;font-weight:700;color:#435047;display:flex;align-items:center;gap:8px}.trust-pill i{font-style:normal;color:var(--green);font-size:17px}  
+    section{padding:92px 0}.section-head{text-align:center;max-width:690px;margin:0 auto 45px}.kicker{color:var(--green);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:800}.section-head h2{font:800 clamp(30px,4vw,43px)/1.2 Manrope,sans-serif;letter-spacing:-1.5px;margin:12px 0}.section-head p{color:var(--muted);font-size:14px}.services{background:#fbfdfb}.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.service-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.28s;display:flex;flex-direction:column;min-height:320px}.service-card:hover{transform:translateY(-7px);box-shadow:var(--shadow);border-color:#bce8c8}.service-img{height:145px;overflow:hidden;position:relative;background:#eaf7ee}.service-img img{width:100%;height:100%;object-fit:cover;transition:.4s}.service-card:hover .service-img img{transform:scale(1.06)}.service-img:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,52,29,.28),transparent 70%)}.service-content{padding:19px 18px 18px;display:flex;flex-direction:column;flex:1}.service-icon{width:36px;height:36px;border-radius:11px;background:#e9f8ed;color:var(--green);display:grid;place-items:center;font-size:17px;margin-top:-37px;position:relative;z-index:2;border:3px solid white}.service-content h3{font:800 16px Manrope,sans-serif;margin:12px 0 7px}.service-content p{font-size:12px;color:var(--muted);line-height:1.65;flex:1}.learn{margin-top:14px;color:var(--green);font-size:12px;font-weight:800;display:flex;align-items:center;gap:7px}.learn span{transition:.2s}.service-card:hover .learn span{transform:translateX(5px)}  
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:65px;align-items:center}.about-art{position:relative;padding:20px}.about-art img{width:100%;height:390px;object-fit:cover;border-radius:28px;box-shadow:var(--shadow)}.about-art:before{content:"";position:absolute;left:0;bottom:0;width:150px;height:150px;border-left:8px solid #2acb46;border-bottom:8px solid #2acb46;border-radius:0 0 0 25px;z-index:-1}.about-copy h2{font:800 clamp(30px,4vw,42px)/1.2 Manrope,sans-serif;letter-spacing:-1.4px;margin:12px 0 17px}.about-copy p{font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:14px}.feature-list{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;margin:24px 0 28px}.feature{display:flex;gap:10px;align-items:flex-start;font-size:13px;font-weight:700}.check{flex:none;width:22px;height:22px;border-radius:50%;background:#e8f8ec;color:var(--green);display:grid;place-items:center;font-size:12px}  
+    .process{background:linear-gradient(135deg,#073e2a,#075b38);color:white}.process .section-head p{color:#c1d7c9}.process .kicker{color:#8cf0a4}.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.process-card{padding:25px 21px;border:1px solid rgba(255,255,255,.16);border-radius:19px;background:rgba(255,255,255,.055)}.process-card .num{font:800 30px Manrope;color:#65e582}.process-card h3{font:800 16px Manrope;margin:14px 0 7px}.process-card p{font-size:12px;color:#c4d8cb;line-height:1.75}  
+    .reviews{background:#f8fcf9}.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.review-slot{min-height:220px;border:2px dashed #b9d9c2;border-radius:19px;background:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;color:#718078}.review-slot .plus{width:43px;height:43px;margin:0 auto 12px;border-radius:50%;display:grid;place-items:center;background:#eaf8ed;color:var(--green);font-size:25px}.review-slot strong{display:block;color:#34463a;font-size:13px}.review-slot small{font-size:11px;display:block;margin-top:5px;line-height:1.6}.review-help{text-align:center;color:#87948b;font-size:11px;margin-top:18px}  
+    .cta{padding:0 0 92px;background:#f8fcf9}.cta-panel{background:linear-gradient(110deg,#078348,#0aaf58 65%,#27c943);border-radius:28px;padding:48px 55px;display:flex;align-items:center;justify-content:space-between;gap:30px;color:white;position:relative;overflow:hidden}.cta-panel:after{content:"";position:absolute;width:300px;height:300px;border:1px solid rgba(255,255,255,.2);border-radius:50%;right:24%;top:-210px}.cta-panel h2{font:800 clamp(25px,3.5vw,37px)/1.2 Manrope;letter-spacing:-1px;max-width:570px}.cta-panel p{font-size:13px;color:#e2ffea;margin-top:10px}.cta-panel .btn{background:white;color:var(--deep);box-shadow:none;position:relative;z-index:1;white-space:nowrap}.cta-panel .btn:hover{background:#e9ffed}  
+    footer{background:#071d13;color:#d9e8de;padding:62px 0 22px}.footer-grid{display:grid;grid-template-columns:1.4fr .8fr 1fr 1fr;gap:40px;padding-bottom:42px}.footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:17px}.footer-brand img{width:54px;height:54px;object-fit:contain;background:white;border-radius:50%;border:1px solid rgba(255,255,255,.22);padding:2px;flex:none}.footer-brand strong{font:800 18px Manrope;color:white}.footer-brand small{display:block;font-size:9px;letter-spacing:4px;color:#aabeb1}.footer-about p{font-size:12px;color:#a8bdb0;line-height:1.85;max-width:290px}.footer-col h4{font:800 13px Manrope;color:#fff;margin-bottom:17px}.footer-col a,.footer-col p{display:block;color:#a8bdb0;font-size:12px;margin:10px 0;line-height:1.6}.footer-col a:hover{color:#6ee78a}.socials{display:flex;gap:9px;margin-top:17px}.socials button{width:35px;height:35px;border:1px solid #355343;border-radius:50%;background:transparent;color:#d9e8de;font-size:12px;font-weight:800}.socials button:hover{background:var(--green);border-color:var(--green)}  
+    .socials .social-icon{width:38px;height:38px;display:grid;place-items:center;padding:0;border:1px solid #355343;border-radius:50%;background:transparent;color:#e5f4e9;transition:background .2s,border-color .2s,transform .2s}  
+    .socials .social-icon svg{width:19px;height:19px;display:block}  
+    .socials .social-icon:hover{background:var(--green);border-color:var(--green);transform:translateY(-2px)}  
+    .fb-mark{width:20px;height:20px;display:inline-grid;place-items:center}  
+    .fb-mark svg{width:18px;height:18px;display:block}  
+    .close-modal:focus-visible,.social-icon:focus-visible{outline:3px solid #72e88e;outline-offset:3px}  
+    @media(max-width:480px){.modal{padding:32px 22px 28px;border-radius:25px}.close-modal{right:13px;top:13px;width:42px;height:42px;font-size:29px}.modal h3{padding:0 12px;font-size:25px}}  
+.copyright{border-top:1px solid #1e392a;padding-top:20px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:#80998a;font-size:11px}.copyright a{color:#a9c5b3}  
+    .modal-backdrop{position:fixed;inset:0;background:rgba(3,22,13,.65);backdrop-filter:blur(6px);z-index:100;display:none;align-items:center;justify-content:center;padding:20px}.modal-backdrop.show{display:flex}.modal{width:min(430px,100%);background:#fff;border-radius:24px;padding:34px;text-align:center;box-shadow:0 25px 90px rgba(0,0,0,.25);position:relative;animation:pop .2s ease}.modal-mark{width:58px;height:58px;margin:0 auto 15px;border-radius:18px;background:linear-gradient(135deg,#e7f9ec,#c8f3d2);display:grid;place-items:center;color:var(--green);font-size:26px}.modal .tag{font-size:10px;letter-spacing:2px;color:var(--green);font-weight:800;text-transform:uppercase}.modal h3{font:800 26px Manrope;margin:8px 0}.modal p{font-size:13px;color:var(--muted);margin-bottom:22px}.fb-link{display:flex;align-items:center;justify-content:center;gap:10px;padding:13px;border-radius:13px;background:#0866ff;color:#fff;font-size:13px;font-weight:800}.close-modal{position:absolute;right:15px;top:13px;border:0;background:#f0f5f1;border-radius:50%;width:30px;height:30px;font-size:18px;color:#425148}.close-modal:hover{background:#e2eee5}@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}  
+    @media(max-width:1000px){.navlinks{gap:15px}.service-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1.2fr 1fr 1fr}.footer-about{grid-column:span 3}.hero-grid{gap:35px}.float-card{right:-8px}.float-card2{left:-8px}}  
+    @media(max-width:760px){.container{width:min(100% - 30px,560px)}.nav{height:70px}.brand img{width:47px;height:47px}.brand strong{font-size:16px}.menu-btn{display:block}.nav-cta{display:none}.navlinks{display:none;position:absolute;top:70px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:18px 25px 23px;flex-direction:column;align-items:flex-start;gap:16px;box-shadow:0 16px 25px rgba(0,0,0,.06)}.navlinks.open{display:flex}.hero{padding:65px 0 58px}.hero-grid{grid-template-columns:1fr;gap:35px}.hero h1{font-size:43px;letter-spacing:-1.8px}.hero p{font-size:14px}.hero-visual{min-height:330px}.visual-main{height:320px}.float-card{top:20px}.trust-inner{justify-content:center}.trust-inner p{width:100%;text-align:center}.trust-pill{font-size:11px}section{padding:68px 0}.section-head{margin-bottom:32px}.service-grid{gap:12px}.service-card{min-height:310px}.service-img{height:125px}.service-content{padding:16px 14px}.service-content h3{font-size:14px}.service-content p{font-size:11px}.about-grid{grid-template-columns:1fr;gap:35px}.about-art img{height:300px}.about-copy h2{font-size:33px}.process-grid{grid-template-columns:1fr 1fr;gap:12px}.process-card{padding:19px 16px}.review-grid{grid-template-columns:1fr}.review-slot{min-height:170px}.cta{padding-bottom:68px}.cta-panel{padding:32px 25px;display:block}.cta-panel .btn{margin-top:22px}.footer-grid{grid-template-columns:1fr 1fr;gap:28px}.footer-about{grid-column:span 2}.copyright{font-size:10px}}  
+    @media(max-width:390px){.hero h1{font-size:37px}.service-grid{grid-template-columns:1fr}.service-card{min-height:300px}.service-img{height:155px}.process-grid{grid-template-columns:1fr}.feature-list{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-about{grid-column:auto}}  /* NextCraft Studio: deep-forest and fresh-green visual system */  
+:root{--green:#20c653;--green2:#62e77a;--deep:#061d17;--ink:#101a16;--muted:#7a8981;--pale:#eff5f0;--line:#dce7df;--white:#fff;--shadow:0 18px 55px rgba(0,0,0,.18)}  
+body{background:#f5f8f5;color:#101a16}  
+header{background:rgba(4,22,17,.96);border-bottom:1px solid rgba(125,224,151,.12)}  
+.brand strong{color:#f5fff7}.brand small{color:#a6b9ac}.navlinks{color:#d8e5dc}.navlinks a:hover{color:#61e77c}.menu-btn{background:#102d22;color:#75eb8b}  
+.nav-cta,.btn{background:#18a94d;color:#fff}.nav-cta:hover,.btn:hover{background:#35cf5d;color:#03170d}  
+.hero{background:radial-gradient(circle at 78% 35%,rgba(26,197,78,.16),transparent 34%),linear-gradient(125deg,#041b14 0%,#06251a 55%,#03150f 100%);color:#f6fff8;padding:78px 0 76px}  
+.hero:before{border-color:rgba(79,226,111,.15)}.eyebrow{background:rgba(20,74,44,.38);border-color:rgba(85,226,116,.24);color:#78ed91}.hero h1 span{color:#39d95e}.hero p{color:#bdcec2}.hero-note{color:#9eb5a6}.hero-note b{color:#e2f4e7}.btn-outline{background:rgba(255,255,255,.04);border-color:rgba(210,239,218,.24);color:#effff2}.btn-outline:hover{border-color:#4de36e;color:#72f08b}  
+.hero-visual{min-height:430px;padding:12px 8px}.growth-dashboard{width:100%;max-width:530px;min-height:365px;padding:23px;border:1px solid rgba(117,228,145,.2);border-radius:24px;background:linear-gradient(145deg,rgba(14,47,34,.98),rgba(5,28,20,.98));box-shadow:0 30px 75px rgba(0,0,0,.34);position:relative;overflow:hidden;animation:dashboardFloat 7s ease-in-out infinite}  
+.growth-dashboard:before{content:"";position:absolute;width:250px;height:250px;border-radius:50%;background:rgba(32,198,83,.10);filter:blur(35px);right:-100px;top:-130px;pointer-events:none}  
+.dashboard-top,.dashboard-heading,.chart-caption,.chart-legend,.dashboard-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;position:relative}.dashboard-top{padding-bottom:18px;border-bottom:1px solid rgba(218,255,227,.1)}.dashboard-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#42d965;margin-right:5px}.dashboard-dot:first-child{background:#f2c66a}.dashboard-dot:nth-child(2){background:#76c9ff}.dashboard-label,.live-indicator{font-size:8px;letter-spacing:1.4px;color:#a8c4b1;font-weight:800}.live-indicator{color:#5be27b}.dashboard-heading{padding:20px 0 16px}.dashboard-heading small{color:#94ad9c;font-size:10px}.dashboard-heading h3{font:800 17px Manrope,sans-serif;color:#f1fff4;max-width:280px;line-height:1.3;margin-top:4px}.trend-icon{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:rgba(38,208,86,.13);color:#6aee87;font-size:23px}.metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;position:relative}.metric-card{padding:12px 10px;border:1px solid rgba(208,244,217,.1);border-radius:12px;background:rgba(255,255,255,.035)}.metric-card span,.metric-card small{display:block;font-size:8px;color:#9db5a5}.metric-card strong{display:block;color:#eaffed;font:800 13px Manrope;margin:5px 0 3px}.chart-area{margin-top:18px;padding:14px 13px 10px;border:1px solid rgba(208,244,217,.1);border-radius:14px;background:rgba(0,0,0,.12);position:relative}.chart-caption strong{font:700 10px Manrope;color:#e6f7e9}.chart-caption span{font-size:8px;color:#8da99a}.chart-grid{height:105px;position:relative;margin-top:10px;display:flex;flex-direction:column;justify-content:space-between}.chart-grid>span{height:1px;background:rgba(214,242,221,.09);width:100%}.chart-grid svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.chart-fill{fill:url(#chartFill)}.chart-line{fill:none;stroke:#4ee574;stroke-width:3;stroke-linecap:round;stroke-dasharray:700;stroke-dashoffset:700;animation:drawLine 3s ease forwards .4s}.chart-point{fill:#b5ffc4;stroke:#27c958;stroke-width:4;animation:pointPulse 2.4s ease-in-out infinite}.chart-legend{font-size:8px;color:#8eaa98;margin-top:7px}.dashboard-foot{justify-content:flex-start;flex-wrap:wrap;margin-top:14px;color:#a9cbb4;font-size:8px}.dashboard-foot span{padding:6px 8px;border-radius:7px;background:rgba(45,196,88,.09)}.float-card{right:-14px;top:8px;background:#0c3021;border:1px solid rgba(117,228,145,.22);color:#a9c6b3;box-shadow:0 14px 35px rgba(0,0,0,.25)}.float-card strong{color:#7bef91}  
+.trust-strip{background:#0b211a;border-color:rgba(150,211,166,.12)}.trust-inner p{color:#7e9b89}.trust-pill{color:#d4e7d9}.trust-pill i{color:#5be47a}  
+.services{background:#061a14;color:#f4fff6}.services .section-head p{color:#9db2a4}.services .kicker{color:#67e985}.services .section-head h2{color:#f3fff5}.service-grid{grid-template-columns:repeat(3,1fr);gap:18px}.service-card{min-height:235px;background:linear-gradient(145deg,#0d241d,#0a1c16);border:1px solid rgba(174,223,185,.12);border-radius:18px;overflow:hidden;transition:transform .28s,border-color .28s,box-shadow .28s}.service-card:hover{transform:translateY(-6px);border-color:rgba(83,224,117,.55);box-shadow:0 18px 38px rgba(0,0,0,.25)}.service-content{padding:23px 22px;min-height:235px}.service-icon{margin:0;width:40px;height:40px;border:1px solid rgba(92,229,124,.2);border-radius:12px;background:rgba(38,199,83,.12);color:#6bed89;font-size:19px}.service-content h3{color:#f0fff3;font-size:16px;margin:17px 0 9px}.service-content p{color:#9bb0a2;font-size:12px;line-height:1.8}.learn{color:#6dea87;margin-top:18px}.learn span{transition:transform .25s}.service-card:hover .learn span{transform:translateX(5px)}  
+#about{background:#f4f7f4;color:#142019}#about .kicker{color:#159c48}.about-copy p{color:#65736a}.about-art img{box-shadow:0 20px 55px rgba(4,36,20,.13)}  
+.process{background:linear-gradient(135deg,#061b14,#0a3321)}.process .section-head h2{color:#f2fff5}.process-card{background:rgba(255,255,255,.045);border-color:rgba(190,239,199,.13)}.process-card p{color:#adc4b4}  
+.reviews{background:#f4f8f4}.reviews .kicker{color:#159c48}.review-slot{border-color:#b9d7c1;background:#fff}.cta{background:#f4f8f4}.cta-panel{background:linear-gradient(110deg,#087b3e,#0b9f4b 62%,#27c653)}  
+footer{background:#041710;color:#e7f4ea}.footer-col a,.footer-about p{color:#a9bdb0}.footer-col a:hover{color:#67e985}.copyright{border-color:rgba(195,232,203,.13);color:#81998a}  
+.modal-backdrop{background:rgba(0,13,8,.78)}.modal{background:#0b2419;color:#effff2;border:1px solid rgba(107,226,132,.2)}.modal p{color:#adc4b4}.close-modal{display:grid;place-items:center;width:42px;height:42px;line-height:1;padding:0;font-family:Arial,sans-serif;font-size:29px;font-weight:500;color:#063d2a!important;background:#e9fff0!important;border:1px solid rgba(51,190,91,.35);border-radius:50%;box-shadow:0 4px 14px rgba(0,0,0,.18);z-index:5;opacity:1}.close-modal:hover{background:#c9f8d7!important;color:#042719!important;transform:rotate(90deg)}.fb-link{background:#168b45;color:#fff}  
+@keyframes dashboardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}@keyframes drawLine{to{stroke-dashoffset:0}}@keyframes pointPulse{0%,100%{filter:drop-shadow(0 0 0 rgba(75,232,115,0))}50%{filter:drop-shadow(0 0 7px rgba(75,232,115,.8))}}  
+@media(max-width:1000px){.service-grid{grid-template-columns:repeat(2,1fr)}}  
+@media(max-width:760px){header{background:rgba(4,22,17,.98)}.navlinks{background:#071d15;border-color:rgba(125,224,151,.15)}.navlinks a{color:#d8e5dc}.hero{padding:58px 0 52px}.hero-visual{min-height:355px;padding:8px 3px}.growth-dashboard{padding:18px;min-height:340px}.dashboard-heading h3{font-size:15px}.float-card{right:-4px;top:-5px}.metric-card{padding:10px 8px}.metric-card strong{font-size:11px}.dashboard-foot{gap:5px}.dashboard-foot span{font-size:7px}.service-grid{grid-template-columns:1fr 1fr}.service-card,.service-content{min-height:250px}.service-content{padding:19px 16px}.service-content h3{font-size:14px}.service-content p{font-size:11px}}  
+@media(max-width:390px){.service-grid{grid-template-columns:1fr}.service-card,.service-content{min-height:220px}.growth-dashboard{padding:15px}.dashboard-label{font-size:7px}.live-indicator{font-size:7px}.chart-caption span{font-size:7px}}  
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}  
 
-    /* NextCraft Studio: deep-forest and fresh-green visual system */
-    :root{--green:#20c653;--green2:#62e77a;--deep:#061d17;--ink:#101a16;--muted:#7a8981;--pale:#eff5f0;--line:#dce7df;--white:#fff;--shadow:0 18px 55px rgba(0,0,0,.18)}
-    body{background:#f5f8f5;color:#101a16}
-    header{background:rgba(4,22,17,.96);border-bottom:1px solid rgba(125,224,151,.12)}
-    .brand strong{color:#f5fff7}.brand small{color:#a6b9ac}.navlinks{color:#d8e5dc}.navlinks a:hover{color:#61e77c}.menu-btn{background:#102d22;color:#75eb8b}
-    .nav-cta,.btn{background:#18a94d;color:#fff}.nav-cta:hover,.btn:hover{background:#35cf5d;color:#03170d}
-    .hero{background:radial-gradient(circle at 78% 35%,rgba(26,197,78,.16),transparent 34%),linear-gradient(125deg,#041b14 0%,#06251a 55%,#03150f 100%);color:#f6fff8;padding:78px 0 76px}
-    .hero:before{border-color:rgba(79,226,111,.15)}.eyebrow{background:rgba(20,74,44,.38);border-color:rgba(85,226,116,.24);color:#78ed91}.hero h1 span{color:#39d95e}.hero p{color:#bdcec2}.hero-note{color:#9eb5a6}.hero-note b{color:#e2f4e7}.btn-outline{background:rgba(255,255,255,.04);border-color:rgba(210,239,218,.24);color:#effff2}.btn-outline:hover{border-color:#4de36e;color:#72f08b}
-    .hero-visual{min-height:430px;padding:12px 8px}.growth-dashboard{width:100%;max-width:530px;min-height:365px;padding:23px;border:1px solid rgba(117,228,145,.2);border-radius:24px;background:linear-gradient(145deg,rgba(14,47,34,.98),rgba(5,28,20,.98));box-shadow:0 30px 75px rgba(0,0,0,.34);position:relative;overflow:hidden;animation:dashboardFloat 7s ease-in-out infinite}
-    .growth-dashboard:before{content:"";position:absolute;width:250px;height:250px;border-radius:50%;background:rgba(32,198,83,.10);filter:blur(35px);right:-100px;top:-130px;pointer-events:none}
-    .dashboard-top,.dashboard-heading,.chart-caption,.chart-legend,.dashboard-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;position:relative}.dashboard-top{padding-bottom:18px;border-bottom:1px solid rgba(218,255,227,.1)}.dashboard-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#42d965;margin-right:5px}.dashboard-dot:first-child{background:#f2c66a}.dashboard-dot:nth-child(2){background:#76c9ff}.dashboard-label,.live-indicator{font-size:8px;letter-spacing:1.4px;color:#a8c4b1;font-weight:800}.live-indicator{color:#5be27b}.dashboard-heading{padding:20px 0 16px}.dashboard-heading small{color:#94ad9c;font-size:10px}.dashboard-heading h3{font:800 17px Manrope,sans-serif;color:#f1fff4;max-width:280px;line-height:1.3;margin-top:4px}.trend-icon{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:rgba(38,208,86,.13);color:#6aee87;font-size:23px}.metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;position:relative}.metric-card{padding:12px 10px;border:1px solid rgba(208,244,217,.1);border-radius:12px;background:rgba(255,255,255,.035)}.metric-card span,.metric-card small{display:block;font-size:8px;color:#9db5a5}.metric-card strong{display:block;color:#eaffed;font:800 13px Manrope;margin:5px 0 3px}.chart-area{margin-top:18px;padding:14px 13px 10px;border:1px solid rgba(208,244,217,.1);border-radius:14px;background:rgba(0,0,0,.12);position:relative}.chart-caption strong{font:700 10px Manrope;color:#e6f7e9}.chart-caption span{font-size:8px;color:#8da99a}.chart-grid{height:105px;position:relative;margin-top:10px;display:flex;flex-direction:column;justify-content:space-between}.chart-grid>span{height:1px;background:rgba(214,242,221,.09);width:100%}.chart-grid svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.chart-fill{fill:url(#chartFill)}.chart-line{fill:none;stroke:#4ee574;stroke-width:3;stroke-linecap:round;stroke-dasharray:700;stroke-dashoffset:700;animation:drawLine 3s ease forwards .4s}.chart-point{fill:#b5ffc4;stroke:#27c958;stroke-width:4;animation:pointPulse 2.4s ease-in-out infinite}.chart-legend{font-size:8px;color:#8eaa98;margin-top:7px}.dashboard-foot{justify-content:flex-start;flex-wrap:wrap;margin-top:14px;color:#a9cbb4;font-size:8px}.dashboard-foot span{padding:6px 8px;border-radius:7px;background:rgba(45,196,88,.09)}.float-card{right:-14px;top:8px;background:#0c3021;border:1px solid rgba(117,228,145,.22);color:#a9c6b3;box-shadow:0 14px 35px rgba(0,0,0,.25)}.float-card strong{color:#7bef91}
-    .trust-strip{background:#0b211a;border-color:rgba(150,211,166,.12)}.trust-inner p{color:#7e9b89}.trust-pill{color:#d4e7d9}.trust-pill i{color:#5be47a}
-    .services{background:#061a14;color:#f4fff6}.services .section-head p{color:#9db2a4}.services .kicker{color:#67e985}.services .section-head h2{color:#f3fff5}.service-grid{grid-template-columns:repeat(3,1fr);gap:18px}.service-card{min-height:235px;background:linear-gradient(145deg,#0d241d,#0a1c16);border:1px solid rgba(174,223,185,.12);border-radius:18px;overflow:hidden;transition:transform .28s,border-color .28s,box-shadow .28s}.service-card:hover{transform:translateY(-6px);border-color:rgba(83,224,117,.55);box-shadow:0 18px 38px rgba(0,0,0,.25)}.service-content{padding:23px 22px;min-height:235px}.service-icon{margin:0;width:40px;height:40px;border:1px solid rgba(92,229,124,.2);border-radius:12px;background:rgba(38,199,83,.12);color:#6bed89;font-size:19px}.service-content h3{color:#f0fff3;font-size:16px;margin:17px 0 9px}.service-content p{color:#9bb0a2;font-size:12px;line-height:1.8}.learn{color:#6dea87;margin-top:18px}.learn span{transition:transform .25s}.service-card:hover .learn span{transform:translateX(5px)}
-    #about{background:#f4f7f4;color:#142019}#about .kicker{color:#159c48}.about-copy p{color:#65736a}.about-art img{box-shadow:0 20px 55px rgba(4,36,20,.13)}
-    .process{background:linear-gradient(135deg,#061b14,#0a3321)}.process .section-head h2{color:#f2fff5}.process-card{background:rgba(255,255,255,.045);border-color:rgba(190,239,199,.13)}.process-card p{color:#adc4b4}
-    .reviews{background:#f4f8f4}.reviews .kicker{color:#159c48}.review-slot{border-color:#b9d7c1;background:#fff}.cta{background:#f4f8f4}.cta-panel{background:linear-gradient(110deg,#087b3e,#0b9f4b 62%,#27c653)}
-    footer{background:#041710;color:#e7f4ea}.footer-col a,.footer-about p{color:#a9bdb0}.footer-col a:hover{color:#67e985}.copyright{border-color:rgba(195,232,203,.13);color:#81998a}
-    .modal-backdrop{background:rgba(0,13,8,.78)}.modal{background:#0b2419;color:#effff2;border:1px solid rgba(107,226,132,.2)}.modal p{color:#adc4b4}.close-modal{display:grid;place-items:center;width:42px;height:42px;line-height:1;padding:0;font-family:Arial,sans-serif;font-size:29px;font-weight:500;color:#063d2a!important;background:#e9fff0!important;border:1px solid rgba(51,190,91,.35);border-radius:50%;box-shadow:0 4px 14px rgba(0,0,0,.18);z-index:5;opacity:1}.close-modal:hover{background:#c9f8d7!important;color:#042719!important;transform:rotate(90deg)}.fb-link{background:#168b45;color:#fff}
-    @keyframes dashboardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}@keyframes drawLine{to{stroke-dashoffset:0}}@keyframes pointPulse{0%,100%{filter:drop-shadow(0 0 0 rgba(75,232,115,0))}50%{filter:drop-shadow(0 0 7px rgba(75,232,115,.8))}}
-    @media(max-width:1000px){.service-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:760px){header{background:rgba(4,22,17,.98)}.navlinks{background:#071d15;border-color:rgba(125,224,151,.15)}.navlinks a{color:#d8e5dc}.hero{padding:58px 0 52px}.hero-visual{min-height:355px;padding:8px 3px}.growth-dashboard{padding:18px;min-height:340px}.dashboard-heading h3{font-size:15px}.float-card{right:-4px;top:-5px}.metric-card{padding:10px 8px}.metric-card strong{font-size:11px}.dashboard-foot{gap:5px}.dashboard-foot span{font-size:7px}.service-grid{grid-template-columns:1fr 1fr}.service-card,.service-content{min-height:250px}.service-content{padding:19px 16px}.service-content h3{font-size:14px}.service-content p{font-size:11px}}
-    @media(max-width:390px){.service-grid{grid-template-columns:1fr}.service-card,.service-content{min-height:220px}.growth-dashboard{padding:15px}.dashboard-label{font-size:7px}.live-indicator{font-size:7px}.chart-caption span{font-size:7px}}
-    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
-
-    /* Service detail page — shares the homepage palette and typography */
-    .service-hero{padding:82px 0 76px;background:radial-gradient(circle at 82% 18%,rgba(40,207,56,.14),transparent 28%),linear-gradient(130deg,#f7fcf8 0%,#fff 55%,#f0fbf3 100%);position:relative;overflow:hidden}
-    .service-hero:before{content:"";position:absolute;width:430px;height:430px;border:1px solid rgba(7,155,82,.12);border-radius:50%;right:-180px;top:-220px}
-    .service-hero-grid > div:only-child{grid-column:1/-1;max-width:850px}
-    .price-section{background:#09251a}
-    .price-wrap{display:flex;justify-content:center;align-items:center}
-    .price-wrap .price-card{width:min(100%,560px)}
-    .service-hero-grid{position:relative;display:grid;grid-template-columns:1.12fr .88fr;gap:55px;align-items:center}
-    .service-hero h1{font:800 clamp(38px,5vw,59px)/1.12 Manrope,sans-serif;letter-spacing:-2.2px;margin:20px 0 18px;max-width:720px}
-    .service-hero h1 span{color:var(--green)}.service-hero .lead{font-size:16px;line-height:1.85;color:#647168;max-width:620px}
-    .service-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}.demo-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid #cfe5d5;color:var(--deep);background:#fff;border-radius:999px;padding:12px 19px;font-size:13px;font-weight:800;transition:.25s}.demo-btn:hover{border-color:var(--green);color:var(--green);transform:translateY(-2px)}
-    .price-card{background:#082d20;color:#fff;border:1px solid rgba(40,207,56,.28);border-radius:28px;padding:30px;box-shadow:0 25px 65px rgba(4,76,39,.18);position:relative;overflow:hidden}
-    .price-card:after{content:"";position:absolute;width:210px;height:210px;border:1px solid rgba(118,239,145,.2);border-radius:50%;right:-95px;top:-105px}
-    .price-label{display:inline-flex;padding:7px 12px;border-radius:99px;background:rgba(40,207,56,.13);color:#9af0ad;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;font-weight:800}
-    .price-card h2{font:800 17px Manrope,sans-serif;margin:22px 0 5px;color:#d8f5df}.price{font:800 clamp(42px,5vw,58px)/1.1 Manrope,sans-serif;color:#fff;letter-spacing:-2px}.price small{font:700 15px 'DM Sans',sans-serif;color:#b8d7c2;letter-spacing:0}.price-note{color:#b8d7c2;font-size:12px;margin-top:12px;line-height:1.7}.price-points{list-style:none;margin-top:23px;display:grid;gap:12px}.price-points li{display:flex;gap:10px;align-items:center;color:#e3f4e8;font-size:12px}.price-points b{color:#77e991;font-size:16px}
-    .detail-section{padding:86px 0}.detail-section.soft{background:#f8fcf9}.detail-heading{text-align:center;max-width:700px;margin:0 auto 40px}.detail-heading .kicker{display:block}.detail-heading h2{font:800 clamp(29px,4vw,41px)/1.2 Manrope,sans-serif;letter-spacing:-1.3px;margin:12px 0}.detail-heading p{font-size:14px;color:var(--muted);line-height:1.8}
-    .included-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.included-card{display:flex;gap:16px;padding:23px;border:1px solid var(--line);background:#fff;border-radius:19px;transition:.25s}.included-card:hover{transform:translateY(-4px);border-color:#bce8c8;box-shadow:var(--shadow)}.included-icon{width:46px;height:46px;flex:none;border-radius:14px;background:#e9f8ed;color:var(--green);display:grid;place-items:center;font-size:21px}.included-card h3{font:800 15px Manrope,sans-serif;margin:1px 0 6px}.included-card p{font-size:12px;line-height:1.7;color:var(--muted)}
-    .benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.benefit-card{padding:25px 22px;border:1px solid var(--line);border-radius:19px;background:#fff}.benefit-card .symbol{font-size:22px;color:var(--green)}.benefit-card h3{font:800 15px Manrope,sans-serif;margin:12px 0 7px}.benefit-card p{font-size:12px;color:var(--muted);line-height:1.75}
-    .delivery-band{background:linear-gradient(120deg,#073e2a,#075b38);color:#fff;padding:34px;border-radius:24px;display:flex;align-items:center;justify-content:space-between;gap:25px}.delivery-band h3{font:800 22px Manrope,sans-serif;margin-bottom:6px}.delivery-band p{font-size:13px;color:#c5dfce;line-height:1.7}.delivery-time{white-space:nowrap;font:800 27px Manrope;color:#8df0a5}
-    .service-faq{max-width:820px;margin:auto;display:grid;gap:12px}.service-faq details{border:1px solid var(--line);border-radius:15px;padding:17px 20px;background:#fff}.service-faq summary{font:800 14px Manrope;cursor:pointer;color:#1c2920}.service-faq details p{font-size:13px;color:var(--muted);line-height:1.8;padding-top:12px}
-    @media(max-width:850px){.service-hero-grid{grid-template-columns:1fr;gap:32px}.price-card{max-width:520px}.benefit-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:560px){.service-hero{padding:60px 0 55px}.service-hero h1{font-size:39px;letter-spacing:-1.6px}.service-hero .lead{font-size:14px}.price-card{padding:24px}.included-grid,.benefit-grid{grid-template-columns:1fr}.detail-section{padding:65px 0}.delivery-band{padding:25px;display:block}.delivery-time{display:block;margin-top:16px}.service-actions a{width:100%}}
+/* Service detail page — shares the homepage palette and typography */  
+.service-hero{padding:82px 0 76px;background:radial-gradient(circle at 82% 18%,rgba(40,207,56,.14),transparent 28%),linear-gradient(130deg,#f7fcf8 0%,#fff 55%,#f0fbf3 100%);position:relative;overflow:hidden}  
+.service-hero:before{content:"";position:absolute;width:430px;height:430px;border:1px solid rgba(7,155,82,.12);border-radius:50%;right:-180px;top:-220px}  
+.service-hero-grid > div:only-child{grid-column:1/-1;max-width:850px}  
+.price-section{background:#09251a}  
+.price-wrap{display:flex;justify-content:center;align-items:center}  
+.price-wrap .price-card{width:min(100%,560px)}  
+.service-hero-grid{position:relative;display:grid;grid-template-columns:1.12fr .88fr;gap:55px;align-items:center}  
+.service-hero h1{font:800 clamp(38px,5vw,59px)/1.12 Manrope,sans-serif;letter-spacing:-2.2px;margin:20px 0 18px;max-width:720px}  
+.service-hero h1 span{color:var(--green)}.service-hero .lead{font-size:16px;line-height:1.85;color:#647168;max-width:620px}  
+.service-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}.demo-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid #cfe5d5;color:var(--deep);background:#fff;border-radius:999px;padding:12px 19px;font-size:13px;font-weight:800;transition:.25s}.demo-btn:hover{border-color:var(--green);color:var(--green);transform:translateY(-2px)}  
+.price-card{background:#082d20;color:#fff;border:1px solid rgba(40,207,56,.28);border-radius:28px;padding:30px;box-shadow:0 25px 65px rgba(4,76,39,.18);position:relative;overflow:hidden}  
+.price-card:after{content:"";position:absolute;width:210px;height:210px;border:1px solid rgba(118,239,145,.2);border-radius:50%;right:-95px;top:-105px}  
+.price-label{display:inline-flex;padding:7px 12px;border-radius:99px;background:rgba(40,207,56,.13);color:#9af0ad;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;font-weight:800}  
+.price-card h2{font:800 17px Manrope,sans-serif;margin:22px 0 5px;color:#d8f5df}.price{font:800 clamp(42px,5vw,58px)/1.1 Manrope,sans-serif;color:#fff;letter-spacing:-2px}.price small{font:700 15px 'DM Sans',sans-serif;color:#b8d7c2;letter-spacing:0}.price-note{color:#b8d7c2;font-size:12px;margin-top:12px;line-height:1.7}.price-points{list-style:none;margin-top:23px;display:grid;gap:12px}.price-points li{display:flex;gap:10px;align-items:center;color:#e3f4e8;font-size:12px}.price-points b{color:#77e991;font-size:16px}  
+.detail-section{padding:86px 0}.detail-section.soft{background:#f8fcf9}.detail-heading{text-align:center;max-width:700px;margin:0 auto 40px}.detail-heading .kicker{display:block}.detail-heading h2{font:800 clamp(29px,4vw,41px)/1.2 Manrope,sans-serif;letter-spacing:-1.3px;margin:12px 0}.detail-heading p{font-size:14px;color:var(--muted);line-height:1.8}  
+.included-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.included-card{display:flex;gap:16px;padding:23px;border:1px solid var(--line);background:#fff;border-radius:19px;transition:.25s}.included-card:hover{transform:translateY(-4px);border-color:#bce8c8;box-shadow:var(--shadow)}.included-icon{width:46px;height:46px;flex:none;border-radius:14px;background:#e9f8ed;color:var(--green);display:grid;place-items:center;font-size:21px}.included-card h3{font:800 15px Manrope,sans-serif;margin:1px 0 6px}.included-card p{font-size:12px;line-height:1.7;color:var(--muted)}  
+.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.benefit-card{padding:25px 22px;border:1px solid var(--line);border-radius:19px;background:#fff}.benefit-card .symbol{font-size:22px;color:var(--green)}.benefit-card h3{font:800 15px Manrope,sans-serif;margin:12px 0 7px}.benefit-card p{font-size:12px;color:var(--muted);line-height:1.75}  
+.delivery-band{background:linear-gradient(120deg,#073e2a,#075b38);color:#fff;padding:34px;border-radius:24px;display:flex;align-items:center;justify-content:space-between;gap:25px}.delivery-band h3{font:800 22px Manrope,sans-serif;margin-bottom:6px}.delivery-band p{font-size:13px;color:#c5dfce;line-height:1.7}.delivery-time{white-space:nowrap;font:800 27px Manrope;color:#8df0a5}  
+.service-faq{max-width:820px;margin:auto;display:grid;gap:12px}.service-faq details{border:1px solid var(--line);border-radius:15px;padding:17px 20px;background:#fff}.service-faq summary{font:800 14px Manrope;cursor:pointer;color:#1c2920}.service-faq details p{font-size:13px;color:var(--muted);line-height:1.8;padding-top:12px}  
+@media(max-width:850px){.service-hero-grid{grid-template-columns:1fr;gap:32px}.price-card{max-width:520px}.benefit-grid{grid-template-columns:1fr 1fr}}  
+@media(max-width:560px){.service-hero{padding:60px 0 55px}.service-hero h1{font-size:39px;letter-spacing:-1.6px}.service-hero .lead{font-size:14px}.price-card{padding:24px}.included-grid,.benefit-grid{grid-template-columns:1fr}.detail-section{padding:65px 0}.delivery-band{padding:25px;display:block}.delivery-time{display:block;margin-top:16px}.service-actions a{width:100%}}  
 
 
-    /* Service detail refresh: predominantly deep-green sections with clean white cards */
-    body{background:#061b14;color:#f1fff4}
-    .service-hero{background:radial-gradient(circle at 82% 18%,rgba(35,205,83,.16),transparent 29%),linear-gradient(130deg,#041b14 0%,#06271b 58%,#03160f 100%);color:#f4fff6}
-    .service-hero:before{border-color:rgba(104,231,135,.16)}
-    .service-hero h1{color:#f5fff7}.service-hero h1 span{color:#48df6b}.service-hero .lead{color:#b7cbbd}
-    .service-hero .eyebrow{background:rgba(24,89,49,.35);border-color:rgba(99,222,126,.25);color:#79ed91}
-    .service-hero .hero-note{color:#a9c0b0}.service-hero .hero-note b{color:#e9fff0}
-    .service-hero .btn-outline,.service-hero .demo-btn{background:rgba(255,255,255,.06);border-color:rgba(203,239,211,.25);color:#edfff1}
-    .service-hero .demo-btn:hover,.service-hero .btn-outline:hover{background:#fff;color:#063d2a}
-    .price-card{background:#f7fff8;color:#10251a;border:1px solid rgba(255,255,255,.75);box-shadow:0 25px 65px rgba(0,0,0,.28)}
-    .price-card h2{color:#123c25}.price{color:#087b3e}.price small,.price-note{color:#61766a}.price-points li{color:#304b39}.price-points b{color:#0b9b49}
-    .price-label{background:#e5f8e9;color:#087b3e}
-    .detail-section{background:#061b14;color:#f2fff5}
-    .detail-section.soft{background:#09251a}
-    .detail-heading h2{color:#f4fff6}.detail-heading p{color:#a9bfb0}.detail-heading .kicker{color:#68e986}
-    .included-card,.benefit-card,.service-faq details{background:#f8fff9;border-color:rgba(201,235,207,.8);color:#14251a}
-    .included-card h3,.benefit-card h3,.service-faq summary{color:#143b24}
-    .included-card p,.benefit-card p,.service-faq details p{color:#63766a}
-    .included-icon{background:#e5f8e9;color:#078b42}
-    .included-icon svg,.benefit-card .symbol svg{width:23px;height:23px;display:block}
-    .benefit-card .symbol{color:#078b42}
-    .delivery-band{background:#f7fff8;color:#123b24;border:1px solid rgba(199,235,207,.8);box-shadow:0 18px 45px rgba(0,0,0,.16)}
-    .delivery-band p{color:#64776a}.delivery-time{color:#078b42}
-    .cta{background:#061b14}
-    .cta-panel{background:#f7fff8;color:#123b24;border:1px solid rgba(199,235,207,.8);box-shadow:0 18px 50px rgba(0,0,0,.18)}
-    .cta-panel p{color:#62766a}.cta-panel .btn{background:#11984b;color:#fff}.cta-panel .btn:hover{background:#075d34;color:#fff}
-    .service-faq details{border-color:rgba(201,235,207,.8)}
-    .video-samples{background:#09251a}
-    .video-samples{background:#061b14;padding-top:72px;padding-bottom:76px}
-    .sample-group{margin-top:44px}
-    .sample-group + .sample-group{margin-top:62px}
-    .sample-group-heading{display:flex;align-items:center;gap:15px;margin-bottom:20px}
-    .sample-index{width:43px;height:43px;flex:none;border-radius:13px;background:#f4fff6;color:#078b42;display:grid;place-items:center;font:800 14px Manrope,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.16)}
-    .sample-group-heading h3{font:800 20px Manrope,sans-serif;color:#f4fff6;letter-spacing:-.4px}
-    .sample-group-heading p{font-size:12px;color:#a9bfb0;margin-top:3px}
-    .video-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-    .video-card{min-width:0;background:#f8fff9;border:1px solid rgba(203,238,210,.85);border-radius:18px;overflow:hidden;box-shadow:0 18px 42px rgba(0,0,0,.2);transition:transform .25s,box-shadow .25s}
-    .video-card:hover{transform:translateY(-5px);box-shadow:0 24px 48px rgba(0,0,0,.28)}
-    .video-frame{width:100%;background:#020906;position:relative;overflow:hidden;line-height:0}
-    .video-frame video{display:block;width:100%;height:auto;max-width:100%;background:#020906;object-fit:contain}
-    .video-caption{display:flex;align-items:center;gap:12px;padding:14px 15px;color:#183b25;min-height:68px}
-    .video-caption h3{font:800 12px Manrope,sans-serif}.video-caption p{font-size:10px;color:#718276;margin-top:3px}
-    .video-play{width:35px;height:35px;display:grid;place-items:center;border-radius:11px;background:#e3f7e8;color:#078b42;flex:none}
-    .video-play svg{width:18px;height:18px}
-    @media(max-width:900px){.video-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:560px){.video-gallery{grid-template-columns:1fr;gap:16px}.sample-group{margin-top:35px}.sample-group + .sample-group{margin-top:48px}.sample-group-heading h3{font-size:17px}.video-caption{padding:13px}}
-    .inline-icon{width:18px;height:18px;display:inline-block;vertical-align:-3px;margin-right:5px}
-    .service-hero .inline-icon{color:#66e985}
-    .service-actions .demo-btn svg{width:16px;height:16px}
-    
+/* Service detail refresh: predominantly deep-green sections with clean white cards */  
+body{background:#061b14;color:#f1fff4}  
+.service-hero{background:radial-gradient(circle at 82% 18%,rgba(35,205,83,.16),transparent 29%),linear-gradient(130deg,#041b14 0%,#06271b 58%,#03160f 100%);color:#f4fff6}  
+.service-hero:before{border-color:rgba(104,231,135,.16)}  
+.service-hero h1{color:#f5fff7}.service-hero h1 span{color:#48df6b}.service-hero .lead{color:#b7cbbd}  
+.service-hero .eyebrow{background:rgba(24,89,49,.35);border-color:rgba(99,222,126,.25);color:#79ed91}  
+.service-hero .hero-note{color:#a9c0b0}.service-hero .hero-note b{color:#e9fff0}  
+.service-hero .btn-outline,.service-hero .demo-btn{background:rgba(255,255,255,.06);border-color:rgba(203,239,211,.25);color:#edfff1}  
+.service-hero .demo-btn:hover,.service-hero .btn-outline:hover{background:#fff;color:#063d2a}  
+.price-card{background:#f7fff8;color:#10251a;border:1px solid rgba(255,255,255,.75);box-shadow:0 25px 65px rgba(0,0,0,.28)}  
+.price-card h2{color:#123c25}.price{color:#087b3e}.price small,.price-note{color:#61766a}.price-points li{color:#304b39}.price-points b{color:#0b9b49}  
+.price-label{background:#e5f8e9;color:#087b3e}  
+.detail-section{background:#061b14;color:#f2fff5}  
+.detail-section.soft{background:#09251a}  
+.detail-heading h2{color:#f4fff6}.detail-heading p{color:#a9bfb0}.detail-heading .kicker{color:#68e986}  
+.included-card,.benefit-card,.service-faq details{background:#f8fff9;border-color:rgba(201,235,207,.8);color:#14251a}  
+.included-card h3,.benefit-card h3,.service-faq summary{color:#143b24}  
+.included-card p,.benefit-card p,.service-faq details p{color:#63766a}  
+.included-icon{background:#e5f8e9;color:#078b42}  
+.included-icon svg,.benefit-card .symbol svg{width:23px;height:23px;display:block}  
+.benefit-card .symbol{color:#078b42}  
+.delivery-band{background:#f7fff8;color:#123b24;border:1px solid rgba(199,235,207,.8);box-shadow:0 18px 45px rgba(0,0,0,.16)}  
+.delivery-band p{color:#64776a}.delivery-time{color:#078b42}  
+.cta{background:#061b14}  
+.cta-panel{background:#f7fff8;color:#123b24;border:1px solid rgba(199,235,207,.8);box-shadow:0 18px 50px rgba(0,0,0,.18)}  
+.cta-panel p{color:#62766a}.cta-panel .btn{background:#11984b;color:#fff}.cta-panel .btn:hover{background:#075d34;color:#fff}  
+.service-faq details{border-color:rgba(201,235,207,.8)}  
+.video-samples{background:#09251a}  
+.video-samples{background:#061b14;padding-top:72px;padding-bottom:76px}  
+.sample-group{margin-top:44px}  
+.sample-group + .sample-group{margin-top:62px}  
+.sample-group-heading{display:flex;align-items:center;gap:15px;margin-bottom:20px}  
+.sample-index{width:43px;height:43px;flex:none;border-radius:13px;background:#f4fff6;color:#078b42;display:grid;place-items:center;font:800 14px Manrope,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.16)}  
+.sample-group-heading h3{font:800 20px Manrope,sans-serif;color:#f4fff6;letter-spacing:-.4px}  
+.sample-group-heading p{font-size:12px;color:#a9bfb0;margin-top:3px}  
+.video-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.featured-video{width:100%;margin:34px 0 8px;position:relative;aspect-ratio:16/9;background:#000;overflow:hidden}
+.featured-video iframe{position:absolute;inset:0;width:100%;height:100%;display:block;border:0}  
+.video-card{min-width:0;background:#f8fff9;border:1px solid rgba(203,238,210,.85);border-radius:18px;overflow:hidden;box-shadow:0 18px 42px rgba(0,0,0,.2);transition:transform .25s,box-shadow .25s}  
+.video-card:hover{transform:translateY(-5px);box-shadow:0 24px 48px rgba(0,0,0,.28)}  
+.video-frame{width:100%;background:#020906;position:relative;overflow:hidden;line-height:0}  
+.video-frame video{display:block;width:100%;height:auto;max-width:100%;background:#020906;object-fit:contain}  
+.video-caption{display:flex;align-items:center;gap:12px;padding:14px 15px;color:#183b25;min-height:68px}  
+.video-caption h3{font:800 12px Manrope,sans-serif}.video-caption p{font-size:10px;color:#718276;margin-top:3px}  
+.video-play{width:35px;height:35px;display:grid;place-items:center;border-radius:11px;background:#e3f7e8;color:#078b42;flex:none}  
+.video-play svg{width:18px;height:18px}  
+@media(max-width:900px){.video-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}  
+@media(max-width:560px){.video-gallery{grid-template-columns:1fr;gap:16px}.sample-group{margin-top:35px}.sample-group + .sample-group{margin-top:48px}.sample-group-heading h3{font-size:17px}.video-caption{padding:13px}}  
+.inline-icon{width:18px;height:18px;display:inline-block;vertical-align:-3px;margin-right:5px}  
+.service-hero .inline-icon{color:#66e985}  
+.service-actions .demo-btn svg{width:16px;height:16px}
 
-  </style>
+  </style>  <body>  
+  <div class="topline"></div>  
+  <header>  
+    <div class="container nav">  
+      <a class="brand" href="https://nextcraftstudio.site/" aria-label="NextCraft Studio home">  
+        <img src="https://www.image2url.com/r2/default/images/1795247168690-f16366ec-ddc2-49da-b216-d337aa0de663.jpg" alt="NextCraft Studio logo">  
+        <span><strong>NEXTCRAFT</strong><small>STUDIO</small></span>  
+      </a>  
+      <nav class="navlinks" id="navlinks">  
+        <a href="https://nextcraftstudio.site/">Home</a><a href="https://nextcraftstudio.site/#services">Services</a><a href="https://nextcraftstudio.site/#about">About Us</a><a href="https://nextcraftstudio.site/#process">Our Process</a><a href="https://nextcraftstudio.site/#reviews">Reviews</a><a href="https://nextcraftstudio.site/#contact">Contact</a>  
+      </nav>  
+      <a class="nav-cta" href="https://wa.me/8801810546079" target="_blank" rel="noopener">Let's Talk <span>↗</span></a>  
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>  
+    </div>  
+  </header>  
+  <main>  
+    <section class="service-hero" id="home">  
+      <div class="container service-hero-grid">  
+        <div>  
+          <div class="eyebrow">NextCraft Studio · Creative Video Solutions</div>  
+          <h1>Make Your Brand Stand Out With <span>Powerful Video Ads.</span></h1>  
+          <p class="lead">আপনার পণ্য বা সার্ভিসকে আকর্ষণীয়ভাবে উপস্থাপন করতে তৈরি করুন প্রফেশনাল ভিডিও বিজ্ঞাপন। কৌশলগত কনটেন্ট, মানসম্মত ভয়েসওভার ও মনকাড়া মোশন ডিজাইনের সমন্বয়ে আপনার ব্র্যান্ডের বার্তা পৌঁছে দিন সঠিকভাবে।</p>  
+          <div class="service-actions">  
+            <a class="btn" href="https://wa.me/8801810546079?text=Assalamu%20Alaikum%2C%20I%20want%20to%20order%20a%20video%20advertisement%20from%20NextCraft%20Studio." target="_blank" rel="noopener">Order on WhatsApp <span>↗</span></a>  
+            <a class="demo-btn" href="#video-samples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg> Watch Video Samples</a>  
+          </div>  
+          <div class="hero-note"><svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 2.3 7.7L22 12l-7.7 2.3L12 22l-2.3-7.7L2 12l7.7-2.3z" fill="currentColor"/></svg><span><b>Creative quality. Strategic storytelling.</b> — Designed around your business goals.</span></div>  
+        </div>  </div>  
+</section>  
 
-<body>
-  <div class="topline"></div>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="https://nextcraftstudio.site/" aria-label="NextCraft Studio home">
-        <img src="https://www.image2url.com/r2/default/images/1795247168690-f16366ec-ddc2-49da-b216-d337aa0de663.jpg" alt="NextCraft Studio logo">
-        <span><strong>NEXTCRAFT</strong><small>STUDIO</small></span>
-      </a>
-      <nav class="navlinks" id="navlinks">
-        <a href="https://nextcraftstudio.site/">Home</a><a href="https://nextcraftstudio.site/#services">Services</a><a href="https://nextcraftstudio.site/#about">About Us</a><a href="https://nextcraftstudio.site/#process">Our Process</a><a href="https://nextcraftstudio.site/#reviews">Reviews</a><a href="https://nextcraftstudio.site/#contact">Contact</a>
-      </nav>
-      <a class="nav-cta" href="https://wa.me/8801810546079" target="_blank" rel="noopener">Let's Talk <span>↗</span></a>
-      <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
+<section class="detail-section">  
+  <div class="container">  
+    <div class="detail-heading"><span class="kicker">What You Get</span><h2>প্রতিটি ভিডিওতে থাকছে</h2><p>শুধু ভিডিও এডিটিং নয়—আপনার ব্যবসার পণ্য বা সার্ভিসকে সুন্দরভাবে তুলে ধরতে পরিকল্পিত ক্রিয়েটিভ উপস্থাপনা।</p></div>  
+    <div class="included-grid">  
+      <article class="included-card"><div class="included-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6m-5 3h4m-5-6.5a7 7 0 1 1 6 0c-.8.5-1 1.2-1 1.5h-4c0-.3-.2-1-1-1.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><div><h3>Sales-Focused Strategic Content</h3><p>আপনার পণ্য, সার্ভিস ও কাস্টমারের প্রয়োজন বুঝে আকর্ষণীয় কনটেন্ট সাজানো হয়, যাতে ভিডিওটি দর্শকের কাছে সহজে বার্তা পৌঁছে দিতে পারে।</p></div></article>  
+      <article class="included-card"><div class="included-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4m-4 0h8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><div><h3>Professional Voiceover</h3><p>ভিডিওর বিষয়বস্তু ও ব্র্যান্ডের উপযোগী ভয়েসওভারের মাধ্যমে বিজ্ঞাপনকে আরও পরিষ্কার, সাবলীল ও প্রাণবন্ত করে তোলা হয়।</p></div></article>  
+      <article class="included-card"><div class="included-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18h1.2a2 2 0 0 0 1.5-3.3 1.7 1.7 0 0 1 1.3-2.8H18a3 3 0 0 0 3-3c0-5-4-8.9-9-8.9Z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="7.5" cy="10" r="1" fill="currentColor"/><circle cx="11" cy="7" r="1" fill="currentColor"/><circle cx="16" cy="8.5" r="1" fill="currentColor"/></svg></div><div><h3>Engaging Animation &amp; Premium Design</h3><p>মনকাড়া টেক্সট অ্যানিমেশন, মোশন গ্রাফিক্স ও পরিপাটি ভিজ্যুয়াল ডিজাইনে আপনার বিজ্ঞাপন পাবে প্রফেশনাল উপস্থাপনা।</p></div></article>  
+      <article class="included-card"><div class="included-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 10-13h-7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div><div><h3>Fast Video Delivery</h3><p>প্রজেক্টের প্রয়োজনীয় তথ্য ও উপকরণ হাতে পাওয়ার পর সর্বোচ্চ ৩ ঘণ্টার মধ্যে ভিডিও ডেলিভারির লক্ষ্য রাখা হয়।</p></div></article>  
+    </div>  
+  </div>  
+</section>  
+
+<!-- VIDEO SAMPLES: Replace the MP4 filenames in each source tag with your own video files. -->  
+<section class="detail-section video-samples" id="video-samples">  
+  <div class="container">  
+    <div class="detail-heading">  
+      <span class="kicker">Our Portfolio</span>  
+      <h2>ভিডিও স্যাম্পল</h2>  
+      <p>আমাদের কাজের নমুনা দেখুন। ভিডিওগুলো এই পেজেই সরাসরি প্লে করতে পারবেন।</p>  
+    </div>  
+
+    <div class="featured-video">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/AxpdKVYuQ2k"
+        title="NextCraft Studio Featured Video"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
     </div>
-  </header>
-  <main>
-    <section class="service-hero" id="home">
-      <div class="container service-hero-grid">
-        <div>
-          <div class="eyebrow">NextCraft Studio · Creative Video Solutions</div>
-          <h1>Make Your Brand Stand Out With <span>Powerful Video Ads.</span></h1>
-          <p class="lead">আপনার পণ্য বা সার্ভিসকে আকর্ষণীয়ভাবে উপস্থাপন করতে তৈরি করুন প্রফেশনাল ভিডিও বিজ্ঞাপন। কৌশলগত কনটেন্ট, মানসম্মত ভয়েসওভার ও মনকাড়া মোশন ডিজাইনের সমন্বয়ে আপনার ব্র্যান্ডের বার্তা পৌঁছে দিন সঠিকভাবে।</p>
-          <div class="service-actions">
-            <a class="btn" href="https://wa.me/8801810546079?text=Assalamu%20Alaikum%2C%20I%20want%20to%20order%20a%20video%20advertisement%20from%20NextCraft%20Studio." target="_blank" rel="noopener">Order on WhatsApp <span>↗</span></a>
-            <a class="demo-btn" href="#video-samples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg> Watch Video Samples</a>
-          </div>
-          <div class="hero-note"><svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 2.3 7.7L22 12l-7.7 2.3L12 22l-2.3-7.7L2 12l7.7-2.3z" fill="currentColor"/></svg><span><b>Creative quality. Strategic storytelling.</b> — Designed around your business goals.</span></div>
-        </div>
 
-      </div>
-    </section>
+    <div class="sample-group">  
+      <div class="sample-group-heading">  
+        <span class="sample-index">01</span>  
+        <div><h3>Video Advertising Samples</h3><p>ব্যবসা ও পণ্যের প্রচারের জন্য তৈরি ভিডিও বিজ্ঞাপনের নমুনা</p></div>  
+      </div>  
+      <div class="video-gallery">  
+        <article class="video-card">  
+          <div class="video-frame"><video controls playsinline preload="metadata" aria-label="Video Advertising Sample 01"><source src="video-advertising-sample-01.mp4" type="video/mp4">আপনার ব্রাউজার ভিডিও প্লে সমর্থন করে না।</video></div>  
+          <div class="video-caption"><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><div><h3>Video Advertising Sample 01</h3><p>NextCraft Studio</p></div></div>  
+        </article>  
+        <article class="video-card">  
+          <div class="video-frame"><video controls playsinline preload="metadata" aria-label="Video Advertising Sample 02"><source src="video-advertising-sample-02.mp4" type="video/mp4">আপনার ব্রাউজার ভিডিও প্লে সমর্থন করে না।</video></div>  
+          <div class="video-caption"><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><div><h3>Video Advertising Sample 02</h3><p>NextCraft Studio</p></div></div>  
+        </article>  
+        <article class="video-card">  
+          <div class="video-frame"><video controls playsinline preload="metadata" aria-label="Video Advertising Sample 03"><source src="video-advertising-sample-03.mp4" type="video/mp4">আপনার ব্রাউজার ভিডিও প্লে সমর্থন করে না।</video></div>  
+          <div class="video-caption"><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><div><h3>Video Advertising Sample 03</h3><p>NextCraft Studio</p></div></div>  
+        </article>  
+      </div>  
+    </div>  
 
-    <section class="detail-section">
-      <div class="container">
-        <div class="detail-heading"><span class="kicker">What You Get</span><h2>প্রতিটি ভিডিওতে থাকছে</h2><p>শুধু ভিডিও এডিটিং নয়—আপনার ব্যবসার পণ্য বা সার্ভিসকে সুন্দরভাবে তুলে ধরতে পরিকল্পিত ক্রিয়েটিভ উপস্থাপনা।</p></div>
-        <div class="included-grid">
-          <article class="included-card"><div class="included-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6m-5 3h4m-5-6.5a7 7 0 1 1 6 0c-.8.5-1 1.2-1 1.5h-4c0-.3-.2-1-1-1.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><div><h3>Sales-Focused Strategic Content</h3><p>আপনার পণ্য, সার্ভিস ও কাস্টমারের প্রয়োজন বুঝে আকর্ষণীয় কনটেন্ট সাজানো হয়, যাতে ভিডিওটি দর্শকের কাছে সহজে বার্তা পৌঁছে দিতে পারে।</p></div></article>
-          <article class="included-card"><div class="included-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4m-4 0h8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><div><h3>Professional Voiceover</h3><p>ভিডিওর বিষয়বস্তু ও ব্র্যান্ডের উপযোগী ভয়েসওভারের মাধ্যমে বিজ্ঞাপনকে আরও পরিষ্কার, সাবলীল ও প্রাণবন্ত করে তোলা হয়।</p></div></article>
-          <article class="included-card"><div class="included-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18h1.2a2 2 0 0 0 1.5-3.3 1.7 1.7 0 0 1 1.3-2.8H18a3 3 0 0 0 3-3c0-5-4-8.9-9-8.9Z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="7.5" cy="10" r="1" fill="currentColor"/><circle cx="11" cy="7" r="1" fill="currentColor"/><circle cx="16" cy="8.5" r="1" fill="currentColor"/></svg></div><div><h3>Engaging Animation &amp; Premium Design</h3><p>মনকাড়া টেক্সট অ্যানিমেশন, মোশন গ্রাফিক্স ও পরিপাটি ভিজ্যুয়াল ডিজাইনে আপনার বিজ্ঞাপন পাবে প্রফেশনাল উপস্থাপনা।</p></div></article>
-          <article class="included-card"><div class="included-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 10-13h-7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div><div><h3>Fast Video Delivery</h3><p>প্রজেক্টের প্রয়োজনীয় তথ্য ও উপকরণ হাতে পাওয়ার পর সর্বোচ্চ ৩ ঘণ্টার মধ্যে ভিডিও ডেলিভারির লক্ষ্য রাখা হয়।</p></div></article>
-        </div>
-      </div>
-    </section>
+    <div class="sample-group ai-sample-group">  
+      <div class="sample-group-heading">  
+        <span class="sample-index">02</span>  
+        <div><h3>AI Video Samples</h3><p>Cloud-based AI technology ব্যবহার করে তৈরি ভিডিওর নমুনা</p></div>  
+      </div>  
+      <div class="video-gallery">  
+        <article class="video-card">  
+          <div class="video-frame"><video controls playsinline preload="metadata" aria-label="AI Video Sample 01"><source src="ai-video-sample-01.mp4" type="video/mp4">আপনার ব্রাউজার ভিডিও প্লে সমর্থন করে না।</video></div>  
+          <div class="video-caption"><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><div><h3>AI Video Sample 01</h3><p>NextCraft Studio</p></div></div>  
+        </article>  
+        <article class="video-card">  
+          <div class="video-frame"><video controls playsinline preload="metadata" aria-label="AI Video Sample 02"><source src="ai-video-sample-02.mp4" type="video/mp4">আপনার ব্রাউজার ভিডিও প্লে সমর্থন করে না।</video></div>  
+          <div class="video-caption"><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><div><h3>AI Video Sample 02</h3><p>NextCraft Studio</p></div></div>  
+        </article>  
+        <article class="video-card">  
+          <div class="video-frame"><video controls playsinline preload="metadata" aria-label="AI Video Sample 03"><source src="ai-video-sample-03.mp4" type="video/mp4">আপনার ব্রাউজার ভিডিও প্লে সমর্থন করে না।</video></div>  
+          <div class="video-caption"><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><div><h3>AI Video Sample 03</h3><p>NextCraft Studio</p></div></div>  
+        </article>  
+      </div>  
+    </div>  
+  </div>  
+</section>  
 
-    <!-- VIDEO SAMPLES: Replace the MP4 filenames in each source tag with your own video files. -->
-    <section class="detail-section video-samples" id="video-samples">
-      <div class="container">
-        <div class="detail-heading">
-          <span class="kicker">Our Portfolio</span>
-          <h2>ভিডিও স্যাম্পল</h2>
-          <p>আমাদের কাজের নমুনা দেখুন। ভিডিওগুলো এই পেজেই সরাসরি প্লে করতে পারবেন।</p>
-        </div>
+<section class="detail-section price-section" aria-label="Service pricing">  
+  <div class="container">  
+    <div class="detail-heading"><span class="kicker">Simple &amp; Clear Pricing</span><h2>আপনার ভিডিও বিজ্ঞাপনের মূল্য</h2><p>প্রফেশনাল ভিডিও বিজ্ঞাপন ও এডিটিং সার্ভিসের জন্য নির্ধারিত প্যাকেজ।</p></div>  
+    <div class="price-wrap">        <aside class="price-card" aria-label="Video advertising service price">  
+      <span class="price-label">Our Service Package</span>  
+      <h2>Video Advertising &amp; Editing</h2>  
+      <div class="price">১২৯৯৳</div>  
+      <p class="price-note">একটি আকর্ষণীয় ভিডিও বিজ্ঞাপনের জন্য প্রয়োজনীয় ক্রিয়েটিভ কাজ ও এডিটিং সাপোর্ট। আপনার প্রয়োজন অনুযায়ী কাজের বিস্তারিত WhatsApp-এ আলোচনা করুন।</p>  
+      <ul class="price-points">  
+        <li><b>✓</b> Strategic content direction</li>  
+        <li><b>✓</b> Professional voiceover</li>  
+        <li><b>✓</b> Premium animation &amp; design</li>  
+        <li><b>✓</b> Fast project delivery</li>  
+      </ul>  
+    </aside></div>  
+  </div>  
+</section>  
 
-        <div class="sample-group">
-          <div class="sample-group-heading">
-            <span class="sample-index">01</span>
-            <div><h3>Video Advertising Samples</h3><p>ব্যবসা ও পণ্যের প্রচারের জন্য তৈরি ভিডিও বিজ্ঞাপনের নমুনা</p></div>
-          </div>
-          <div class="video-gallery">
-            <article class="video-card">
-              <div class="video-frame"><video controls playsinline preload="metadata" aria-label="Video Advertising Sample 01"><source src="video-advertising-sample-01.mp4" type="video/mp4">আপনার ব্রাউজার ভিডিও প্লে সমর্থন করে না।</video></div>
-              <div class="video-caption"><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><div><h3>Video Advertising Sample 01</h3><p>NextCraft Studio</p></div></div>
-            </article>
-            <article class="video-card">
-              <div class="video-frame"><video controls playsinline preload="metadata" aria-label="Video Advertising Sample 02"><source src="video-advertising-sample-02.mp4" type="video/mp4">আপনার ব্রাউজার ভিডিও প্লে সমর্থন করে না।</video></div>
-              <div class="video-caption"><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><div><h3>Video Advertising Sample 02</h3><p>NextCraft Studio</p></div></div>
-            </article>
-            <article class="video-card">
-              <div class="video-frame"><video controls playsinline preload="metadata" aria-label="Video Advertising Sample 03"><source src="video-advertising-sample-03.mp4" type="video/mp4">আপনার ব্রাউজার ভিডিও প্লে সমর্থন করে না।</video></div>
-              <div class="video-caption"><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><div><h3>Video Advertising Sample 03</h3><p>NextCraft Studio</p></div></div>
-            </article>
-          </div>
-        </div>
+<section class="detail-section soft">  
+  <div class="container">  
+    <div class="detail-heading"><span class="kicker">Why NextCraft Studio</span><h2>ভিডিও বিজ্ঞাপনে সৃজনশীলতা ও কৌশলের সমন্বয়</h2><p>আপনার ব্র্যান্ডের পরিচিতি, অফার ও মূল বার্তাকে গুরুত্ব দিয়ে প্রতিটি ভিডিও সাজানো হয়।</p></div>  
+    <div class="benefit-grid">  
+      <article class="benefit-card"><div class="symbol"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 2.3 7.7L22 12l-7.7 2.3L12 22l-2.3-7.7L2 12l7.7-2.3z" fill="currentColor"/></svg></div><h3>Brand-Focused Presentation</h3><p>আপনার ব্র্যান্ডের রং, পরিচিতি ও পণ্যের বৈশিষ্ট্যের সঙ্গে মিল রেখে ভিডিওর ভিজ্যুয়াল তৈরি করা হয়।</p></article>  
+      <article class="benefit-card"><div class="symbol"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 9 10-9 10L3 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v10m-5-5h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><h3>Clear Marketing Message</h3><p>দর্শক যেন অল্প সময়েই আপনার অফার ও সার্ভিস সম্পর্কে বুঝতে পারেন, সেভাবে কনটেন্ট সাজানো হয়।</p></article>  
+      <article class="benefit-card"><div class="symbol"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></div><h3>Platform-Ready Creative</h3><p>আপনার ব্যবহারের প্রয়োজন অনুযায়ী Facebook ও অন্যান্য ডিজিটাল প্ল্যাটফর্মে প্রকাশের উপযোগী ভিডিও তৈরি করা হয়।</p></article>  
+    </div>  
+  </div>  
+</section>  
 
-        <div class="sample-group ai-sample-group">
-          <div class="sample-group-heading">
-            <span class="sample-index">02</span>
-            <div><h3>AI Video Samples</h3><p>Cloud-based AI technology ব্যবহার করে তৈরি ভিডিওর নমুনা</p></div>
-          </div>
-          <div class="video-gallery">
-            <article class="video-card">
-              <div class="video-frame"><video controls playsinline preload="metadata" aria-label="AI Video Sample 01"><source src="ai-video-sample-01.mp4" type="video/mp4">আপনার ব্রাউজার ভিডিও প্লে সমর্থন করে না।</video></div>
-              <div class="video-caption"><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><div><h3>AI Video Sample 01</h3><p>NextCraft Studio</p></div></div>
-            </article>
-            <article class="video-card">
-              <div class="video-frame"><video controls playsinline preload="metadata" aria-label="AI Video Sample 02"><source src="ai-video-sample-02.mp4" type="video/mp4">আপনার ব্রাউজার ভিডিও প্লে সমর্থন করে না।</video></div>
-              <div class="video-caption"><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><div><h3>AI Video Sample 02</h3><p>NextCraft Studio</p></div></div>
-            </article>
-            <article class="video-card">
-              <div class="video-frame"><video controls playsinline preload="metadata" aria-label="AI Video Sample 03"><source src="ai-video-sample-03.mp4" type="video/mp4">আপনার ব্রাউজার ভিডিও প্লে সমর্থন করে না।</video></div>
-              <div class="video-caption"><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><div><h3>AI Video Sample 03</h3><p>NextCraft Studio</p></div></div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="detail-section price-section" aria-label="Service pricing">
-      <div class="container">
-        <div class="detail-heading"><span class="kicker">Simple &amp; Clear Pricing</span><h2>আপনার ভিডিও বিজ্ঞাপনের মূল্য</h2><p>প্রফেশনাল ভিডিও বিজ্ঞাপন ও এডিটিং সার্ভিসের জন্য নির্ধারিত প্যাকেজ।</p></div>
-        <div class="price-wrap">        <aside class="price-card" aria-label="Video advertising service price">
-          <span class="price-label">Our Service Package</span>
-          <h2>Video Advertising &amp; Editing</h2>
-          <div class="price">১২৯৯৳</div>
-          <p class="price-note">একটি আকর্ষণীয় ভিডিও বিজ্ঞাপনের জন্য প্রয়োজনীয় ক্রিয়েটিভ কাজ ও এডিটিং সাপোর্ট। আপনার প্রয়োজন অনুযায়ী কাজের বিস্তারিত WhatsApp-এ আলোচনা করুন।</p>
-          <ul class="price-points">
-            <li><b>✓</b> Strategic content direction</li>
-            <li><b>✓</b> Professional voiceover</li>
-            <li><b>✓</b> Premium animation &amp; design</li>
-            <li><b>✓</b> Fast project delivery</li>
-          </ul>
-        </aside></div>
-      </div>
-    </section>
-
-    <section class="detail-section soft">
-      <div class="container">
-        <div class="detail-heading"><span class="kicker">Why NextCraft Studio</span><h2>ভিডিও বিজ্ঞাপনে সৃজনশীলতা ও কৌশলের সমন্বয়</h2><p>আপনার ব্র্যান্ডের পরিচিতি, অফার ও মূল বার্তাকে গুরুত্ব দিয়ে প্রতিটি ভিডিও সাজানো হয়।</p></div>
-        <div class="benefit-grid">
-          <article class="benefit-card"><div class="symbol"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 2.3 7.7L22 12l-7.7 2.3L12 22l-2.3-7.7L2 12l7.7-2.3z" fill="currentColor"/></svg></div><h3>Brand-Focused Presentation</h3><p>আপনার ব্র্যান্ডের রং, পরিচিতি ও পণ্যের বৈশিষ্ট্যের সঙ্গে মিল রেখে ভিডিওর ভিজ্যুয়াল তৈরি করা হয়।</p></article>
-          <article class="benefit-card"><div class="symbol"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 9 10-9 10L3 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v10m-5-5h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><h3>Clear Marketing Message</h3><p>দর্শক যেন অল্প সময়েই আপনার অফার ও সার্ভিস সম্পর্কে বুঝতে পারেন, সেভাবে কনটেন্ট সাজানো হয়।</p></article>
-          <article class="benefit-card"><div class="symbol"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></div><h3>Platform-Ready Creative</h3><p>আপনার ব্যবহারের প্রয়োজন অনুযায়ী Facebook ও অন্যান্য ডিজিটাল প্ল্যাটফর্মে প্রকাশের উপযোগী ভিডিও তৈরি করা হয়।</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="detail-section">
-      <div class="container">
-        <div class="delivery-band"><div><h3><svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 10-13h-7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg> দ্রুত ডেলিভারি, যত্নসহকারে তৈরি</h3><p>প্রয়োজনীয় তথ্য, স্ক্রিপ্টের নির্দেশনা ও উপকরণ পাওয়ার পর সর্বোচ্চ ৩ ঘণ্টার মধ্যে ডেলিভারির লক্ষ্য। কাজের ধরন ও জটিলতার ওপর সময় নির্ভর করতে পারে।</p></div><div class="delivery-time">Within 3 Hours*</div></div>
-      </div>
-    </section>
+<section class="detail-section">  
+  <div class="container">  
+    <div class="delivery-band"><div><h3><svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 10-13h-7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg> দ্রুত ডেলিভারি, যত্নসহকারে তৈরি</h3><p>প্রয়োজনীয় তথ্য, স্ক্রিপ্টের নির্দেশনা ও উপকরণ পাওয়ার পর সর্বোচ্চ ৩ ঘণ্টার মধ্যে ডেলিভারির লক্ষ্য। কাজের ধরন ও জটিলতার ওপর সময় নির্ভর করতে পারে।</p></div><div class="delivery-time">Within 3 Hours*</div></div>  
+  </div>  
+</section>  
 
 
-    <section class="detail-section">
-      <div class="container">
-        <div class="detail-heading"><span class="kicker">Frequently Asked Questions</span><h2>আপনার কিছু প্রশ্নের উত্তর</h2></div>
-        <div class="service-faq">
-          <details><summary>ভিডিও তৈরি করতে কী কী তথ্য দিতে হবে?</summary><p>আপনার ব্যবসা বা পণ্যের পরিচিতি, প্রয়োজনীয় ছবি/ভিডিও ক্লিপ, লোগো, যোগাযোগের তথ্য এবং বিশেষ কোনো নির্দেশনা থাকলে সেগুলো দিতে হবে।</p></details>
-          <details><summary>ভিডিও ডেলিভারি কত সময়ে পাব?</summary><p>প্রয়োজনীয় সব তথ্য ও উপকরণ পাওয়ার পর সর্বোচ্চ ৩ ঘণ্টার মধ্যে ডেলিভারির লক্ষ্য রাখা হয়। প্রজেক্টের জটিলতা অনুযায়ী সময় কিছুটা পরিবর্তিত হতে পারে।</p></details>
-          <details><summary>কাজ শুরু করার আগে কীভাবে যোগাযোগ করব?</summary><p>নিচের WhatsApp বাটনে ক্লিক করে আপনার ব্যবসা ও ভিডিওর প্রয়োজনীয়তা জানাতে পারেন। কাজের বিস্তারিত ও অর্ডার প্রক্রিয়া সেখানে আলোচনা করা হবে।</p></details>
-        </div>
-      </div>
-    </section>
+<section class="detail-section">  
+  <div class="container">  
+    <div class="detail-heading"><span class="kicker">Frequently Asked Questions</span><h2>আপনার কিছু প্রশ্নের উত্তর</h2></div>  
+    <div class="service-faq">  
+      <details><summary>ভিডিও তৈরি করতে কী কী তথ্য দিতে হবে?</summary><p>আপনার ব্যবসা বা পণ্যের পরিচিতি, প্রয়োজনীয় ছবি/ভিডিও ক্লিপ, লোগো, যোগাযোগের তথ্য এবং বিশেষ কোনো নির্দেশনা থাকলে সেগুলো দিতে হবে।</p></details>  
+      <details><summary>ভিডিও ডেলিভারি কত সময়ে পাব?</summary><p>প্রয়োজনীয় সব তথ্য ও উপকরণ পাওয়ার পর সর্বোচ্চ ৩ ঘণ্টার মধ্যে ডেলিভারির লক্ষ্য রাখা হয়। প্রজেক্টের জটিলতা অনুযায়ী সময় কিছুটা পরিবর্তিত হতে পারে।</p></details>  
+      <details><summary>কাজ শুরু করার আগে কীভাবে যোগাযোগ করব?</summary><p>নিচের WhatsApp বাটনে ক্লিক করে আপনার ব্যবসা ও ভিডিওর প্রয়োজনীয়তা জানাতে পারেন। কাজের বিস্তারিত ও অর্ডার প্রক্রিয়া সেখানে আলোচনা করা হবে।</p></details>  
+    </div>  
+  </div>  
+</section>  
 
-    <section class="cta"><div class="container"><div class="cta-panel"><div><h2>Ready to Promote Your Business?</h2><p>আপনার ব্যবসার জন্য একটি প্রফেশনাল ভিডিও বিজ্ঞাপন তৈরি করতে আজই NextCraft Studio-এর সঙ্গে কথা বলুন।</p></div><a class="btn" href="https://wa.me/8801810546079?text=Assalamu%20Alaikum%2C%20I%20want%20to%20know%20about%20your%20video%20advertising%20service." target="_blank" rel="noopener">Chat on WhatsApp <span>↗</span></a></div></div></section>
-  </main>
+<section class="cta"><div class="container"><div class="cta-panel"><div><h2>Ready to Promote Your Business?</h2><p>আপনার ব্যবসার জন্য একটি প্রফেশনাল ভিডিও বিজ্ঞাপন তৈরি করতে আজই NextCraft Studio-এর সঙ্গে কথা বলুন।</p></div><a class="btn" href="https://wa.me/8801810546079?text=Assalamu%20Alaikum%2C%20I%20want%20to%20know%20about%20your%20video%20advertising%20service." target="_blank" rel="noopener">Chat on WhatsApp <span>↗</span></a></div></div></section>
 
-  <footer><div class="container"><div class="footer-grid">
-    <div class="footer-about"><div class="footer-brand"><img src="https://www.image2url.com/r2/default/images/1795247168690-f16366ec-ddc2-49da-b216-d337aa0de663.jpg" alt="NextCraft Studio logo"><span><strong>NEXTCRAFT</strong><small>STUDIO</small></span></div><p>A creative digital agency helping businesses grow their online presence through thoughtful design, marketing and digital solutions.</p><div class="socials">
-      <a class="social-icon" href="https://facebook.com/NextCraftStudio1" target="_blank" rel="noopener" aria-label="Facebook">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H7.3v3.2h2.8V21z"/></svg>
-      </a>
-      <button class="social-icon" type="button" onclick="showComing('LinkedIn')" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.2 3.5a2.1 2.1 0 1 0 0 4.2 2.1 2.1 0 0 0 0-4.2ZM3.4 9.2H7V21H3.4zM9.2 9.2h3.4v1.6h.1a3.8 3.8 0 0 1 3.4-1.9c3.6 0 4.3 2.3 4.3 5.3V21h-3.6v-6c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3V21H9.2z"/></svg>
-      </button>
-      <button class="social-icon" type="button" onclick="showComing('Instagram')" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="igGradient" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#ffb13d"/><stop offset=".48" stop-color="#ed3b78"/><stop offset="1" stop-color="#8b43c8"/></linearGradient></defs><rect x="3" y="3" width="18" height="18" rx="5.2" fill="none" stroke="url(#igGradient)" stroke-width="2.2"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="url(#igGradient)" stroke-width="2.1"/><circle cx="17.6" cy="6.7" r="1.25" fill="#ed3b78"/></svg>
-      </button>
-    </div></div>
-    <div class="footer-col"><h4>Quick Links</h4><a href="https://nextcraftstudio.site/">Home</a><a href="https://nextcraftstudio.site/#about">About Us</a><a href="https://nextcraftstudio.site/#services">Our Services</a><a href="https://nextcraftstudio.site/#reviews">Client Reviews</a><a href="https://nextcraftstudio.site/#contact">Contact</a></div>
-    <div class="footer-col"><h4>Our Services</h4><a href="https://nextcraftstudio.site/video-advertising-video-editing/">Video Advertising &amp; Editing</a><a href="https://nextcraftstudio.site/facebook-ads-campaign/">Facebook Ads Campaign</a><a href="https://nextcraftstudio.site/google-ads-campaign/">Google Ads Campaign</a><a href="https://nextcraftstudio.site/graphic-design-branding/">Graphic Design &amp; Branding</a><a href="https://nextcraftstudio.site/landing-page-design-development/">Landing Page Development</a><a href="https://nextcraftstudio.site/web-development/">Web Development</a></div>
-    <div class="footer-col"><h4>Get in Touch</h4><a href="https://wa.me/8801810546079" target="_blank" rel="noopener">WhatsApp: +880 1810-546079</a><a href="mailto:nextcraftstudio02@gmail.com">nextcraftstudio02@gmail.com</a><p>Magura, Bangladesh</p><a href="https://facebook.com/NextCraftStudio1" target="_blank" rel="noopener">Visit our Facebook Page ↗</a></div>
-  </div><div class="copyright"><span>© <span id="year"></span> NextCraft Studio. All rights reserved.</span><span>Designed with care by <a href="https://nextcraftstudio.site/">NextCraft Studio</a></span></div></div></footer>
-  <div class="modal-backdrop" id="comingModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="if(event.target===this)closeComing()"><div class="modal"><button class="close-modal" type="button" onclick="closeComing()" aria-label="Close popup">×</button><div class="modal-mark">✦</div><div class="tag">Stay Connected</div><h3 id="modalTitle">Coming Soon!</h3><p id="modalText">Our social media profile is on its way. In the meantime, visit our Facebook page and stay connected with NextCraft Studio.</p><a class="fb-link" href="https://facebook.com/NextCraftStudio1" target="_blank" rel="noopener"><span class="fb-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H7.3v3.2h2.8V21z"/></svg></span> Visit Our Facebook Page ↗</a></div></div>
+  </main>    <footer><div class="container"><div class="footer-grid">  
+    <div class="footer-about"><div class="footer-brand"><img src="https://www.image2url.com/r2/default/images/1795247168690-f16366ec-ddc2-49da-b216-d337aa0de663.jpg" alt="NextCraft Studio logo"><span><strong>NEXTCRAFT</strong><small>STUDIO</small></span></div><p>A creative digital agency helping businesses grow their online presence through thoughtful design, marketing and digital solutions.</p><div class="socials">  
+      <a class="social-icon" href="https://facebook.com/NextCraftStudio1" target="_blank" rel="noopener" aria-label="Facebook">  
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H7.3v3.2h2.8V21z"/></svg>  
+      </a>  
+      <button class="social-icon" type="button" onclick="showComing('LinkedIn')" aria-label="LinkedIn">  
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.2 3.5a2.1 2.1 0 1 0 0 4.2 2.1 2.1 0 0 0 0-4.2ZM3.4 9.2H7V21H3.4zM9.2 9.2h3.4v1.6h.1a3.8 3.8 0 0 1 3.4-1.9c3.6 0 4.3 2.3 4.3 5.3V21h-3.6v-6c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3V21H9.2z"/></svg>  
+      </button>  
+      <button class="social-icon" type="button" onclick="showComing('Instagram')" aria-label="Instagram">  
+        <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="igGradient" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#ffb13d"/><stop offset=".48" stop-color="#ed3b78"/><stop offset="1" stop-color="#8b43c8"/></linearGradient></defs><rect x="3" y="3" width="18" height="18" rx="5.2" fill="none" stroke="url(#igGradient)" stroke-width="2.2"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="url(#igGradient)" stroke-width="2.1"/><circle cx="17.6" cy="6.7" r="1.25" fill="#ed3b78"/></svg>  
+      </button>  
+    </div></div>  
+    <div class="footer-col"><h4>Quick Links</h4><a href="https://nextcraftstudio.site/">Home</a><a href="https://nextcraftstudio.site/#about">About Us</a><a href="https://nextcraftstudio.site/#services">Our Services</a><a href="https://nextcraftstudio.site/#reviews">Client Reviews</a><a href="https://nextcraftstudio.site/#contact">Contact</a></div>  
+    <div class="footer-col"><h4>Our Services</h4><a href="https://nextcraftstudio.site/video-advertising-video-editing/">Video Advertising &amp; Editing</a><a href="https://nextcraftstudio.site/facebook-ads-campaign/">Facebook Ads Campaign</a><a href="https://nextcraftstudio.site/google-ads-campaign/">Google Ads Campaign</a><a href="https://nextcraftstudio.site/graphic-design-branding/">Graphic Design &amp; Branding</a><a href="https://nextcraftstudio.site/landing-page-design-development/">Landing Page Development</a><a href="https://nextcraftstudio.site/web-development/">Web Development</a></div>  
+    <div class="footer-col"><h4>Get in Touch</h4><a href="https://wa.me/8801810546079" target="_blank" rel="noopener">WhatsApp: +880 1810-546079</a><a href="mailto:nextcraftstudio02@gmail.com">nextcraftstudio02@gmail.com</a><p>Magura, Bangladesh</p><a href="https://facebook.com/NextCraftStudio1" target="_blank" rel="noopener">Visit our Facebook Page ↗</a></div>  
+  </div><div class="copyright"><span>© <span id="year"></span> NextCraft Studio. All rights reserved.</span><span>Designed with care by <a href="https://nextcraftstudio.site/">NextCraft Studio</a></span></div></div></footer>  
+  <div class="modal-backdrop" id="comingModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="if(event.target===this)closeComing()"><div class="modal"><button class="close-modal" type="button" onclick="closeComing()" aria-label="Close popup">×</button><div class="modal-mark">✦</div><div class="tag">Stay Connected</div><h3 id="modalTitle">Coming Soon!</h3><p id="modalText">Our social media profile is on its way. In the meantime, visit our Facebook page and stay connected with NextCraft Studio.</p><a class="fb-link" href="https://facebook.com/NextCraftStudio1" target="_blank" rel="noopener"><span class="fb-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H7.3v3.2h2.8V21z"/></svg></span> Visit Our Facebook Page ↗</a></div></div>    <script>  
+    const menuBtn=document.getElementById('menuBtn');  
+    const navlinks=document.getElementById('navlinks');  
+    menuBtn.addEventListener('click',()=>{navlinks.classList.toggle('open');menuBtn.textContent=navlinks.classList.contains('open')?'×':'☰'});  
+    navlinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navlinks.classList.remove('open');menuBtn.textContent='☰'}));  
+    document.getElementById('year').textContent=new Date().getFullYear();  
+    function showComing(platform){document.getElementById('modalTitle').textContent=platform+' — Coming Soon!';document.getElementById('modalText').textContent='Our '+platform+' account is coming soon. In the meantime, visit our Facebook page and stay connected with NextCraft Studio.';document.getElementById('comingModal').classList.add('show');document.body.style.overflow='hidden'}  
+    function closeComing(){document.getElementById('comingModal').classList.remove('show');document.body.style.overflow=''}  
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeComing()});  
+  </script>  </body>  
+</html>  https://youtu.be/AxpdKVYuQ2k
 
-  <script>
-    const menuBtn=document.getElementById('menuBtn');
-    const navlinks=document.getElementById('navlinks');
-    menuBtn.addEventListener('click',()=>{navlinks.classList.toggle('open');menuBtn.textContent=navlinks.classList.contains('open')?'×':'☰'});
-    navlinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navlinks.classList.remove('open');menuBtn.textContent='☰'}));
-    document.getElementById('year').textContent=new Date().getFullYear();
-    function showComing(platform){document.getElementById('modalTitle').textContent=platform+' — Coming Soon!';document.getElementById('modalText').textContent='Our '+platform+' account is coming soon. In the meantime, visit our Facebook page and stay connected with NextCraft Studio.';document.getElementById('comingModal').classList.add('show');document.body.style.overflow='hidden'}
-    function closeComing(){document.getElementById('comingModal').classList.remove('show');document.body.style.overflow=''}
-    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeComing()});
-  </script>
-</body>
-</html>
+আমার ওয়েবসাইটে ভিডিওটা অ্যাড করে দেন, একটা ভালো জায়গায় অ্যাড করবা। স্যাম্পলের উপরে অ্যাড করলেই ভালো হয়। মানে যেখানেই অ্যাড করলে ভালো হয় সেভাবে অ্যাড করবা। অতিরিক্ত বর্ডার দিয়ে ভিডিওটাকে ছোট করে ফেলবা না। জাস্ট ভিডিওটা ওইখানে ওপেন হবে। ভিডিওর নিচে কোনো লিংক ওপেনের অপশনও দিবা না। যে এখানে ক্লিক করে ডাইরেক্ট ইউটিউবে চলে যান। ওই অপশনও দরকার নাই। লিংক দিলে ওইখানে, ওয়েবসাইটের ভিতরেই ওরা ভিডিও ওপেন করতে পারবে
